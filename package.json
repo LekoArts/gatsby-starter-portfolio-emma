@@ -1,23 +1,29 @@
 {
-  "name": "gatsby-starter-default",
-  "description": "Gatsby default starter",
+  "name": "gatsby-starter-portfolio-emma",
+  "description": "Gatsby Starter Portfolio Emma",
   "version": "1.0.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "LekoArts <hello@lekoarts.de>",
+  "repository": {
+    "url": "https://github.com/LeKoArts/gatsby-starter-portfolio-emma",
+    "type": "git"
+  },
   "dependencies": {
     "gatsby": "^1.9.63",
     "gatsby-link": "^1.6.21",
     "gatsby-plugin-react-helmet": "^1.0.5"
   },
   "keywords": [
-    "gatsby"
+    "gatsby",
+    "lekoarts",
+    "portfolio",
+    "starter"
   ],
   "license": "MIT",
   "main": "n/a",
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop",
-    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js'",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "gatsby develop",
+    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js'"
   },
   "devDependencies": {
     "prettier": "^1.7.4"
