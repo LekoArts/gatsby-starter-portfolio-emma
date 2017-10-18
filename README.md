@@ -6,8 +6,6 @@ A portfolio starter for [Gatsby](https://www.gatsbyjs.org/). The target audience
 
 [Demo Website](...)
 
-## Emma Theme
-
 - Full-width Grid-Layout
 - Large images
 - Light Theme
