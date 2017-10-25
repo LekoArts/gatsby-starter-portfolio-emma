@@ -1,0 +1,52 @@
+@import "../../../config/_variables.scss";
+
+.wrapper {
+    display: flex;
+    a {
+        color: $body-color;
+        &:hover {
+            color: $brand-primary;
+        }
+    }
+}
+
+.navigation, .name, .socialMedia {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.navigation > span {
+    margin-right: auto;
+}
+
+.socialMedia > span {
+    margin-left: auto;
+}
+
+.navigation {
+    a:not(:first-child) {
+        margin-left: 1rem;
+    }
+}
+
+.name {
+    h3 {
+        margin-bottom: 0 !important;
+    }
+    a {
+        &:hover, &:focus {
+            text-decoration: none;
+            color: $body-color;
+        }
+    }
+}
+
+.socialMedia {
+    a {
+        font-size: 1.5rem;
+    }
+    a:not(:first-child) {
+        margin-left: 1rem;
+    }
+}

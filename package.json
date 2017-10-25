@@ -8,9 +8,29 @@
     "type": "git"
   },
   "dependencies": {
-    "gatsby": "^1.9.63",
-    "gatsby-link": "^1.6.21",
-    "gatsby-plugin-react-helmet": "^1.0.5"
+    "gatsby": "^1.9.79",
+    "gatsby-image": "^1.0.15",
+    "gatsby-link": "^1.6.23",
+    "gatsby-plugin-catch-links": "^1.0.9",
+    "gatsby-plugin-google-analytics": "^1.0.10",
+    "gatsby-plugin-manifest": "^1.0.8",
+    "gatsby-plugin-nprogress": "^1.0.7",
+    "gatsby-plugin-offline": "^1.0.10",
+    "gatsby-plugin-postcss-sass": "^1.0.12",
+    "gatsby-plugin-react-helmet": "^1.0.8",
+    "gatsby-plugin-sharp": "^1.6.11",
+    "gatsby-plugin-sitemap": "^1.2.5",
+    "gatsby-plugin-typography": "^1.7.10",
+    "gatsby-remark-external-links": "^0.0.3",
+    "gatsby-remark-images": "^1.5.22",
+    "gatsby-remark-responsive-iframe": "^1.4.12",
+    "gatsby-source-filesystem": "^1.5.5",
+    "gatsby-transformer-remark": "^1.7.17",
+    "gatsby-transformer-sharp": "^1.6.13",
+    "react-headroom": "^2.2.2",
+    "react-icons": "^2.2.7",
+    "react-palette": "^0.1.2",
+    "react-reveal": "^0.7.1"
   },
   "keywords": [
     "gatsby",
@@ -22,10 +42,15 @@
   "main": "n/a",
   "scripts": {
     "build": "gatsby build",
-    "dev": "gatsby develop",
+    "dev": "gatsby develop -o",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js'"
   },
   "devDependencies": {
-    "prettier": "^1.7.4"
+    "autoprefixer": "^7.1.5",
+    "babel-plugin-lodash": "^3.2.11",
+    "lodash": "^4.17.4",
+    "lodash-webpack-plugin": "^0.11.4",
+    "prettier": "^1.7.4",
+    "rucksack-css": "^1.0.2"
   }
 }

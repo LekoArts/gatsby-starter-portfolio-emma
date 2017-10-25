@@ -1,0 +1,90 @@
+// --------------
+// Mixins
+// --------------
+
+// Hover
+
+@mixin hover-focus {
+    &:focus,
+    &:hover {
+        @content
+    }
+}
+
+// Centerer
+
+@mixin centerer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+// Media Queries
+
+@mixin for-stoneage-only {
+    @media (max-width: 400px) { @content; }
+}
+@mixin for-phone-only {
+    @media (max-width: 599px) { @content; }
+}
+@mixin for-tablet-portrait-up {
+    @media (min-width: 600px) { @content; }
+}
+@mixin for-tablet-portrait-only {
+    @media (min-width: 600px) and (max-width: 899px) { @content; }
+}
+@mixin for-tablet-landscape-down {
+    @media (max-width: 899px) { @content; }
+}
+@mixin for-tablet-landscape-up {
+    @media (min-width: 900px) { @content; }
+}
+@mixin for-tablet-landscape-only {
+    @media (min-width: 900px) and (max-width: 1199px) { @content; }
+}
+@mixin for-desktop-up {
+    @media (min-width: 1200px) { @content; }
+}
+@mixin for-big-desktop-up {
+    @media (min-width: 1500px) { @content; }
+}
+
+// Custom Media Queries
+
+@mixin for-mobile-landscape {
+    @media (max-width: 900px) and (orientation: landscape) { @content; }
+}
+
+// Configure your colors here
+
+$brand-primary: #cf1993;
+$brand-secondary: #7b8acc;
+$grey: #252525;
+$black: #000000;
+
+// Configure your grid here
+
+$content-width: 100vw;
+$gutter: 0px;
+$columns: 3;
+$row-size: calc( (#{$content-width} - #{$gutter} * (#{$columns} - 1)) / #{$columns} );
+
+// --------------------------------------------
+// You don't need to change anything below here
+// --------------------------------------------
+
+$background-color: #f3f3f3;
+$body-color: #222222;
+$link-color: $brand-primary;
+$link-decoration: none;
+$link-color-hover: darken($brand-primary, 15%);
+$link-decoration-hover: underline;
+
+$table-bg: $background-color;
+$table-cell-padding: 1.5rem;
+
+$text-muted: $brand-secondary;
+$cursor-disabled: not-allowed;
+
+$transition: .5s;
