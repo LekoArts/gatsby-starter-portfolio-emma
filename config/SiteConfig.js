@@ -11,7 +11,11 @@ module.exports = {
     // og: Meta Tags
     ogSiteName: `emma`,
     googleAnalyticsID: `UA-12345689-1`,
-    copyright: `Copyright © 2017. Emma Theme by LekoArts. All rights reserved. Pictures by Unsplash.`,
+    copyright: `Copyright © 2017. All rights reserved. Pictures by Unsplash.`,
+    // You can translate these three words into your language if you want. They'll be shown on the project page header
+    client: `Client`,
+    date: `Date`,
+    service: `Service`,
     // Manifest and Progress color
     themeColor: `#3498DB`,
     backgroundColor: `#2b2e3c`,

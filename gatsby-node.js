@@ -54,7 +54,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
             path: edge.node.fields.slug,
             component: projectPage,
             context: {
-              slug: edge.node.fields.slug
+              slug: edge.node.fields.slug,
             }
           })
         })

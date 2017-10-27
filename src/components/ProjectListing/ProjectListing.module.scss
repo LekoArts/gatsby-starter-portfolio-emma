@@ -6,6 +6,14 @@
     max-width: $content-width;
     grid-template-columns: repeat($columns, 1fr);
     grid-auto-rows: $row-size;
+    @include for-tablet-landscape-down() {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: calc( (#{$content-width} - #{$gutter} * (2 - 1)) / 2 );
+    }
+    @include for-phone-only() {
+        grid-template-columns: repeat(1, 1fr);
+        grid-auto-rows: calc( (#{$content-width} - #{$gutter} * (1 - 1)) / 1 );
+    }
     grid-column-gap: $gutter;
     grid-row-gap: $gutter;
 }

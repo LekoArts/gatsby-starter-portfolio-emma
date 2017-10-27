@@ -11,20 +11,6 @@
     }
 }
 
-// Centerer
-
-@mixin centerer {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-// Media Queries
-
-@mixin for-stoneage-only {
-    @media (max-width: 400px) { @content; }
-}
 @mixin for-phone-only {
     @media (max-width: 599px) { @content; }
 }
@@ -40,9 +26,6 @@
 @mixin for-tablet-landscape-up {
     @media (min-width: 900px) { @content; }
 }
-@mixin for-tablet-landscape-only {
-    @media (min-width: 900px) and (max-width: 1199px) { @content; }
-}
 @mixin for-desktop-up {
     @media (min-width: 1200px) { @content; }
 }
@@ -56,6 +39,10 @@
     @media (max-width: 900px) and (orientation: landscape) { @content; }
 }
 
+// --------------
+// Configuration
+// --------------
+
 // Configure your colors here
 
 $brand-primary: #cf1993;
@@ -68,7 +55,23 @@ $black: #000000;
 $content-width: 100vw;
 $gutter: 0px;
 $columns: 3;
+
 $row-size: calc( (#{$content-width} - #{$gutter} * (#{$columns} - 1)) / #{$columns} );
+
+// Configure the max-width of your containers here
+// Try to keep it in sync with maxWidth of `gatsby-remark-images`
+
+$container: 100rem;
+$container-text: 55rem; // Longer texts should have a smaller max-width to improve readability
+
+// Responsive Typography
+// You can set your min and max font-size here
+// More information: https://www.rucksackcss.org/docs/#responsive-type
+
+html {
+    font-size: responsive 12px 16px;
+    font-range: 420px 1280px;
+}
 
 // --------------------------------------------
 // You don't need to change anything below here
@@ -79,7 +82,7 @@ $body-color: #222222;
 $link-color: $brand-primary;
 $link-decoration: none;
 $link-color-hover: darken($brand-primary, 15%);
-$link-decoration-hover: underline;
+$link-decoration-hover: none;
 
 $table-bg: $background-color;
 $table-cell-padding: 1.5rem;
@@ -88,3 +91,5 @@ $text-muted: $brand-secondary;
 $cursor-disabled: not-allowed;
 
 $transition: .5s;
+
+$distance: 2rem; // Horizontal spacing for nav/container

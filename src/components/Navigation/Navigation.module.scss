@@ -2,6 +2,7 @@
 
 .wrapper {
     display: flex;
+    align-items: center;
     a {
         color: $body-color;
         &:hover {
@@ -33,6 +34,7 @@
 .name {
     h3 {
         margin-bottom: 0 !important;
+        font-size: 23px !important;
     }
     a {
         &:hover, &:focus {
@@ -48,5 +50,43 @@
     }
     a:not(:first-child) {
         margin-left: 1rem;
+    }
+}
+
+.mobileNav {
+    display: none;
+    @include for-phone-only {
+        display: block;
+    }
+    a {
+        color: #ffffff;
+        font-size: 200%;
+        margin-bottom: 2rem;
+        &:hover {
+            color: #ffffff;
+        }
+    }
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    background-color: $background-color;
+    z-index: 100;
+}
+
+.mobileNavName {
+    position: fixed;
+    left: 1rem;
+    top: 1rem;
+    h3 {
+        margin-bottom: 0 !important;
+        font-size: 23px !important;
+    }
+}
+
+.mobileNavSocialMedia {
+    margin-top: 6rem;
+    font-size: 1.5rem;
+    a:not(:first-child) {
+        margin-left: 1.5rem;
     }
 }

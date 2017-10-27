@@ -6,17 +6,17 @@ import config from '../../config/SiteConfig'
 import '../utils/emma.scss'
 
 export default class MainLayout extends React.Component {
-  render() {
-    const { children } = this.props
-    return (
-      <div className="layout">
-        <Helmet>
-          <title>{config.siteTitle}</title>
-        </Helmet>
-        <SEO />
-        <Navigation />
-        {children()}
-      </div>
-    );
-  }
+	render() {
+		const { children } = this.props
+		return (
+			<div className="layout">
+				<Helmet>
+					<title>{config.siteTitle}</title>
+				</Helmet>
+				<SEO />
+				<Navigation />
+				{children()}
+			</div>
+		)
+	}
 }

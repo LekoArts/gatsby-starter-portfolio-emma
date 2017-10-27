@@ -21,6 +21,7 @@
 
 html {
     box-sizing: border-box;
+    overflow: auto;
   }
   
   *,
@@ -102,10 +103,6 @@ html {
       color: $link-color-hover;
       text-decoration: $link-decoration-hover;
     }
-  }
-
-  a.active {
-    text-decoration: $link-decoration-hover;
   }
   
   // And undo these styles for placeholder links/named anchors (without href)

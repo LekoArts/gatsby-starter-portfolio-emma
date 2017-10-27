@@ -1,7 +1,7 @@
 ---
-customer: "SmartTriangle"
+client: "SmartTriangle"
 title: "SmartTriangle - Make Triangles smart!"
-cover: "./cover.jpg"
+cover: "./smartTriangle.jpg"
 date: "27.10.2017"
 service: "Art Direction"
 ---

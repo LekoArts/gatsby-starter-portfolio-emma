@@ -1,7 +1,7 @@
 ---
-customer: "BlobSphere"
+client: "BlobSphere"
 title: "BlobSphere - Make Spheres blob!"
-cover: "./cover.jpg"
+cover: "./blobSphere.jpg"
 date: "25.10.2017"
 service: "App Design"
 ---

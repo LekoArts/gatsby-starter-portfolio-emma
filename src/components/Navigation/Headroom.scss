@@ -6,12 +6,14 @@ $transition-headroom: all .35s ease-in-out;
     position: fixed;
     width: 100%;
     z-index: 200;
+    @include for-phone-only() {
+        display: none;
+    }
 }
 
 .headroom {
     width: 100%;
     padding: 1rem 2rem;
-
     a.active {
         color: $brand-primary;
     }
