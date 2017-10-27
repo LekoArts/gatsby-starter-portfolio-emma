@@ -1,4 +1,4 @@
-@import "../../config/_variables.scss";
+@import "../../config/_variables";
 
 .content {
 	margin: 0 auto;
@@ -6,12 +6,23 @@
 	padding-top: $distance;
 }
 
-.header {
-	color: #fff;
+.headerWrapper {
 	margin-bottom: 3rem;
 	margin-top: 1rem;
+	min-height: 25rem;
+	position: relative;
+	width: 100%;
+}
+
+.header {
+	background-color: $background-color;
+	color: #fff;
+	height: 25rem;
 	padding: 6rem $distance;
+	position: absolute;
 	text-align: center;
+	transition: all .5s;
+	width: 100%;
 }
 
 .title {

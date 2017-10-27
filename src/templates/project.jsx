@@ -21,61 +21,63 @@ export default class Project extends React.Component {
 			<div className="container project-container">
 				<Helmet title={`${project.title} | ${config.siteTitle}`} />
 				<SEO postPath={slug} postNode={postNode} postSEO />
-				<Palette image={imageURL}>
-					{palette => (
-						<section
-							className={styles.header}
-							style={{ backgroundColor: palette.vibrant }}
-						>
-							<div className={styles.title}>
-								<Fade down duration={1250} tag="h1">
-									{project.title}
-								</Fade>
-							</div>
-							<div className={styles.information}>
-								<div className={styles.infoBlock}>
-									<Fade up duration={1250} className={styles.top}>
-										{config.client}
-									</Fade>
-									<Fade
-										up
-										duration={1250}
-										delay={500}
-										className={styles.bottom}
-									>
-										{project.client}
+				<div className={styles.headerWrapper}>
+					<Palette image={imageURL}>
+						{palette => (
+							<section
+								className={styles.header}
+								style={{ backgroundColor: palette.vibrant }}
+							>
+								<div className={styles.title}>
+									<Fade down duration={1250} tag="h1">
+										{project.title}
 									</Fade>
 								</div>
-								<div className={styles.infoBlock}>
-									<Fade up duration={1250} className={styles.top}>
-										{config.date}
-									</Fade>
-									<Fade
-										up
-										duration={1250}
-										delay={500}
-										className={styles.bottom}
-									>
-										{project.date}
-									</Fade>
+								<div className={styles.information}>
+									<div className={styles.infoBlock}>
+										<Fade up duration={1250} className={styles.top}>
+											{config.client}
+										</Fade>
+										<Fade
+											up
+											duration={1250}
+											delay={500}
+											className={styles.bottom}
+										>
+											{project.client}
+										</Fade>
+									</div>
+									<div className={styles.infoBlock}>
+										<Fade up duration={1250} className={styles.top}>
+											{config.date}
+										</Fade>
+										<Fade
+											up
+											duration={1250}
+											delay={500}
+											className={styles.bottom}
+										>
+											{project.date}
+										</Fade>
+									</div>
+									<div className={styles.infoBlock}>
+										<Fade up duration={1250} className={styles.top}>
+											{config.service}
+										</Fade>
+										<Fade
+											up
+											duration={1250}
+											delay={500}
+											className={styles.bottom}
+										>
+											{project.service}
+										</Fade>
+									</div>
 								</div>
-								<div className={styles.infoBlock}>
-									<Fade up duration={1250} className={styles.top}>
-										{config.service}
-									</Fade>
-									<Fade
-										up
-										duration={1250}
-										delay={500}
-										className={styles.bottom}
-									>
-										{project.service}
-									</Fade>
-								</div>
-							</div>
-						</section>
-					)}
-				</Palette>
+							</section>
+						)}
+					</Palette>
+				</div>
 				<Container>
 					<div
 						className={styles.content}
