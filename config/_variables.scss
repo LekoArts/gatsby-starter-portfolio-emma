@@ -48,12 +48,13 @@
 $brand-primary: #cf1993;
 $brand-secondary: #7b8acc;
 $grey: #252525;
-$black: #000000;
+$black: #000;
 
 // Configure your grid here
+// You don't need to change it!
 
 $content-width: 100vw;
-$gutter: 0px;
+$gutter: 0;
 $columns: 3;
 
 $row-size: calc( (#{$content-width} - #{$gutter} * (#{$columns} - 1)) / #{$columns} );
@@ -78,7 +79,7 @@ html {
 // --------------------------------------------
 
 $background-color: #f3f3f3;
-$body-color: #222222;
+$body-color: #222;
 $link-color: $brand-primary;
 $link-decoration: none;
 $link-color-hover: darken($brand-primary, 15%);
