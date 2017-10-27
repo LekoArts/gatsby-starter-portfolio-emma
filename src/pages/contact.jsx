@@ -2,6 +2,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import Header from '../components/Header/Header'
 import Container from '../components/Container/Container'
+import Footer from '../components/Footer/Footer'
 import config from '../../config/SiteConfig'
 
 export default class Contact extends React.Component {
@@ -26,6 +27,7 @@ export default class Contact extends React.Component {
             there were thousands.
 					</p>
 				</Container>
+				<Footer />
 			</div>
 		)
 	}
