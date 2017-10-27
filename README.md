@@ -12,7 +12,7 @@ A portfolio starter for [Gatsby](https://www.gatsbyjs.org/). The target audience
 
 ## Why?
 
-If you want to quickly bootstrap a design/photography portfolio or use it as a foundation for your personal site the *gatsby-starter-portfolio* are a perfect fit for you! The project's goal is to offer minimalistic and fast websites.
+If you want to quickly bootstrap a design/photography portfolio or use it as a foundation for your personal site the *gatsby-starter-portfolio* are a perfect fit for you! The project's goal is to offer minimalistic and fast websites. [Tweet me](https://twitter.com/lekoarts_de) your website made with this starter!
 
 ## Features
 
@@ -119,4 +119,8 @@ html {
 
 ## Credits
 
-- Inspired by [atsby-advanced-starter](https://github.com/Vagr9K/gatsby-advanced-starter)
+- Inspired by [gatsby-advanced-starter](https://github.com/Vagr9K/gatsby-advanced-starter)
+
+## About Me
+
+Thanks for using my *gatsby-starter*. I hope you like it and create something awesome! To see some of my work you can visit my [website](https://www.lekoarts.de) or support me on [Patreon](https://www.patreon.com/lekoarts) to get some neat rewards (4K images, project files, tutorial insights).
