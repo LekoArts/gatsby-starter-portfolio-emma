@@ -19,6 +19,7 @@ If you want to quickly bootstrap a design/photography portfolio or use it as a f
 - Configurable
     - Use the SiteConfig.js to easily change the most important information
     - Easily change the font
+- Automatic colors for your projects (with the help of [vibrant.js](https://jariz.github.io/vibrant.js/))
 - Projects in Markdown
 - Google Analytics Support
 - SEO
@@ -118,6 +119,11 @@ html {
 ```
 
 **Attention:** You also need to edit ``static/robots.txt`` to include your domain!
+
+## Automatic Colors
+
+By default the hover overlay of the grid image and the header on the project page automatically choose its color by using [react-palette](https://github.com/leonardokl/react-palette).
+The plugin chooses the *vibrant* color of the image and applies it as the ``background-color`` for the hover overlay and header background. If you don't want that behavior you can delete the ``<Palette />`` component both from ``pages/index.jsx`` and ``templates/project.jsx``.
 
 ## Credits
 
