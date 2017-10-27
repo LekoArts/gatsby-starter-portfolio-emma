@@ -4,48 +4,48 @@
 @import "../../config/_variables.scss";
 
 .container {
-  padding-top: 6.25rem;
+	padding-top: 6.25rem;
 }
 
 .vibrant-canvas {
-  display: none;
+	display: none;
 }
 
 .bm-burger-button {
-  position: fixed;
-  width: 36px;
-  height: 30px;
-  right: 1rem;
-  top: .8rem;
+	height: 30px;
+	position: fixed;
+	right: 1rem;
+	top: .8rem;
+	width: 36px;
 }
 
 .bm-burger-bars {
-  background: #373a47;
+	background: #373a47;
 }
 
 .bm-cross-button {
-  height: 24px;
-  width: 24px;
-  transform: scale(2.5);
-  top: 2rem !important;
-  right: 2rem !important;
+	height: 24px;
+	right: 2rem !important;
+	top: 2rem !important;
+	transform: scale(2.5);
+	width: 24px;
 }
 
 .bm-cross {
-  background: #ffffff;
+	background: #fff;
 }
 
 .bm-menu {
-  background: $brand-primary !important;
-  padding: 2.5em 1.5em 0;
-  font-size: 1.15em;
+	background: $brand-primary !important;
+	font-size: 1.15em;
+	padding: 2.5em 1.5em 0;
 }
 
 .bm-morph-shape {
-  fill: #373a47;
+	fill: #373a47;
 }
 
 .bm-item-list {
-  color: #b8b7ad;
-  padding: 0.8em;
+	color: #b8b7ad;
+	padding: 0.8em;
 }

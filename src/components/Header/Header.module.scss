@@ -1,10 +1,14 @@
 @import "../../../config/_variables.scss";
 
 .header {
-    margin-top: 1rem;
-    margin-bottom: 4rem;
-    background: $brand-secondary;
-    color: #ffffff;
-    padding: 6rem $distance;
-    text-align: center;
+	background: $brand-secondary;
+	color: #fff;
+	margin-bottom: 4rem;
+	margin-top: 1rem;
+	padding: 6rem $distance;
+	text-align: center;
+
+	h1 {
+		margin-bottom: 0 !important;
+	}
 }

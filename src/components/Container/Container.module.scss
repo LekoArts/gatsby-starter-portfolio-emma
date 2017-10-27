@@ -1,19 +1,20 @@
 @import "../../../config/_variables.scss";
 
 .container {
-    max-width: $container;
-    margin: 0 auto;
-    padding-left: $distance;
-    padding-right: $distance;
+	margin: 0 auto;
+	max-width: $container;
+	padding-left: $distance;
+	padding-right: $distance;
 }
 
 .text {
-    max-width: $container-text;
-    p {
-        line-height: 1.58;
-        letter-spacing: -.003em;
-        --baseline-multiplier: 0.179;
-        --x-height-multiplier: 0.35;
-        font-size: 1.25rem;
-    }
+	max-width: $container-text;
+
+	p {
+		font-size: 1.25rem;
+		letter-spacing: -.003em;
+		line-height: 1.58;
+		--baseline-multiplier: 0.179;
+		--x-height-multiplier: 0.35;
+	}
 }

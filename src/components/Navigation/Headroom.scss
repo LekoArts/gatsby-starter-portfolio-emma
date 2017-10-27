@@ -3,39 +3,43 @@
 $transition-headroom: all .35s ease-in-out;
 
 .headroom-wrapper {
-    position: fixed;
-    width: 100%;
-    z-index: 200;
-    @include for-phone-only() {
-        display: none;
-    }
+	position: fixed;
+	width: 100%;
+	z-index: 200;
+	@include for-phone-only() {
+		display: none;
+	}
 }
 
 .headroom {
-    width: 100%;
-    padding: 1rem 2rem;
-    a.active {
-        color: $brand-primary;
-    }
+	padding: 1rem 2rem;
+	width: 100%;
+
+	a.active {
+		color: $brand-primary;
+	}
 }
 
 .headroom--unfixed {
-    position: relative;
-    transform: translateY(0);
-    transition: $transition-headroom;
+	position: relative;
+	transform: translateY(0);
+	transition: $transition-headroom;
 }
+
 .headroom--scrolled {
-    transition: $transition-headroom;
+	transition: $transition-headroom;
 }
+
 .headroom--unpinned {
-    position: fixed;
-    transform: translateY(-100%);
-    transition: $transition-headroom;
+	position: fixed;
+	transform: translateY(-100%);
+	transition: $transition-headroom;
 }
+
 .headroom--pinned {
-    position: fixed;
-    transform: translateY(0%);
-    transition: $transition-headroom;
-    background-color: $background-color;
-    box-shadow: 0px 5px 30px rgba(0,0,0,.2);
+	background-color: $background-color;
+	box-shadow: 0 5px 30px rgba(0,0,0,.2);
+	position: fixed;
+	transform: translateY(0%);
+	transition: $transition-headroom;
 }

@@ -1,43 +1,43 @@
 @import "../../config/_variables.scss";
 
 .content {
-    margin: 0 auto;
-    padding-top: $distance;
-    padding-bottom: $distance;
+	margin: 0 auto;
+	padding-bottom: $distance;
+	padding-top: $distance;
 }
 
 .header {
-    margin-top: 1rem;
-    margin-bottom: 3rem;
-    color: #ffffff;
-    padding: 6rem $distance;
-    text-align: center;
+	color: #fff;
+	margin-bottom: 3rem;
+	margin-top: 1rem;
+	padding: 6rem $distance;
+	text-align: center;
 }
 
 .title {
-    margin: 1rem 0rem;
+	margin: 1rem 0;
 }
 
 .information {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
 }
 
 .infoBlock {
-    display: flex;
-    flex-direction: column;
-    margin: $distance $distance;
-    text-align: left;
+	display: flex;
+	flex-direction: column;
+	margin: $distance $distance;
+	text-align: left;
 }
 
 .top {
-    position: relative;
-    margin-bottom: .5rem;
-    font-size: 80%;
-    text-transform: uppercase;
+	font-size: 80%;
+	margin-bottom: .5rem;
+	position: relative;
+	text-transform: uppercase;
 }
 
 .bottom {
-    font-size: 125%;
+	font-size: 125%;
 }
