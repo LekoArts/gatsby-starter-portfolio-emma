@@ -2,7 +2,6 @@ import React from 'react'
 import Link from 'gatsby-link'
 import Img from 'gatsby-image'
 import Palette from 'react-palette'
-import { Fade } from 'react-reveal'
 import styles from './ProjectListing.module.scss'
 
 export default class ProjectListing extends React.PureComponent {
@@ -22,7 +21,7 @@ export default class ProjectListing extends React.PureComponent {
 	render() {
 		const List = this.getList()
 		return (
-			<Fade delay={250} duration={1500} className={styles.base}>
+			<div className={styles.base}>
 				{List.map(project => (
 					<div key={project.path} className={styles.wrapper}>
 						<div className={styles.content}>
@@ -52,7 +51,7 @@ export default class ProjectListing extends React.PureComponent {
 						</div>
 					</div>
 				))}
-			</Fade>
+			</div>
 		)
 	}
 }
