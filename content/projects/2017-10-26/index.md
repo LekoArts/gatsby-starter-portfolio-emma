@@ -1,9 +1,9 @@
 ---
-client: "BlobSphere"
-title: "BlobSphere - Make Spheres blob!"
-cover: "./blobSphere.jpg"
-date: "25.10.2017"
-service: "App Design"
+client: "CubeRound"
+title: "CubeRound - Make Cubes round!"
+cover: "./cubeRound.jpg"
+date: "2017-10-26"
+service: "Website"
 ---
 # Description
 

@@ -2,7 +2,7 @@
 client: "LekoArts"
 title: "LekoArts - Your theme creator!"
 cover: "./lekoarts.jpg"
-date: "28.10.2017"
+date: "2017-10-28"
 service: "Theme"
 ---
 # Description

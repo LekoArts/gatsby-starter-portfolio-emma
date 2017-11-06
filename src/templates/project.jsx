@@ -2,6 +2,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import { Fade } from 'react-reveal'
 import Palette from 'react-palette'
+import format from 'date-fns/format'
 import config from '../../config/SiteConfig'
 import SEO from '../components/SEO/SEO'
 import Footer from '../components/Footer/Footer'
@@ -13,6 +14,7 @@ export default class Project extends React.Component {
 		const { slug } = this.props.pathContext
 		const postNode = this.props.data.markdownRemark
 		const project = postNode.frontmatter
+		const date = format(project.date, config.dateFormat)
 		const imageURL = project.cover.childImageSharp.resize.src
 		if (!project.id) {
 			project.id = slug
@@ -57,7 +59,7 @@ export default class Project extends React.Component {
 											delay={500}
 											className={styles.bottom}
 										>
-											{project.date}
+											{date}
 										</Fade>
 									</div>
 									<div className={styles.infoBlock}>

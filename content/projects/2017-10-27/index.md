@@ -2,7 +2,7 @@
 client: "SmartTriangle"
 title: "SmartTriangle - Make Triangles smart!"
 cover: "./smartTriangle.jpg"
-date: "27.10.2017"
+date: "2017-10-27"
 service: "Art Direction"
 ---
 # Description
