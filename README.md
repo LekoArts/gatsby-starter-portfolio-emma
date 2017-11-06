@@ -44,6 +44,19 @@ gatsby new Project-Name https://github.com/LeKoArts/gatsby-starter-portfolio-emm
 npm run dev
 ```
 
+### Adding a new project
+- Create a new folder in ``content/projects`` with the current date (Format: YYYY-MM-DD)
+- Create a new markdown file, add the frontmatter (use the same date format)
+- Add an image and reference it in your frontmatter
+- Write your content below the frontmatter
+
+### Building your site
+
+```
+npm run build
+```
+Copy the content of the ``public`` folder to your webhost or use a website like Netlify which automates that for you.
+
 ## Configuration
 
 You can configure your setup in ``config/SiteConfig``:
@@ -67,6 +80,10 @@ module.exports = {
   client: 'Client',
   date: 'Date',
   service: 'Service',
+
+  // Date format used in your project header
+  // More information here: https://date-fns.org/v1.29.0/docs/format
+  dateFormat: 'DD.MM.YYYY',
   
   // Manifest and Progress color
   themeColor: '#3498DB',

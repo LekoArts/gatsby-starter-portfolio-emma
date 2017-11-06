@@ -16,6 +16,9 @@ module.exports = {
 	client: 'Client',
 	date: 'Date',
 	service: 'Service',
+	// Date format used in your project header
+	// More information here: https://date-fns.org/v1.29.0/docs/format
+	dateFormat: 'DD.MM.YYYY',
 	// Manifest and Progress color
 	themeColor: '#3498DB',
 	backgroundColor: '#2b2e3c',
