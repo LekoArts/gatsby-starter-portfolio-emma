@@ -37,7 +37,11 @@ If you want to quickly bootstrap a design/photography portfolio or use it as a f
 
 ## Getting Started
 
-Assuming that the [Gatsby CLI](https://www.gatsbyjs.org/docs/) is installed:
+Check your development environment! You'll need [Node.js](https://nodejs.org/en/), the [Gatsby CLI](https://www.gatsbyjs.org/docs/) and [node-gyp](https://github.com/nodejs/node-gyp#installation) installed. The official Gatsby website also lists two articles regarding this topic:
+- [Gatsby on Windows](https://www.gatsbyjs.org/docs/gatsby-on-windows/)
+- [Check your development environment](https://www.gatsbyjs.org/tutorial/part-one/#check-your-development-environment)
+
+To copy and install this starter run this command (with "Project-Name" being the name of your folder you wish to install it)
 
 ```
 gatsby new Project-Name https://github.com/LeKoArts/gatsby-starter-portfolio-emma
@@ -49,6 +53,12 @@ npm run dev
 - Create a new markdown file, add the frontmatter (use the same date format)
 - Add an image and reference it in your frontmatter
 - Write your content below the frontmatter
+
+If you're still unsure have a look at the already existing examples.
+
+### Adding new features/plugins
+
+You can add other features by having a look at the offical [Plugins Page](https://www.gatsbyjs.org/docs/plugins/)
 
 ### Building your site
 
