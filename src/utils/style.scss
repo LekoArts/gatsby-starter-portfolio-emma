@@ -1,7 +1,7 @@
 // Custom Styles for Emma
 // Using our variables
 
-@import "../../config/_variables.scss";
+@import '../../config/variables';
 
 .container {
 	padding-top: 6.25rem;
@@ -47,5 +47,5 @@
 
 .bm-item-list {
 	color: #b8b7ad;
-	padding: 0.8em;
+	padding: .8em;
 }

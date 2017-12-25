@@ -1,4 +1,4 @@
-@import "../../config/_variables";
+@import '../../config/variables';
 
 .content {
 	margin: 0 auto;
@@ -15,7 +15,7 @@
 }
 
 .header {
-	background-color: $background-color;
+	background-color: $brand-primary;
 	color: #fff;
 	height: 25rem;
 	padding: 6rem $distance;
