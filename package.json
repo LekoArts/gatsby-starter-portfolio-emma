@@ -2,7 +2,7 @@
   "name": "gatsby-starter-portfolio-emma",
   "description": "Gatsby Starter Portfolio Emma",
   "version": "1.0.0",
-  "author": "LekoArts <hello@lekoarts.de>",
+  "author": "LekoArts <hello@lekoarts.de> (https://www.lekoarts.de)",
   "repository": {
     "url": "https://github.com/LeKoArts/gatsby-starter-portfolio-emma",
     "type": "git"
@@ -14,7 +14,7 @@
     "gatsby-image": "^1.0.31",
     "gatsby-link": "^1.6.32",
     "gatsby-plugin-catch-links": "^1.0.14",
-    "gatsby-plugin-google-analytics": "^1.0.14",
+    "gatsby-plugin-google-analytics": "^1.0.15",
     "gatsby-plugin-lodash": "^1.0.7",
     "gatsby-plugin-manifest": "^1.0.12",
     "gatsby-plugin-nprogress": "^1.0.9",
@@ -30,7 +30,7 @@
     "gatsby-source-filesystem": "^1.5.11",
     "gatsby-transformer-remark": "^1.7.26",
     "gatsby-transformer-sharp": "^1.6.16",
-    "react-burger-menu": "^2.1.11",
+    "react-burger-menu": "^2.2.3",
     "react-headroom": "^2.2.2",
     "react-icons": "^2.2.7",
     "react-palette": "^0.1.3",
