@@ -10,9 +10,12 @@
   "dependencies": {
     "classnames": "^2.2.5",
     "date-fns": "^1.29.0",
-    "gatsby": "^1.9.149",
-    "gatsby-image": "^1.0.31",
-    "gatsby-link": "^1.6.32",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "gatsby": "^1.9.155",
+    "gatsby-image": "^1.0.32",
+    "gatsby-link": "^1.6.34",
     "gatsby-plugin-catch-links": "^1.0.14",
     "gatsby-plugin-google-analytics": "^1.0.15",
     "gatsby-plugin-lodash": "^1.0.7",
@@ -28,7 +31,7 @@
     "gatsby-remark-images": "^1.5.36",
     "gatsby-remark-responsive-iframe": "^1.4.16",
     "gatsby-source-filesystem": "^1.5.11",
-    "gatsby-transformer-remark": "^1.7.26",
+    "gatsby-transformer-remark": "^1.7.28",
     "gatsby-transformer-sharp": "^1.6.16",
     "react-burger-menu": "^2.2.3",
     "react-headroom": "^2.2.2",
@@ -47,20 +50,15 @@
   "main": "n/a",
   "scripts": {
     "build": "gatsby build",
-    "dev": "gatsby develop -o",
-    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write src/**/**/*.jsx",
-    "lint:js": "eslint --ext .jsx --ignore-pattern public,static ."
+    "dev": "gatsby develop -o"
   },
   "devDependencies": {
-    "autoprefixer": "^7.2.3",
+    "autoprefixer": "^7.2.5",
     "babel-preset-env": "^1.6.1",
-    "eslint": "^4.9.0",
-    "eslint-plugin-react": "^7.4.0",
+    "eslint": "^4.15.0",
+    "eslint-plugin-react": "^7.5.1",
     "lodash": "^4.17.4",
-    "prettier": "^1.7.4",
-    "rucksack-css": "^1.0.2",
-    "stylelint": "^8.2.0",
-    "stylelint-config-sass-guidelines": "^3.1.0"
+    "rucksack-css": "^1.0.2"
   },
   "browserslist": [
     "> 1%",
