@@ -8,6 +8,7 @@
     "type": "git"
   },
   "dependencies": {
+    "babel-eslint": "^8.2.1",
     "classnames": "^2.2.5",
     "date-fns": "^1.29.0",
     "eslint-config-airbnb": "^16.1.0",
