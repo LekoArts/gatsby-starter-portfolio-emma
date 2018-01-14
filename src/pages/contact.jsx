@@ -1,19 +1,17 @@
-import React from 'react'
-import Helmet from 'react-helmet'
-import Header from '../components/Header/Header'
-import Container from '../components/Container/Container'
-import Footer from '../components/Footer/Footer'
-import config from '../../config/SiteConfig'
+import React from 'react';
+import Helmet from 'react-helmet';
+import Header from '../components/Header/Header';
+import Container from '../components/Container/Container';
+import Footer from '../components/Footer/Footer';
+import config from '../../config/SiteConfig';
 
-export default class Contact extends React.Component {
-	render() {
-		return (
-			<div className="container contact-container">
-				<Helmet title={`Contact | ${config.siteTitle}`} />
-				<Header>Contact</Header>
-				<Container text>
-					<h1>Hi!</h1>
-					<p>
+const Contact = () => (
+  <div className="container contact-container">
+    <Helmet title={`Contact | ${config.siteTitle}`} />
+    <Header>Contact</Header>
+    <Container text>
+      <h1>Contact me!</h1>
+      <p>
             Far far away, behind the word mountains, far from the countries
             Vokalia and Consonantia, there live the blind texts. Separated they
             live in Bookmarksgrove right at the coast of the Semantics, a large
@@ -25,10 +23,10 @@ export default class Contact extends React.Component {
             blind text by the name of Lorem Ipsum decided to leave for the far
             World of Grammar. The Big Oxmox advised her not to do so, because
             there were thousands.
-					</p>
-				</Container>
-				<Footer />
-			</div>
-		)
-	}
-}
+      </p>
+    </Container>
+    <Footer />
+  </div>
+);
+
+export default Contact;
