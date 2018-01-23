@@ -2,13 +2,13 @@
 
 # Gatsby Starter Portfolio: Emma
 
-A portfolio starter for [Gatsby](https://www.gatsbyjs.org/). The target audience are Designers and Photographers.
+A portfolio starter for [Gatsby](https://www.gatsbyjs.org/). The target audience are designers and photographers.
 
 [Demo Website](https://embalmer-glues-43220.netlify.com/)
 
-- Full-width Grid-Layout
+- Full-width grid-layout
 - Large images
-- Light Theme
+- Light theme
 
 ## Why?
 
@@ -32,8 +32,8 @@ If you want to quickly bootstrap a design/photography portfolio or use it as a f
 - Typography.js
 - Responsive images
     - The right image size for every screen size
-    - Traced SVG Loading (Lazy-Loading)
-    - WebP Support
+    - Traced SVG loading (lazy-loading)
+    - WebP support
 
 ## Getting Started
 
@@ -41,24 +41,24 @@ Check your development environment! You'll need [Node.js](https://nodejs.org/en/
 - [Gatsby on Windows](https://www.gatsbyjs.org/docs/gatsby-on-windows/)
 - [Check your development environment](https://www.gatsbyjs.org/tutorial/part-one/#check-your-development-environment)
 
-To copy and install this starter run this command (with "Project-Name" being the name of your folder you wish to install it)
+To copy and install this starter run this command (with "project-name" being the name of your folder you wish to install it in):
 
 ```
-gatsby new Project-Name https://github.com/LeKoArts/gatsby-starter-portfolio-emma
+gatsby new project-name https://github.com/LeKoArts/gatsby-starter-portfolio-emma
 npm run dev
 ```
 
 ### Adding a new project
 - Create a new folder in ``content/projects`` with the current date (Format: YYYY-MM-DD)
 - Create a new markdown file, add the frontmatter (use the same date format)
-- Add an image and reference it in your frontmatter
+- Add an image and reference it in your frontmatter as ``cover``
 - Write your content below the frontmatter
 
 If you're still unsure have a look at the already existing examples.
 
 ### Adding new features/plugins
 
-You can add other features by having a look at the offical [Plugins Page](https://www.gatsbyjs.org/docs/plugins/)
+You can add other features by having a look at the offical [plugins page](https://www.gatsbyjs.org/docs/plugins/)
 
 ### Building your site
 
@@ -74,12 +74,14 @@ You can configure your setup in ``config/SiteConfig``:
 ```JS
 module.exports = {
   pathPrefix: '/', // Prefix for all links. If you deploy your site to example.com/portfolio your pathPrefix should be "portfolio"
+  
   siteTitle: 'Emma', // Navigation and Site Title
   siteTitleAlt: 'Emma - Gatsby Starter Portfolio', // Alternative Site title for SEO
   siteUrl: 'https://embalmer-glues-43220.netlify.com', // Domain of your site. No trailing slash!
   siteLanguage: 'en', // Language Tag on <html> element
   siteLogo: '/logos/logo-1024.png', // Used for SEO and manifest
   siteDescription: 'Minimalistic bright portfolio with full-width grid and large images',
+  
   siteFBAppID: '123456789', // Facebook App ID
   userTwitter: 'emma', // Twitter Username
   ogSiteName: 'emma', // Facebook Site Name
