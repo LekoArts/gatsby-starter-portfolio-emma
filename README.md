@@ -4,7 +4,7 @@
 
 A portfolio starter for [Gatsby](https://www.gatsbyjs.org/). The target audience are designers and photographers.
 
-[Demo Website](https://embalmer-glues-43220.netlify.com/)
+[Demo Website](https://portfolio-emma.netlify.com/)
 
 - Full-width grid-layout
 - Large images
