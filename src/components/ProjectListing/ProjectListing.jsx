@@ -7,7 +7,7 @@ import styles from './ProjectListing.module.scss';
 export default class ProjectListing extends React.PureComponent {
   getList() {
     const List = [];
-    this.props.projectEdges.forEach((projectEdge) => {
+    this.props.projectEdges.forEach(projectEdge => {
       List.push({
         path: projectEdge.node.fields.slug,
         cover: projectEdge.node.frontmatter.cover.childImageSharp.sizes,
@@ -28,18 +28,9 @@ export default class ProjectListing extends React.PureComponent {
               <div className={styles.image}>
                 <Img sizes={project.cover} />
               </div>
-              <Link
-                to={project.path}
-                key={project.path}
-                className={styles.link}
-              >
+              <Link to={project.path} key={project.path} className={styles.link}>
                 <Palette image={project.imageURL}>
-                  {palette => (
-                    <div
-                      className={styles.overlay}
-                      style={{ backgroundColor: palette.vibrant }}
-                    />
-					)}
+                  {palette => <div className={styles.overlay} style={{ backgroundColor: palette.vibrant }} />}
                 </Palette>
                 <h2 className={styles.client} key={project.client}>
                   {project.client}
@@ -50,7 +41,7 @@ export default class ProjectListing extends React.PureComponent {
               </Link>
             </div>
           </div>
-		))}
+        ))}
       </div>
     );
   }

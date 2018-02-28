@@ -26,7 +26,8 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
 
   return new Promise((resolve, reject) => {
     const projectPage = path.resolve('src/templates/project.jsx');
-    resolve(graphql(`
+    resolve(
+      graphql(`
         {
           projects: allMarkdownRemark {
             edges {
@@ -38,22 +39,23 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
             }
           }
         }
-      `).then((result) => {
-      if (result.errors) {
-        /* eslint no-console: "off" */
-        console.log(result.errors);
-        reject(result.errors);
-      }
+      `).then(result => {
+        if (result.errors) {
+          /* eslint no-console: "off" */
+          console.log(result.errors);
+          reject(result.errors);
+        }
 
-      result.data.projects.edges.forEach((edge) => {
-        createPage({
-          path: edge.node.fields.slug,
-          component: projectPage,
-          context: {
-            slug: edge.node.fields.slug,
-          },
+        result.data.projects.edges.forEach(edge => {
+          createPage({
+            path: edge.node.fields.slug,
+            component: projectPage,
+            context: {
+              slug: edge.node.fields.slug,
+            },
+          });
         });
-      });
-    }));
+      })
+    );
   });
 };

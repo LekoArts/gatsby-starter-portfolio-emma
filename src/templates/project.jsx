@@ -9,7 +9,7 @@ import Footer from '../components/Footer/Footer';
 import Container from '../components/Container/Container';
 import styles from './project.module.scss';
 
-const Project = (props) => {
+const Project = props => {
   const { slug } = props.pathContext;
   const postNode = props.data.markdownRemark;
   const project = postNode.frontmatter;
@@ -25,10 +25,7 @@ const Project = (props) => {
       <div className={styles.headerWrapper}>
         <Palette image={imageURL}>
           {palette => (
-            <section
-              className={styles.header}
-              style={{ backgroundColor: palette.vibrant }}
-            >
+            <section className={styles.header} style={{ backgroundColor: palette.vibrant }}>
               <div className={styles.title}>
                 <Fade down duration={1250} tag="h1">
                   {project.title}
@@ -39,12 +36,7 @@ const Project = (props) => {
                   <Fade up duration={1250} className={styles.top}>
                     {config.client}
                   </Fade>
-                  <Fade
-                    up
-                    duration={1250}
-                    delay={500}
-                    className={styles.bottom}
-                  >
+                  <Fade up duration={1250} delay={500} className={styles.bottom}>
                     {project.client}
                   </Fade>
                 </div>
@@ -52,12 +44,7 @@ const Project = (props) => {
                   <Fade up duration={1250} className={styles.top}>
                     {config.date}
                   </Fade>
-                  <Fade
-                    up
-                    duration={1250}
-                    delay={500}
-                    className={styles.bottom}
-                  >
+                  <Fade up duration={1250} delay={500} className={styles.bottom}>
                     {date}
                   </Fade>
                 </div>
@@ -65,25 +52,17 @@ const Project = (props) => {
                   <Fade up duration={1250} className={styles.top}>
                     {config.service}
                   </Fade>
-                  <Fade
-                    up
-                    duration={1250}
-                    delay={500}
-                    className={styles.bottom}
-                  >
+                  <Fade up duration={1250} delay={500} className={styles.bottom}>
                     {project.service}
                   </Fade>
                 </div>
               </div>
             </section>
-						)}
+          )}
         </Palette>
       </div>
       <Container>
-        <div
-          className={styles.content}
-          dangerouslySetInnerHTML={{ __html: postNode.html }}
-        />
+        <div className={styles.content} dangerouslySetInnerHTML={{ __html: postNode.html }} />
       </Container>
       <Footer />
     </div>

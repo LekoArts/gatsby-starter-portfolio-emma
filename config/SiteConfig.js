@@ -28,4 +28,3 @@ module.exports = {
   bodyFontFamily: 'Roboto',
   baseFontSize: '16px',
 };
-

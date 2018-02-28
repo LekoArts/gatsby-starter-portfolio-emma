@@ -60,10 +60,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-postcss-sass',
       options: {
-        postCssPlugins: [
-          autoprefixer(),
-          rucksackCSS(),
-        ],
+        postCssPlugins: [autoprefixer(), rucksackCSS()],
         precision: 8,
       },
     },

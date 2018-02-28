@@ -4,7 +4,7 @@ import config from '../../config/SiteConfig';
 import ProjectListing from '../components/ProjectListing/ProjectListing';
 import Footer from '../components/Footer/Footer';
 
-const Index = (props) => {
+const Index = props => {
   const projectEdges = props.data.allMarkdownRemark.edges;
   return (
     <div className="container index-container">
@@ -35,11 +35,7 @@ export const pageQuery = graphql`
             client
             cover {
               childImageSharp {
-                sizes(
-                  maxWidth: 850
-                  quality: 90
-                  traceSVG: { color: "#f3f3f3" }
-                ) {
+                sizes(maxWidth: 850, quality: 90, traceSVG: { color: "#f3f3f3" }) {
                   ...GatsbyImageSharpSizes_withWebp_tracedSVG
                 }
               }
