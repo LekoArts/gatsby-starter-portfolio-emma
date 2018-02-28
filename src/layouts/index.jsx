@@ -5,11 +5,20 @@ import SEO from '../components/SEO/SEO';
 import config from '../../config/SiteConfig';
 import '../utils/emma.scss';
 
-const MainLayout = (props) => {
+import favicon from './favicon.png';
+import appleTouchIcon from './apple-touch-icon.png';
+
+const MainLayout = props => {
   const { children } = props;
   return (
     <div className="layout">
       <Helmet>
+        <html lang={config.siteLanguage} />
+        <meta charSet="utf-8" />
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0" />
+        <link rel="shortcut icon" href={favicon} />
+        <link rel="apple-touch-icon" href={appleTouchIcon} />
         <title>{config.siteTitle}</title>
       </Helmet>
       <SEO />
