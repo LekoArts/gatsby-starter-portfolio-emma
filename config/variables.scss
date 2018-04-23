@@ -5,38 +5,54 @@
 // Hover
 
 @mixin hover-focus {
-    &:focus,
-    &:hover {
-        @content
-    }
+  &:focus,
+  &:hover {
+    @content;
+  }
 }
 
 @mixin for-phone-only {
-    @media (max-width: 599px) { @content; }
+  @media (max-width: 599px) {
+    @content;
+  }
 }
 @mixin for-tablet-portrait-up {
-    @media (min-width: 600px) { @content; }
+  @media (min-width: 600px) {
+    @content;
+  }
 }
 @mixin for-tablet-portrait-only {
-    @media (min-width: 600px) and (max-width: 899px) { @content; }
+  @media (min-width: 600px) and (max-width: 899px) {
+    @content;
+  }
 }
 @mixin for-tablet-landscape-down {
-    @media (max-width: 899px) { @content; }
+  @media (max-width: 899px) {
+    @content;
+  }
 }
 @mixin for-tablet-landscape-up {
-    @media (min-width: 900px) { @content; }
+  @media (min-width: 900px) {
+    @content;
+  }
 }
 @mixin for-desktop-up {
-    @media (min-width: 1200px) { @content; }
+  @media (min-width: 1200px) {
+    @content;
+  }
 }
 @mixin for-big-desktop-up {
-    @media (min-width: 1500px) { @content; }
+  @media (min-width: 1500px) {
+    @content;
+  }
 }
 
 // Custom Media Queries
 
 @mixin for-mobile-landscape {
-    @media (max-width: 900px) and (orientation: landscape) { @content; }
+  @media (max-width: 900px) and (orientation: landscape) {
+    @content;
+  }
 }
 
 // --------------
@@ -57,7 +73,9 @@ $content-width: 100vw;
 $gutter: 0;
 $columns: 3;
 
-$row-size: calc( (#{$content-width} - #{$gutter} * (#{$columns} - 1)) / #{$columns} );
+$row-size: calc(
+  (#{$content-width} - #{$gutter} * (#{$columns} - 1)) / #{$columns}
+);
 
 // Configure the max-width of your containers here
 // Try to keep it in sync with maxWidth of `gatsby-remark-images`
@@ -70,8 +88,10 @@ $container-text: 55rem; // Longer texts should have a smaller max-width to impro
 // More information: https://www.rucksackcss.org/docs/#responsive-type
 
 html {
-    font-size: responsive 12px 16px;
-    font-range: 420px 1280px;
+  font-size: 14px;
+  @include for-desktop-up {
+    font-size: 16px;
+  }
 }
 
 // --------------------------------------------
@@ -91,6 +111,6 @@ $table-cell-padding: 1.5rem;
 $text-muted: $brand-secondary;
 $cursor-disabled: not-allowed;
 
-$transition: .5s;
+$transition: 0.5s;
 
 $distance: 2rem; // Horizontal spacing for nav/container

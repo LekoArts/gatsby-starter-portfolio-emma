@@ -2,7 +2,6 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import { Fade } from 'react-reveal';
 import Palette from 'react-palette';
-import format from 'date-fns/format';
 import config from '../../config/SiteConfig';
 import SEO from '../components/SEO/SEO';
 import Footer from '../components/Footer/Footer';
@@ -13,7 +12,6 @@ const Project = props => {
   const { slug } = props.pathContext;
   const postNode = props.data.markdownRemark;
   const project = postNode.frontmatter;
-  const date = format(project.date, config.dateFormat);
   const imageURL = project.cover.childImageSharp.resize.src;
   if (!project.id) {
     project.id = slug;
@@ -45,7 +43,7 @@ const Project = props => {
                     {config.date}
                   </Fade>
                   <Fade up duration={1250} delay={500} className={styles.bottom}>
-                    {date}
+                    {project.date}
                   </Fade>
                 </div>
                 <div className={styles.infoBlock}>
@@ -78,7 +76,7 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
-        date
+        date(formatString: "DD.MM.YYYY")
         client
         service
         cover {

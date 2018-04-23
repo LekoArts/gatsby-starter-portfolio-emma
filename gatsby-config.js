@@ -1,5 +1,3 @@
-const autoprefixer = require('autoprefixer');
-const rucksackCSS = require('rucksack-css');
 const config = require('./config/SiteConfig');
 
 const pathPrefix = config.pathPrefix === '/' ? '' : config.pathPrefix;
@@ -57,13 +55,7 @@ module.exports = {
     },
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
-    {
-      resolve: 'gatsby-plugin-postcss-sass',
-      options: {
-        postCssPlugins: [autoprefixer(), rucksackCSS()],
-        precision: 8,
-      },
-    },
+    'gatsby-plugin-sass',
     {
       resolve: 'gatsby-plugin-typography',
       options: {
