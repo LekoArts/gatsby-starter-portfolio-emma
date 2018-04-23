@@ -11,7 +11,7 @@ import appleTouchIcon from './apple-touch-icon.png';
 const MainLayout = props => {
   const { children } = props;
   return (
-    <div className="layout">
+    <React.Fragment>
       <Helmet>
         <html lang={config.siteLanguage} />
         <meta charSet="utf-8" />
@@ -24,7 +24,7 @@ const MainLayout = props => {
       <SEO />
       <Navigation />
       {children()}
-    </div>
+    </React.Fragment>
   );
 };
 
