@@ -10,6 +10,7 @@ module.exports = {
   userTwitter: '@emma', // Twitter Username
   // og: Meta Tags
   ogSiteName: 'emma', // Facebook Site Name
+  ogLanguage: 'de_DE',
   googleAnalyticsID: 'UA-12345689-1',
   copyright: 'Copyright © 2017. All rights reserved. Pictures by Unsplash.', // Copyright in the footer of the site
   // You can translate these three words into your language if you want.

@@ -16,7 +16,7 @@ const SEO = props => {
     image = postMeta.cover.childImageSharp.resize.src;
     postURL = config.siteUrl + realPrefix + postPath;
   } else {
-    title = config.siteTitle;
+    title = config.siteTitleAlt;
     description = config.siteDescription;
     image = config.siteLogo;
   }
@@ -32,7 +32,7 @@ const SEO = props => {
     },
   ];
   if (postSEO) {
-    schemaOrgJSONLD.push([
+    schemaOrgJSONLD.push(
       {
         '@context': 'http://schema.org',
         '@type': 'BreadcrumbList',
@@ -60,15 +60,20 @@ const SEO = props => {
           url: image,
         },
         description,
-      },
-    ]);
+      }
+    );
   }
   return (
     <Helmet>
+      <html lang={config.siteLanguage} />
+      <title>{title}</title>
+      <meta charSet="utf-8" />
+      <meta httpEquiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+      <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0" />
       <meta name="description" content={description} />
       <meta name="image" content={image} />
       <script type="application/ld+json">{JSON.stringify(schemaOrgJSONLD)}</script>
-      <meta property="og:locale" content="de_DE" />
+      <meta property="og:locale" content={config.ogLanguage} />
       <meta property="og:site_name" content={config.ogSiteName} />
       <meta property="og:url" content={postSEO ? postURL : blogURL} />
       {postSEO ? <meta property="og:type" content="article" /> : null}
