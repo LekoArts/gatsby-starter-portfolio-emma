@@ -1,6 +1,8 @@
+/* eslint-disable react/require-default-props */
 import React from 'react';
 import Helmet from 'react-helmet';
-import config from '../../../config/SiteConfig';
+import PropTypes from 'prop-types';
+import config from '../../config/website';
 
 const SEO = props => {
   const { postNode, postPath, postSEO } = props;
@@ -16,7 +18,7 @@ const SEO = props => {
     image = postMeta.cover.childImageSharp.resize.src;
     postURL = config.siteUrl + realPrefix + postPath;
   } else {
-    title = config.siteTitleAlt;
+    title = config.siteTitle;
     description = config.siteDescription;
     image = config.siteLogo;
   }
@@ -92,3 +94,9 @@ const SEO = props => {
 };
 
 export default SEO;
+
+SEO.propTypes = {
+  postNode: PropTypes.object,
+  postPath: PropTypes.string,
+  postSEO: PropTypes.bool,
+};

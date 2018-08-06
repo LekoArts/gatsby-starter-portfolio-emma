@@ -1,8 +1,8 @@
 const path = require('path');
 const _ = require('lodash');
 
-exports.onCreateNode = ({ node, boundActionCreators }) => {
-  const { createNodeField } = boundActionCreators;
+exports.onCreateNode = ({ node, actions }) => {
+  const { createNodeField } = actions;
   let slug;
   if (node.internal.type === 'MarkdownRemark') {
     if (
@@ -21,8 +21,8 @@ exports.onCreateNode = ({ node, boundActionCreators }) => {
   }
 };
 
-exports.createPages = ({ graphql, boundActionCreators }) => {
-  const { createPage } = boundActionCreators;
+exports.createPages = ({ graphql, actions }) => {
+  const { createPage } = actions;
 
   return new Promise((resolve, reject) => {
     const projectPage = path.resolve('src/templates/project.jsx');
@@ -57,5 +57,14 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         });
       })
     );
+  });
+};
+
+/* Allow us to use something like: import { X } from 'directory' instead of '../../folder/directory' */
+exports.onCreateWebpackConfig = ({ stage, actions }) => {
+  actions.setWebpackConfig({
+    resolve: {
+      modules: [path.resolve(__dirname, 'src'), 'node_modules'],
+    },
   });
 };
