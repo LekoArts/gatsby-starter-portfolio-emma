@@ -16,6 +16,7 @@ const Wrapper = styled.section`
   width: 100%;
   color: white;
   padding: 8rem ${props => props.theme.spacer.horizontal};
+  margin-bottom: 6rem;
 `;
 
 const InformationWrapper = styled.div`
@@ -43,11 +44,6 @@ const Bottom = styled.div`
   font-size: 125%;
 `;
 
-const Content = styled.div`
-  margin: 0 auto;
-  padding: ${props => props.theme.spacer.vertical} 0;
-`;
-
 const Project = ({ pageContext: { slug }, data: { markdownRemark: postNode } }) => {
   const project = postNode.frontmatter;
   return (
@@ -72,7 +68,7 @@ const Project = ({ pageContext: { slug }, data: { markdownRemark: postNode } }) 
         </InformationWrapper>
       </Wrapper>
       <Container type="text">
-        <Content dangerouslySetInnerHTML={{ __html: postNode.html }} />
+        <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
       </Container>
     </Layout>
   );
@@ -85,7 +81,7 @@ Project.propTypes = {
     slug: PropTypes.string.isRequired,
   }).isRequired,
   data: PropTypes.shape({
-    markdownRemark: PropTypes.array.isRequired,
+    markdownRemark: PropTypes.object.isRequired,
   }).isRequired,
 };
 

@@ -21,11 +21,6 @@ const Wrapper = styled.header`
     padding: 1rem 0 3rem 0;
     flex-wrap: wrap;
   }
-  @media (max-width: ${props => props.theme.breakpoints.xs}) {
-    div {
-      justify-content: center;
-    }
-  }
 `;
 
 const active = css`
@@ -64,6 +59,7 @@ const Name = styled.div`
   @media (max-width: ${props => props.theme.breakpoints.xs}) {
     order: 1;
     flex: 1 0 100%;
+    margin-bottom: 0.75rem;
   }
 `;
 
