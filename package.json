@@ -54,6 +54,7 @@
   "scripts": {
     "build": "gatsby build",
     "dev": "gatsby develop -o",
+    "serve": "gatsby serve",
     "postinstall": "node ./bin/hello.js"
   },
   "devDependencies": {
