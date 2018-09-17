@@ -16,7 +16,7 @@ A portfolio starter for [Gatsby](https://www.gatsbyjs.org/). The target audience
 
 If you want to quickly bootstrap a design/photography portfolio or use it as a foundation for your personal site the *gatsby-starter-portfolio* are a perfect fit for you! The project's goal is to offer minimalistic and fast websites. 
 
-I hope you like my starters and create something awesome! To see some of my work you can visit my [website](https://www.lekoarts.de) or support me on [Patreon](https://www.patreon.com/lekoarts) to get some neat rewards (4K images, project files, tutorial insights).
+I hope you like my starters and create something awesome! To see some of my work you can visit my [website](https://www.lekoarts.de) or support me on [Patreon](https://www.patreon.com/lekoarts) to get some neat rewards (4K images, project files, tutorial insights). Every pledge on Patreon helps me creating more free starters!
 
 Also check out the other *gatsby-starter-portfolio*:
 - [gatsby-starter-portfolio-emilia](https://github.com/LeKoArts/gatsby-starter-portfolio-emilia)
@@ -27,7 +27,7 @@ Check out the [Gatsby Starter Portfolio Overview](https://gatsby-starter-portfol
 
 ## Features
 
-- Gatsby v2
+- Gatsby v2.0.0
 - Configurable
     - Use the website.js to easily change the most important information
     - Easily change the font
@@ -52,7 +52,7 @@ Check out the [Gatsby Starter Portfolio Overview](https://gatsby-starter-portfol
 
 Check your development environment! You'll need [Node.js](https://nodejs.org/en/), the [Gatsby CLI](https://www.gatsbyjs.org/docs/) and [node-gyp](https://github.com/nodejs/node-gyp#installation) installed. The official Gatsby website also lists two articles regarding this topic:
 - [Gatsby on Windows](https://www.gatsbyjs.org/docs/gatsby-on-windows/)
-- [Check your development environment](https://www.gatsbyjs.org/tutorial/part-one/#check-your-development-environment)
+- [Check your development environment](https://www.gatsbyjs.org/tutorial/part-zero/)
 
 To copy and install this starter run this command (with "project-name" being the name of your folder you wish to install it in):
 
