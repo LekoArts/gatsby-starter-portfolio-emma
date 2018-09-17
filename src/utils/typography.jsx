@@ -1,6 +1,6 @@
 import Typography from 'typography';
 
-const config = require('../../config/SiteConfig');
+const config = require('../../config/website');
 
 const typography = new Typography({
   title: 'Emma',

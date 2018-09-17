@@ -1,15 +1,13 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import Header from '../components/Header/Header';
-import Container from '../components/Container/Container';
-import Footer from '../components/Footer/Footer';
-import config from '../../config/SiteConfig';
+import { Header, Container, Layout } from 'components';
+import config from '../../config/website';
 
 const Contact = () => (
-  <div className="container contact-container">
+  <Layout>
     <Helmet title={`Contact | ${config.siteTitle}`} />
     <Header>Contact</Header>
-    <Container text>
+    <Container type="text">
       <h1>Contact me!</h1>
       <p>
         Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind
@@ -21,8 +19,7 @@ const Contact = () => (
         do so, because there were thousands.
       </p>
     </Container>
-    <Footer />
-  </div>
+  </Layout>
 );
 
 export default Contact;

@@ -1,79 +1,95 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'react-emotion';
+import { graphql } from 'gatsby';
 import Helmet from 'react-helmet';
-import { Fade } from 'react-reveal';
-import Palette from 'react-palette';
-import config from '../../config/SiteConfig';
-import SEO from '../components/SEO/SEO';
-import Footer from '../components/Footer/Footer';
-import Container from '../components/Container/Container';
-import styles from './project.module.scss';
+import { Container, SEO, Layout } from 'components';
+import sample from 'lodash/sample';
+import config from '../../config/website';
+import { overlay } from '../../config/theme';
 
-const Project = props => {
-  const { slug } = props.pathContext;
-  const postNode = props.data.markdownRemark;
+const overlayColor = sample(overlay);
+
+const Wrapper = styled.section`
+  text-align: center;
+  position: relative;
+  width: 100%;
+  color: white;
+  padding: 8rem ${props => props.theme.spacer.horizontal};
+  margin-bottom: 6rem;
+`;
+
+const InformationWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+`;
+
+const InfoBlock = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: ${props => props.theme.spacer.vertical} ${props => props.theme.spacer.horizontal} 0
+    ${props => props.theme.spacer.horizontal};
+`;
+
+const Top = styled.div`
+  font-size: 80%;
+  margin-bottom: 0.5rem;
+  position: relative;
+  text-transform: uppercase;
+`;
+
+const Bottom = styled.div`
+  font-size: 125%;
+`;
+
+const Project = ({ pageContext: { slug }, data: { markdownRemark: postNode } }) => {
   const project = postNode.frontmatter;
-  const imageURL = project.cover.childImageSharp.resize.src;
-  if (!project.id) {
-    project.id = slug;
-  }
   return (
-    <div className="container project-container">
+    <Layout>
       <Helmet title={`${project.title} | ${config.siteTitle}`} />
       <SEO postPath={slug} postNode={postNode} postSEO />
-      <div className={styles.headerWrapper}>
-        <Palette image={imageURL}>
-          {palette => (
-            <section className={styles.header} style={{ backgroundColor: palette.vibrant }}>
-              <div className={styles.title}>
-                <Fade down duration={1250} tag="h1">
-                  {project.title}
-                </Fade>
-              </div>
-              <div className={styles.information}>
-                <div className={styles.infoBlock}>
-                  <Fade up duration={1250} className={styles.top}>
-                    {config.client}
-                  </Fade>
-                  <Fade up duration={1250} delay={500} className={styles.bottom}>
-                    {project.client}
-                  </Fade>
-                </div>
-                <div className={styles.infoBlock}>
-                  <Fade up duration={1250} className={styles.top}>
-                    {config.date}
-                  </Fade>
-                  <Fade up duration={1250} delay={500} className={styles.bottom}>
-                    {project.date}
-                  </Fade>
-                </div>
-                <div className={styles.infoBlock}>
-                  <Fade up duration={1250} className={styles.top}>
-                    {config.service}
-                  </Fade>
-                  <Fade up duration={1250} delay={500} className={styles.bottom}>
-                    {project.service}
-                  </Fade>
-                </div>
-              </div>
-            </section>
-          )}
-        </Palette>
-      </div>
-      <Container>
-        <div className={styles.content} dangerouslySetInnerHTML={{ __html: postNode.html }} />
+      <Wrapper style={{ backgroundColor: overlayColor }}>
+        <h1>{project.title}</h1>
+        <InformationWrapper>
+          <InfoBlock>
+            <Top>Client</Top>
+            <Bottom>{project.client}</Bottom>
+          </InfoBlock>
+          <InfoBlock>
+            <Top>Date</Top>
+            <Bottom>{project.date}</Bottom>
+          </InfoBlock>
+          <InfoBlock>
+            <Top>Service</Top>
+            <Bottom>{project.service}</Bottom>
+          </InfoBlock>
+        </InformationWrapper>
+      </Wrapper>
+      <Container type="text">
+        <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
       </Container>
-      <Footer />
-    </div>
+    </Layout>
   );
 };
 
 export default Project;
 
-/* eslint no-undef: "off" */
+Project.propTypes = {
+  pageContext: PropTypes.shape({
+    slug: PropTypes.string.isRequired,
+  }).isRequired,
+  data: PropTypes.shape({
+    markdownRemark: PropTypes.object.isRequired,
+  }).isRequired,
+};
+
 export const pageQuery = graphql`
   query ProjectPostBySlug($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
+      excerpt
       frontmatter {
         title
         date(formatString: "DD.MM.YYYY")
@@ -90,7 +106,6 @@ export const pageQuery = graphql`
       fields {
         slug
       }
-      excerpt
     }
   }
 `;

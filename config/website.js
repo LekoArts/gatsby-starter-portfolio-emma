@@ -8,23 +8,13 @@ module.exports = {
   siteDescription: 'Minimalistic bright portfolio with full-width grid and large images',
   siteFBAppID: '123456789', // Facebook App ID
   userTwitter: '@emma', // Twitter Username
-  // og: Meta Tags
   ogSiteName: 'emma', // Facebook Site Name
-  ogLanguage: 'de_DE',
+  ogLanguage: 'en_US',
   googleAnalyticsID: 'UA-12345689-1',
-  copyright: 'Copyright © 2017. All rights reserved. Pictures by Unsplash.', // Copyright in the footer of the site
-  // You can translate these three words into your language if you want.
-  // They'll be shown on the project page header
-  client: 'Client',
-  date: 'Date',
-  service: 'Service',
-  // Date format used in your project header
-  // More information here: https://date-fns.org/v1.29.0/docs/format
-  dateFormat: 'DD.MM.YYYY',
   // Manifest and Progress color
   themeColor: '#3498DB',
   backgroundColor: '#2b2e3c',
-  // Settings for typography.js
+  // Settings for typography.jsx
   headerFontFamily: 'Merriweather',
   bodyFontFamily: 'Roboto',
   baseFontSize: '16px',
