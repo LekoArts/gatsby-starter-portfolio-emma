@@ -24,36 +24,23 @@ const SEO = props => {
   }
   image = config.siteUrl + realPrefix + image;
   const blogURL = config.siteUrl + config.pathPrefix;
-  const schemaOrgJSONLD = [
+  let schemaOrgJSONLD = [
     {
       '@context': 'http://schema.org',
       '@type': 'WebSite',
+      '@id': blogURL,
       url: blogURL,
       name: title,
       alternateName: config.siteTitleAlt ? config.siteTitleAlt : '',
     },
   ];
   if (postSEO) {
-    schemaOrgJSONLD.push(
-      {
-        '@context': 'http://schema.org',
-        '@type': 'BreadcrumbList',
-        itemListElement: [
-          {
-            '@type': 'ListItem',
-            position: 1,
-            item: {
-              '@id': postURL,
-              name: title,
-              image,
-            },
-          },
-        ],
-      },
+    schemaOrgJSONLD = [
       {
         '@context': 'http://schema.org',
         '@type': 'BlogPosting',
-        url: blogURL,
+        '@id': postURL,
+        url: postURL,
         name: title,
         alternateName: config.siteTitleAlt ? config.siteTitleAlt : '',
         headline: title,
@@ -62,21 +49,37 @@ const SEO = props => {
           url: image,
         },
         description,
-      }
-    );
+        datePublished: postNode.frontmatter.date,
+        dateModified: postNode.frontmatter.date,
+        author: {
+          '@type': 'Person',
+          name: config.author,
+        },
+        publisher: {
+          '@type': 'Organization',
+          name: config.author,
+          logo: {
+            '@type': 'ImageObject',
+            url: config.siteUrl + realPrefix + config.siteLogo,
+          },
+        },
+        isPartOf: blogURL,
+        mainEntityOfPage: {
+          '@type': 'WebSite',
+          '@id': blogURL,
+        },
+      },
+    ];
   }
   return (
     <Helmet>
       <html lang={config.siteLanguage} />
       <title>{title}</title>
-      <meta charSet="utf-8" />
-      <meta httpEquiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-      <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0" />
       <meta name="description" content={description} />
       <meta name="image" content={image} />
       <script type="application/ld+json">{JSON.stringify(schemaOrgJSONLD)}</script>
       <meta property="og:locale" content={config.ogLanguage} />
-      <meta property="og:site_name" content={config.ogSiteName} />
+      <meta property="og:site_name" content={config.ogSiteName ? config.ogSiteName : ''} />
       <meta property="og:url" content={postSEO ? postURL : blogURL} />
       {postSEO ? <meta property="og:type" content="article" /> : null}
       <meta property="og:title" content={title} />
