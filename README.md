@@ -58,6 +58,7 @@ To copy and install this starter run this command (with "project-name" being the
 
 ```
 gatsby new project-name https://github.com/LeKoArts/gatsby-starter-portfolio-emma
+cd project-name
 npm run dev
 ```
 
