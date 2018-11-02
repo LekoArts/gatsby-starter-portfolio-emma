@@ -3,9 +3,11 @@
   "description": "Gatsby Starter Portfolio Emma",
   "version": "2.0.0",
   "author": "LekoArts <hello@lekoarts.de> (https://www.lekoarts.de)",
-  "repository": {
-    "url": "https://github.com/LeKoArts/gatsby-starter-portfolio-emma",
-    "type": "git"
+  "scripts": {
+    "dev": "gatsby develop -o",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "postinstall": "node ./bin/hello.js"
   },
   "dependencies": {
     "emotion": "^9.2.12",
@@ -44,19 +46,20 @@
   },
   "keywords": [
     "gatsby",
-    "lekoarts",
-    "portfolio",
-    "starter",
-    "gatsby-starter"
+    "gatsby-starter",
+    "gatsby-starter-portfolio",
+    "lekoarts"
   ],
+  "repository": {
+    "url": "https://github.com/LekoArts/gatsby-starter-portfolio-emma",
+    "type": "git"
+  },
+  "bugs": {
+    "url": "https://github.com/LekoArts/gatsby-starter-portfolio-emma/issues"
+  },
+  "homepage": "https://github.com/LekoArts/gatsby-starter-portfolio-emma#readme",
   "license": "MIT",
   "main": "n/a",
-  "scripts": {
-    "build": "gatsby build",
-    "dev": "gatsby develop -o",
-    "serve": "gatsby serve",
-    "postinstall": "node ./bin/hello.js"
-  },
   "devDependencies": {
     "babel-eslint": "^10.0.1",
     "babel-preset-env": "^1.7.0",
