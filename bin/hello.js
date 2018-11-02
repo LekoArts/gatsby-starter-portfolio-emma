@@ -9,7 +9,7 @@ Thanks for giving the ${pkg.name} a try. 🎉
 This project includes two config files in ${chalk.yellow('./config')}
   - website.js
   - theme.js
-The values you set in ${chalk.yellow('website.js')} will affect components, gatsby-config.js, SEO and other files.
+The values you set in ${chalk.yellow('website.js')} will affect components, gatsby-config.js, SEO, and other files.
 The values you set in ${chalk.yellow('theme.js')} will only affect the styling of your page (via the ThemeProvider of emotion).
 
 Happy with your setup? Great!
