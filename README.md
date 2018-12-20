@@ -27,13 +27,12 @@ Check out the [Gatsby Starter Portfolio Overview](https://gatsby-starter-portfol
 
 ## Features
 
-- Gatsby v2.0.0
 - Configurable
     - Use the website.js to easily change the most important information
     - Easily change the font
 - Random colors for your covers and project views
-- Uses Emotion for styling
-- Projects in Markdown
+- Uses styled-components for styling
+- Projects in MDX (`gatsby-mdx`)
 - Google Analytics Support
 - SEO
     - Sitemap
@@ -57,15 +56,15 @@ Check your development environment! You'll need [Node.js](https://nodejs.org/en/
 To copy and install this starter run this command (with "project-name" being the name of your folder you wish to install it in):
 
 ```
-gatsby new project-name https://github.com/LeKoArts/gatsby-starter-portfolio-emma
+gatsby new project-name https://github.com/LekoArts/gatsby-starter-portfolio-emma
 cd project-name
 npm run dev
 ```
 
 ### Adding a new project
-- Create a new folder in ``content/projects`` with the current date (Format: YYYY-MM-DD)
-- Create a new markdown file, add the frontmatter (use the same date format)
-- Add an image and reference it in your frontmatter as ``cover``
+- Create a new folder in `content/projects` with the current date (Format: YYYY-MM-DD)
+- Create a new markdown/mdx file, add the frontmatter (use the same date format)
+- Add an image and reference it in your frontmatter as `cover`
 - Write your content below the frontmatter
 
 If you're still unsure have a look at the already existing examples.
@@ -79,11 +78,11 @@ You can add other features by having a look at the official [plugins page](https
 ```
 npm run build
 ```
-Copy the content of the ``public`` folder to your webhost or use a website like Netlify which automates that for you.
+Copy the content of the `public` folder to your webhost or use a website like Netlify which automates that for you.
 
 ## Configuration
 
-You can configure your setup in ``config/website.js``:
+You can configure your setup in `config/website.js`:
 
 ```JS
 module.exports = {
@@ -110,7 +109,7 @@ module.exports = {
 };
 ```
 
-You can also configure the styling of the site by editing the theme variables in ``config/theme.js``. `overlay` are the colors that get randomly selected for the Index page and the project detail view.
+You can also configure the styling of the site by editing the theme variables in `config/theme.js`. `overlay` are the colors that get randomly selected for the Index page and the project detail view.
 
 ```JS
 import { darken } from 'polished';
@@ -154,4 +153,4 @@ export default theme;
 
 ```
 
-**Attention:** You also need to edit ``static/robots.txt`` to include your domain!
+**Attention:** You also need to edit `static/robots.txt` to include your domain!
