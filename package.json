@@ -9,7 +9,7 @@
     "serve": "gatsby serve",
     "lint": "eslint . --ext .js,.jsx --ignore-path .gitignore",
     "lint:fix": "eslint . --ext .js,.jsx --fix --ignore-path .gitignore",
-    "format": ""
+    "format": "prettier \"**/*.{md,mdx} \" --write"
   },
   "dependencies": {
     "gatsby": "^2.0.23",
