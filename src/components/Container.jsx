@@ -1,6 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import styled, { css } from 'react-emotion';
+import React from 'react'
+import PropTypes from 'prop-types'
+import styled, { css } from 'styled-components'
 
 const Wrapper = styled.div`
   margin: 0 auto;
@@ -17,23 +17,23 @@ const Wrapper = styled.div`
         --x-height-multiplier: 0.35;
       }
     `};
-`;
+`
 
 const Container = ({ children, type, className }) => (
   <Wrapper className={className} type={type}>
     {children}
   </Wrapper>
-);
+)
 
-export default Container;
+export default Container
 
 Container.propTypes = {
   children: PropTypes.node.isRequired,
   type: PropTypes.oneOf(['base', 'text']),
   className: PropTypes.string,
-};
+}
 
 Container.defaultProps = {
   type: 'base',
   className: null,
-};
+}

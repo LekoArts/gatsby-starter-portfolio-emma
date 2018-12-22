@@ -1,4 +1,4 @@
-import styled from 'react-emotion';
+import styled from 'styled-components'
 
 const Header = styled.div`
   background: ${props => props.theme.brand.secondary};
@@ -9,6 +9,6 @@ const Header = styled.div`
   h1 {
     margin-bottom: 0;
   }
-`;
+`
 
-export default Header;
+export default Header

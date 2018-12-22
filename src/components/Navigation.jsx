@@ -1,9 +1,9 @@
-import React from 'react';
-import { Link } from 'gatsby';
-import { FaInstagram, FaBehance, FaDribbble } from 'react-icons/fa';
-import styled, { css } from 'react-emotion';
-import config from '../../config/website';
-import theme from '../../config/theme';
+import React from 'react'
+import { Link } from 'gatsby'
+import { FaInstagram, FaBehance, FaDribbble } from 'react-icons/fa'
+import styled, { css } from 'styled-components'
+import config from '../../config/website'
+import theme from '../../config/theme'
 
 const Wrapper = styled.header`
   align-items: center;
@@ -21,11 +21,11 @@ const Wrapper = styled.header`
     padding: 1rem 0 3rem 0;
     flex-wrap: wrap;
   }
-`;
+`
 
 const active = css`
   color: ${theme.brand.primary} !important;
-`;
+`
 
 const Nav = styled.nav`
   display: flex;
@@ -41,15 +41,16 @@ const Nav = styled.nav`
   @media (max-width: ${props => props.theme.breakpoints.xs}) {
     order: 2;
   }
-`;
+`
 
 const Name = styled.div`
   display: flex;
   flex: 1;
   justify-content: center;
   a {
-    font-size: 23px;
-    font-family: ${`${config.headerFontFamily}, sans-serif`};
+    font-size: 1.25rem;
+    font-family: 'Merriweather', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 700;
     &:hover,
     &:focus {
       color: ${props => props.theme.colors.body_color};
@@ -61,7 +62,7 @@ const Name = styled.div`
     flex: 1 0 100%;
     margin-bottom: 0.75rem;
   }
-`;
+`
 
 const SocialMedia = styled.div`
   display: flex;
@@ -81,7 +82,7 @@ const SocialMedia = styled.div`
   @media (max-width: ${props => props.theme.breakpoints.xs}) {
     order: 3;
   }
-`;
+`
 
 const Navigation = () => (
   <Wrapper>
@@ -118,6 +119,6 @@ const Navigation = () => (
       </a>
     </SocialMedia>
   </Wrapper>
-);
+)
 
-export default Navigation;
+export default Navigation
