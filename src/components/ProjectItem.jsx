@@ -3,14 +3,6 @@ import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 import Img from 'gatsby-image'
-import sample from 'lodash/sample'
-import { overlay } from '../../config/theme'
-
-const Wrapper = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  width: 100%;
-`
 
 const Item = styled.div`
   position: relative;
@@ -73,30 +65,24 @@ const Overlay = styled.div`
   z-index: -1;
 `
 
-const ProjectListing = ({ projectEdges }) => (
-  <Wrapper>
-    {projectEdges.map(project => {
-      const overlayColor = sample(overlay)
-      return (
-        <Item key={project.node.fields.slug}>
-          <Content>
-            <ImageWrapper>
-              <Img fluid={project.node.frontmatter.cover.childImageSharp.fluid} />
-            </ImageWrapper>
-            <Link to={project.node.fields.slug}>
-              <Overlay style={{ backgroundColor: overlayColor }} />
-              <h2>{project.node.frontmatter.client}</h2>
-              <div>{project.node.frontmatter.service}</div>
-            </Link>
-          </Content>
-        </Item>
-      )
-    })}
-  </Wrapper>
+const ProjectItem = ({ node, color }) => (
+  <Item key={node.fields.slug}>
+    <Content>
+      <ImageWrapper>
+        <Img fluid={node.frontmatter.cover.childImageSharp.fluid} />
+      </ImageWrapper>
+      <Link to={node.fields.slug}>
+        <Overlay style={{ backgroundColor: color }} />
+        <h2>{node.frontmatter.client}</h2>
+        <div>{node.frontmatter.service}</div>
+      </Link>
+    </Content>
+  </Item>
 )
 
-export default ProjectListing
+export default ProjectItem
 
-ProjectListing.propTypes = {
-  projectEdges: PropTypes.array.isRequired,
+ProjectItem.propTypes = {
+  node: PropTypes.object.isRequired,
+  color: PropTypes.string.isRequired,
 }
