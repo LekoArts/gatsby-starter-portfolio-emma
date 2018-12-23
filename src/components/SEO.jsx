@@ -13,7 +13,7 @@ const SEO = props => {
   const realPrefix = config.pathPrefix === '/' ? '' : config.pathPrefix
   if (postSEO) {
     const postMeta = postNode.frontmatter
-    title = postMeta.title // eslint-disable-line prefer-destructuring
+    title = `${postMeta.title} | ${config.siteTitle}`
     description = postNode.excerpt
     image = postMeta.cover.childImageSharp.resize.src
     postURL = config.siteUrl + realPrefix + postPath

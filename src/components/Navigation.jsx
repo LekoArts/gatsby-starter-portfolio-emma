@@ -1,9 +1,8 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import { FaInstagram, FaBehance, FaDribbble } from 'react-icons/fa'
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 import config from '../../config/website'
-import theme from '../../config/theme'
 
 const Wrapper = styled.header`
   align-items: center;
@@ -13,6 +12,7 @@ const Wrapper = styled.header`
     color: ${props => props.theme.colors.body_color};
     text-decoration: none;
     transition: all 0.3s ease-in-out;
+    z-index: 100;
     &:hover {
       color: ${props => props.theme.brand.primary};
     }
@@ -21,10 +21,6 @@ const Wrapper = styled.header`
     padding: 1rem 0 3rem 0;
     flex-wrap: wrap;
   }
-`
-
-const active = css`
-  color: ${theme.brand.primary} !important;
 `
 
 const Nav = styled.nav`
@@ -87,20 +83,10 @@ const SocialMedia = styled.div`
 const Navigation = () => (
   <Wrapper>
     <Nav>
-      <Link
-        to="/about"
-        activeClassName={css`
-          ${active};
-        `}
-      >
+      <Link to="/about" activeClassName="nav-active">
         About
       </Link>
-      <Link
-        to="/contact"
-        activeClassName={css`
-          ${active};
-        `}
-      >
+      <Link to="/contact" activeClassName="nav-active">
         Contact
       </Link>
     </Nav>

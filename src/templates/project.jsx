@@ -3,73 +3,102 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import MDXRenderer from 'gatsby-mdx/mdx-renderer'
 import { graphql } from 'gatsby'
-import Helmet from 'react-helmet'
-import sample from 'lodash/sample'
+import Img from 'gatsby-image'
 import SEO from '../components/SEO'
 import Container from '../components/Container'
 import Layout from '../components/Layout'
-import config from '../../config/website'
 import { overlay } from '../../config/theme'
 
-const overlayColor = sample(overlay)
-
-const Wrapper = styled.section`
-  text-align: center;
+const Hero = styled.section`
   position: relative;
+  margin-top: -6rem;
+  height: 40vw;
+  overflow: hidden;
+`
+
+const BGImage = styled.div`
   width: 100%;
-  color: white;
-  padding: 8rem ${props => props.theme.spacer.horizontal};
-  margin-bottom: 6rem;
+  .gatsby-image-wrapper {
+    position: static !important;
+    filter: grayscale(100%);
+    > div {
+      padding-bottom: 40vw !important;
+    }
+  }
+  &:before {
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background-color: ${props => props.customcolor};
+  }
+  &:after {
+    backface-visibility: hidden;
+    background: ${({ theme }) => `linear-gradient(to bottom, rgba(255, 255, 255, 0.4) 0%, ${theme.colors.bg_color} 100%),
+      linear-gradient(to right, rgba(255, 255, 255, 0.4) 50%, ${theme.colors.bg_color} 100%)`};
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+`
+
+const Content = styled(Container)`
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 `
 
 const InformationWrapper = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
 `
 
 const InfoBlock = styled.div`
   display: flex;
   flex-direction: column;
-  margin: ${props => props.theme.spacer.vertical} ${props => props.theme.spacer.horizontal} 0
-    ${props => props.theme.spacer.horizontal};
-`
-
-const Top = styled.div`
-  font-size: 80%;
-  margin-bottom: 0.5rem;
-  position: relative;
-  text-transform: uppercase;
-`
-
-const Bottom = styled.div`
-  font-size: 125%;
+  margin: ${props => props.theme.spacer.vertical} ${props => props.theme.spacer.horizontal} 0 0;
+  div:first-child {
+    text-transform: uppercase;
+  }
 `
 
 const Project = ({ pageContext: { slug }, data: { mdx: postNode } }) => {
   const project = postNode.frontmatter
   return (
     <Layout>
-      <Helmet title={`${project.title} | ${config.siteTitle}`} />
       <SEO postPath={slug} postNode={postNode} postSEO />
-      <Wrapper style={{ backgroundColor: overlayColor }}>
-        <h1>{project.title}</h1>
-        <InformationWrapper>
-          <InfoBlock>
-            <Top>Client</Top>
-            <Bottom>{project.client}</Bottom>
-          </InfoBlock>
-          <InfoBlock>
-            <Top>Date</Top>
-            <Bottom>{project.date}</Bottom>
-          </InfoBlock>
-          <InfoBlock>
-            <Top>Service</Top>
-            <Bottom>{project.service}</Bottom>
-          </InfoBlock>
-        </InformationWrapper>
-      </Wrapper>
+      <Hero>
+        <BGImage customcolor={overlay[project.color]}>
+          <Img fluid={project.cover.childImageSharp.fluid} alt="" />
+        </BGImage>
+        <Content type="text">
+          <h1>{project.title}</h1>
+          <InformationWrapper>
+            <InfoBlock>
+              <div>Client</div>
+              <div>{project.client}</div>
+            </InfoBlock>
+            <InfoBlock>
+              <div>Date</div>
+              <div>{project.date}</div>
+            </InfoBlock>
+            <InfoBlock>
+              <div>Service</div>
+              <div>{project.service}</div>
+            </InfoBlock>
+          </InformationWrapper>
+        </Content>
+      </Hero>
       <Container type="text">
         <MDXRenderer>{postNode.code.body}</MDXRenderer>
       </Container>
@@ -84,7 +113,7 @@ Project.propTypes = {
     slug: PropTypes.string.isRequired,
   }).isRequired,
   data: PropTypes.shape({
-    markdownRemark: PropTypes.object.isRequired,
+    mdx: PropTypes.object.isRequired,
   }).isRequired,
 }
 
@@ -99,9 +128,13 @@ export const pageQuery = graphql`
         title
         date(formatString: "DD.MM.YYYY")
         client
+        color
         service
         cover {
           childImageSharp {
+            fluid(maxWidth: 1920, quality: 90) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
             resize(width: 800) {
               src
             }

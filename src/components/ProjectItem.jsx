@@ -1,10 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
+import { animated } from 'react-spring'
 import styled from 'styled-components'
 import Img from 'gatsby-image'
+import { overlay } from '../../config/theme'
 
-const Item = styled.div`
+const Item = styled(animated.div)`
   position: relative;
   &:before {
     content: '';
@@ -39,6 +41,10 @@ const Content = styled.div`
       text-decoration: none;
     }
   }
+  h2 {
+    margin-top: 0;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
 `
 
 const ImageWrapper = styled.div`
@@ -62,19 +68,39 @@ const Overlay = styled.div`
   position: absolute;
   top: 0;
   width: 100%;
+  z-index: -2;
+`
+
+const TracedGlow = styled.img`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.08;
+  filter: invert(100%);
   z-index: -1;
 `
 
-const ProjectItem = ({ node, color }) => (
-  <Item key={node.fields.slug}>
+const Service = styled.div`
+  opacity: 0.8;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+`
+
+const ProjectItem = ({ node, style }) => (
+  <Item key={node.fields.slug} style={style}>
     <Content>
       <ImageWrapper>
         <Img fluid={node.frontmatter.cover.childImageSharp.fluid} />
       </ImageWrapper>
       <Link to={node.fields.slug}>
-        <Overlay style={{ backgroundColor: color }} />
+        <TracedGlow src={node.frontmatter.cover.childImageSharp.fluid.tracedSVG} alt="" />
+        <Overlay style={{ backgroundColor: overlay[node.frontmatter.color] }} />
         <h2>{node.frontmatter.client}</h2>
-        <div>{node.frontmatter.service}</div>
+        <Service>{node.frontmatter.service}</Service>
       </Link>
     </Content>
   </Item>
@@ -84,5 +110,5 @@ export default ProjectItem
 
 ProjectItem.propTypes = {
   node: PropTypes.object.isRequired,
-  color: PropTypes.string.isRequired,
+  style: PropTypes.object.isRequired,
 }

@@ -1,11 +1,10 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import PropTypes from 'prop-types'
+import { Trail } from 'react-spring'
 import styled from 'styled-components'
-import sample from 'lodash/sample'
 import Layout from '../components/Layout'
 import ProjectItem from '../components/ProjectItem'
-import { overlay } from '../../config/theme'
 
 const ListWrapper = styled.div`
   display: grid;
@@ -20,10 +19,14 @@ const Index = ({
 }) => (
   <Layout>
     <ListWrapper>
-      {projectEdges.map(({ node }) => {
-        const overlayColor = sample(overlay)
-        return <ProjectItem node={node} color={overlayColor} />
-      })}
+      <Trail
+        items={projectEdges}
+        keys={project => project.node.fields.slug}
+        from={{ height: '0%' }}
+        to={{ height: '100%' }}
+      >
+        {project => props => <ProjectItem style={props} key={project.node.fields.slug} node={project.node} />}
+      </Trail>
     </ListWrapper>
   </Layout>
 )
@@ -48,6 +51,7 @@ export const pageQuery = graphql`
           }
           frontmatter {
             service
+            color
             client
             cover {
               childImageSharp {

@@ -17,6 +17,9 @@ const GlobalStyle = createGlobalStyle`
   h1, h2, h3, h4, h5, h6 {
     font-family: "Merriweather", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   }
+  .nav-active {
+    color: ${theme.brand.primary} !important;
+  }
 `
 
 const Layout = ({ children }) => (
