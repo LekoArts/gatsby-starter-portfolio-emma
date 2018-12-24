@@ -100,7 +100,9 @@ const Navigation = () => (
           ))}
         </Nav>
         <Name>
-          <Link to="/" data-testid="home-title-link">{config.siteTitle}</Link>
+          <Link to="/" data-testid="home-title-link">
+            {config.siteTitle}
+          </Link>
         </Name>
         <SocialMedia>
           <a href="https://www.instagram.com/lekoarts.de" target="_blank" rel="noopener noreferrer">
