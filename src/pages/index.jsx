@@ -1,31 +1,60 @@
-import React from 'react';
-import { graphql } from 'gatsby';
-import PropTypes from 'prop-types';
-import { ProjectListing, Layout } from 'components';
+/* eslint react/display-name: 0 */
+import React from 'react'
+import { graphql } from 'gatsby'
+import PropTypes from 'prop-types'
+import { Trail } from 'react-spring'
+import styled from 'styled-components'
+import { Layout, ProjectItem } from '../components'
+
+const ListWrapper = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  width: 100%;
+`
 
 const Index = ({
   data: {
-    allMarkdownRemark: { edges: projectEdges },
+    allMdx: { edges: projectEdges },
   },
 }) => (
   <Layout>
-    <ProjectListing projectEdges={projectEdges} />
+    <ListWrapper>
+      <Trail
+        native
+        items={projectEdges}
+        keys={project => project.node.fields.slug}
+        from={{ height: '0%' }}
+        to={{ height: '100%' }}
+      >
+        {(project, index) => props => (
+          <ProjectItem
+            testid={`projectItem-${index}`}
+            style={props}
+            key={project.node.fields.slug}
+            node={project.node}
+          />
+        )}
+      </Trail>
+    </ListWrapper>
   </Layout>
-);
+)
 
-export default Index;
+export default Index
 
 Index.propTypes = {
   data: PropTypes.shape({
-    allMarkdownRemark: PropTypes.shape({
+    allMdx: PropTypes.shape({
       edges: PropTypes.array.isRequired,
     }),
   }).isRequired,
-};
+}
 
 export const pageQuery = graphql`
   query IndexQuery {
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMdx(
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: { fields: { sourceInstanceName: { eq: "projects" } } }
+    ) {
       edges {
         node {
           fields {
@@ -33,6 +62,7 @@ export const pageQuery = graphql`
           }
           frontmatter {
             service
+            color
             client
             cover {
               childImageSharp {
@@ -46,4 +76,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`;
+`

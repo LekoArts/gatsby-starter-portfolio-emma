@@ -1,20 +1,19 @@
-import { darken } from 'polished';
+import { darken } from 'polished'
 
 const brand = {
   primary: '#cf1993',
   secondary: '#7b8acc',
-};
+}
 
 const colors = {
-  grey: '#25252',
+  grey: '#6b6b6b',
   black: '#000',
+  white: '#fff',
   bg_color: '#f3f3f3',
-  body_color: '#222',
+  body_color: '#444',
   link_color: brand.primary,
   link_color_hover: `${darken(0.15, brand.primary)}`,
-};
-
-export const overlay = ['#f76262', '#216583', '#65c0ba', '#35477d', '#6c5b7b', '#203541', '#9951ff', '#480032'];
+}
 
 const theme = {
   brand,
@@ -33,6 +32,6 @@ const theme = {
     horizontal: '2rem',
     vertical: '3rem',
   },
-};
+}
 
-export default theme;
+export default theme

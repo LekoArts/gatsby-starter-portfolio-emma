@@ -1,9 +1,10 @@
-import Container from './Container';
-import Footer from './Footer';
-import Header from './Header';
-import Layout from './Layout';
-import Navigation from './Navigation';
-import ProjectListing from './ProjectListing';
-import SEO from './SEO';
+import BGImage from './BGImage'
+import Container from './Container'
+import Footer from './Footer'
+import Hero from './Hero'
+import Layout from './Layout'
+import Navigation from './Navigation'
+import ProjectItem from './ProjectItem'
+import SEO from './SEO'
 
-export { Container, Footer, Header, Layout, Navigation, ProjectListing, SEO };
+export { BGImage, Container, Footer, Hero, Layout, Navigation, ProjectItem, SEO }

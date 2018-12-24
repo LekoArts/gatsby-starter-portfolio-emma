@@ -1,111 +1,141 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import styled from 'react-emotion';
-import { graphql } from 'gatsby';
-import Helmet from 'react-helmet';
-import { Container, SEO, Layout } from 'components';
-import sample from 'lodash/sample';
-import config from '../../config/website';
-import { overlay } from '../../config/theme';
+import React from 'react'
+import PropTypes from 'prop-types'
+import styled from 'styled-components'
+import { animated, Spring, config } from 'react-spring'
+import MDXRenderer from 'gatsby-mdx/mdx-renderer'
+import { graphql } from 'gatsby'
+import Img from 'gatsby-image'
+import { SEO, Container, Layout, Hero, BGImage } from '../components'
 
-const overlayColor = sample(overlay);
+const Content = styled(Container)`
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  z-index: 3;
+`
 
-const Wrapper = styled.section`
-  text-align: center;
-  position: relative;
-  width: 100%;
-  color: white;
-  padding: 8rem ${props => props.theme.spacer.horizontal};
-  margin-bottom: 6rem;
-`;
-
-const InformationWrapper = styled.div`
+const InformationWrapper = styled(animated.div)`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
-`;
+  justify-content: flex-start;
+`
+
+const Title = styled(animated.h1)`
+  margin-top: 0;
+`
 
 const InfoBlock = styled.div`
   display: flex;
   flex-direction: column;
-  margin: ${props => props.theme.spacer.vertical} ${props => props.theme.spacer.horizontal} 0
-    ${props => props.theme.spacer.horizontal};
-`;
+  margin: 1rem 2rem 0 0;
+  div:first-child {
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: ${props => (props.customcolor ? props.customcolor : props.theme.colors.grey)};
+  }
+  div:last-child {
+    font-size: 1rem;
+  }
+`
 
-const Top = styled.div`
-  font-size: 80%;
-  margin-bottom: 0.5rem;
-  position: relative;
-  text-transform: uppercase;
-`;
-
-const Bottom = styled.div`
-  font-size: 125%;
-`;
-
-const Project = ({ pageContext: { slug }, data: { markdownRemark: postNode } }) => {
-  const project = postNode.frontmatter;
+const Project = ({ pageContext: { slug }, data: { mdx: postNode } }) => {
+  const project = postNode.frontmatter
   return (
     <Layout>
-      <Helmet title={`${project.title} | ${config.siteTitle}`} />
       <SEO postPath={slug} postNode={postNode} postSEO />
-      <Wrapper style={{ backgroundColor: overlayColor }}>
-        <h1>{project.title}</h1>
-        <InformationWrapper>
-          <InfoBlock>
-            <Top>Client</Top>
-            <Bottom>{project.client}</Bottom>
-          </InfoBlock>
-          <InfoBlock>
-            <Top>Date</Top>
-            <Bottom>{project.date}</Bottom>
-          </InfoBlock>
-          <InfoBlock>
-            <Top>Service</Top>
-            <Bottom>{project.service}</Bottom>
-          </InfoBlock>
-        </InformationWrapper>
-      </Wrapper>
+      <Hero>
+        <BGImage customcolor={project.color}>
+          <Img fluid={project.cover.childImageSharp.fluid} alt="" />
+        </BGImage>
+        <Content type="text">
+          <Spring
+            native
+            config={config.slow}
+            from={{ opacity: 0, transform: 'translate3d(0, -30px, 0)' }}
+            to={{ opacity: 1, transform: 'translate3d(0, 0, 0)' }}
+          >
+            {props => (
+              <Title data-testid="project-title" style={props}>
+                {project.title}
+              </Title>
+            )}
+          </Spring>
+          <Spring native config={config.slow} delay={500} from={{ opacity: 0 }} to={{ opacity: 1 }}>
+            {props => (
+              <InformationWrapper style={props}>
+                <InfoBlock customcolor={project.color}>
+                  <div>Client</div>
+                  <div>{project.client}</div>
+                </InfoBlock>
+                <InfoBlock customcolor={project.color}>
+                  <div>Date</div>
+                  <div>{project.date}</div>
+                </InfoBlock>
+                <InfoBlock customcolor={project.color}>
+                  <div>Service</div>
+                  <div>{project.service}</div>
+                </InfoBlock>
+              </InformationWrapper>
+            )}
+          </Spring>
+        </Content>
+      </Hero>
       <Container type="text">
-        <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
+        <Spring native config={config.slow} delay={1000} from={{ opacity: 0 }} to={{ opacity: 1 }}>
+          {props => (
+            <animated.div style={props}>
+              <MDXRenderer>{postNode.code.body}</MDXRenderer>
+            </animated.div>
+          )}
+        </Spring>
       </Container>
     </Layout>
-  );
-};
+  )
+}
 
-export default Project;
+export default Project
 
 Project.propTypes = {
   pageContext: PropTypes.shape({
     slug: PropTypes.string.isRequired,
   }).isRequired,
   data: PropTypes.shape({
-    markdownRemark: PropTypes.object.isRequired,
+    mdx: PropTypes.object.isRequired,
   }).isRequired,
-};
+}
 
 export const pageQuery = graphql`
-  query ProjectPostBySlug($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      html
+  query($slug: String!) {
+    mdx(fields: { slug: { eq: $slug } }) {
+      code {
+        body
+      }
       excerpt
+      fields {
+        slug
+      }
       frontmatter {
         title
         date(formatString: "DD.MM.YYYY")
         client
+        color
         service
         cover {
           childImageSharp {
+            fluid(maxWidth: 1920, quality: 90) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
             resize(width: 800) {
               src
             }
           }
         }
       }
-      fields {
-        slug
-      }
     }
   }
-`;
+`

@@ -8,6 +8,8 @@ A portfolio starter for [Gatsby](https://www.gatsbyjs.org/). The target audience
 
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/LeKoArts/gatsby-starter-portfolio-emma) [![Edit gatsby-starter-portfolio-emma](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/LekoArts/gatsby-starter-portfolio-emma/tree/master/)
 
+[![CircleCI](https://circleci.com/gh/LekoArts/gatsby-starter-portfolio-emma.svg?style=svg)](https://circleci.com/gh/LekoArts/gatsby-starter-portfolio-emma)
+
 - Full-width grid-layout
 - Large images
 - Light theme
@@ -27,13 +29,15 @@ Check out the [Gatsby Starter Portfolio Overview](https://gatsby-starter-portfol
 
 ## Features
 
-- Gatsby v2.0.0
 - Configurable
     - Use the website.js to easily change the most important information
     - Easily change the font
-- Random colors for your covers and project views
-- Uses Emotion for styling
-- Projects in Markdown
+- Choose a color for your projects highlights
+- Create your subpages with MDX
+- Uses styled-components for styling
+- [react-spring](https://github.com/react-spring/react-spring) animations
+- Projects in MDX ([gatsby-mdx](https://github.com/ChristopherBiscardi/gatsby-mdx))
+- Cypress for End-to-End testing (+ CircleCI config)
 - Google Analytics Support
 - SEO
     - Sitemap
@@ -42,7 +46,6 @@ Check out the [Gatsby Starter Portfolio Overview](https://gatsby-starter-portfol
     - Twitter Tags
 - Offline Support
 - WebApp Manifest Support
-- Typography.js
 - Responsive images
     - The right image size for every screen size
     - Traced SVG loading (lazy-loading)
@@ -57,18 +60,22 @@ Check your development environment! You'll need [Node.js](https://nodejs.org/en/
 To copy and install this starter run this command (with "project-name" being the name of your folder you wish to install it in):
 
 ```
-gatsby new project-name https://github.com/LeKoArts/gatsby-starter-portfolio-emma
+gatsby new project-name https://github.com/LekoArts/gatsby-starter-portfolio-emma
 cd project-name
 npm run dev
 ```
 
 ### Adding a new project
-- Create a new folder in ``content/projects`` with the current date (Format: YYYY-MM-DD)
-- Create a new markdown file, add the frontmatter (use the same date format)
-- Add an image and reference it in your frontmatter as ``cover``
+- Create a new folder in `content/projects`
+- Create a new markdown/mdx file, add the frontmatter (use the date format "YYYY-MM-DD")
+- Add an image and reference it in your frontmatter as `cover`
 - Write your content below the frontmatter
 
 If you're still unsure have a look at the already existing examples.
+
+### Adding a new page
+- Create a new folder in `src/pages`
+- Create a new mdx file with the name `index.mdx` in it
 
 ### Adding new features/plugins
 
@@ -79,11 +86,11 @@ You can add other features by having a look at the official [plugins page](https
 ```
 npm run build
 ```
-Copy the content of the ``public`` folder to your webhost or use a website like Netlify which automates that for you.
+Copy the content of the `public` folder to your webhost or use a website like Netlify which automates that for you.
 
 ## Configuration
 
-You can configure your setup in ``config/website.js``:
+You can configure your setup in `config/website.js`:
 
 ```JS
 module.exports = {
@@ -92,44 +99,41 @@ module.exports = {
   siteTitleAlt: 'Emma - Gatsby Starter Portfolio', // Alternative Site title for SEO
   siteUrl: 'https://portfolio-emma.netlify.com', // Domain of your site. No trailing slash!
   siteLanguage: 'en', // Language Tag on <html> element
-  siteLogo: '/logos/logo-1024.png', // Used for SEO and manifest
+  siteLogo: '/logo.png', // Used for SEO and manifest
   siteDescription: 'Minimalistic bright portfolio with full-width grid and large images',
   author: 'LekoArts', // Author for schemaORGJSONLD
+
   // siteFBAppID: '123456789', // Facebook App ID - Optional
   userTwitter: '@emma', // Twitter Username
   ogSiteName: 'emma', // Facebook Site Name
   ogLanguage: 'en_US',
   googleAnalyticsID: 'UA-12345689-1',
+
   // Manifest and Progress color
   themeColor: '#3498DB',
   backgroundColor: '#2b2e3c',
-  // Settings for typography.jsx
-  headerFontFamily: 'Merriweather',
-  bodyFontFamily: 'Roboto',
-  baseFontSize: '16px',
-};
+}
 ```
 
-You can also configure the styling of the site by editing the theme variables in ``config/theme.js``. `overlay` are the colors that get randomly selected for the Index page and the project detail view.
+You can also configure the styling of the site by editing the theme variables in `config/theme.js`.
 
 ```JS
-import { darken } from 'polished';
+import { darken } from 'polished'
 
 const brand = {
   primary: '#cf1993',
   secondary: '#7b8acc',
-};
+}
 
 const colors = {
-  grey: '#25252',
+  grey: '#6b6b6b',
   black: '#000',
+  white: '#fff',
   bg_color: '#f3f3f3',
-  body_color: '#222',
+  body_color: '#444',
   link_color: brand.primary,
   link_color_hover: `${darken(0.15, brand.primary)}`,
-};
-
-export const overlay = ['#f76262', '#216583', '#65c0ba', '#35477d', '#6c5b7b', '#203541', '#9951ff', '#480032'];
+}
 
 const theme = {
   brand,
@@ -148,10 +152,9 @@ const theme = {
     horizontal: '2rem',
     vertical: '3rem',
   },
-};
+}
 
-export default theme;
-
+export default theme
 ```
 
-**Attention:** You also need to edit ``static/robots.txt`` to include your domain!
+**Attention:** You also need to edit `static/robots.txt` to include your domain!
