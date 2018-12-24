@@ -8,6 +8,8 @@ A portfolio starter for [Gatsby](https://www.gatsbyjs.org/). The target audience
 
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/LeKoArts/gatsby-starter-portfolio-emma) [![Edit gatsby-starter-portfolio-emma](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/LekoArts/gatsby-starter-portfolio-emma/tree/master/)
 
+[![CircleCI](https://circleci.com/gh/LekoArts/gatsby-starter-portfolio-emma.svg?style=svg)](https://circleci.com/gh/LekoArts/gatsby-starter-portfolio-emma)
+
 - Full-width grid-layout
 - Large images
 - Light theme
@@ -30,9 +32,12 @@ Check out the [Gatsby Starter Portfolio Overview](https://gatsby-starter-portfol
 - Configurable
     - Use the website.js to easily change the most important information
     - Easily change the font
-- Random colors for your covers and project views
+- Choose a color for your projects highlights
+- Create your subpages with MDX
 - Uses styled-components for styling
-- Projects in MDX (`gatsby-mdx`)
+- [react-spring](https://github.com/react-spring/react-spring) animations
+- Projects in MDX ([gatsby-mdx](https://github.com/ChristopherBiscardi/gatsby-mdx))
+- Cypress for End-to-End testing (+ CircleCI config)
 - Google Analytics Support
 - SEO
     - Sitemap
@@ -61,12 +66,16 @@ npm run dev
 ```
 
 ### Adding a new project
-- Create a new folder in `content/projects` with the current date (Format: YYYY-MM-DD)
-- Create a new markdown/mdx file, add the frontmatter (use the same date format)
+- Create a new folder in `content/projects`
+- Create a new markdown/mdx file, add the frontmatter (use the date format "YYYY-MM-DD")
 - Add an image and reference it in your frontmatter as `cover`
 - Write your content below the frontmatter
 
 If you're still unsure have a look at the already existing examples.
+
+### Adding a new page
+- Create a new folder in `src/pages`
+- Create a new mdx file with the name `index.mdx` in it
 
 ### Adding new features/plugins
 
@@ -106,7 +115,7 @@ module.exports = {
 }
 ```
 
-You can also configure the styling of the site by editing the theme variables in `config/theme.js`. `overlay` are the colors that get randomly selected for the Index page and the project detail view.
+You can also configure the styling of the site by editing the theme variables in `config/theme.js`.
 
 ```JS
 import { darken } from 'polished'
@@ -117,15 +126,14 @@ const brand = {
 }
 
 const colors = {
-  grey: '#25252',
+  grey: '#6b6b6b',
   black: '#000',
+  white: '#fff',
   bg_color: '#f3f3f3',
-  body_color: '#222',
+  body_color: '#444',
   link_color: brand.primary,
   link_color_hover: `${darken(0.15, brand.primary)}`,
 }
-
-export const overlay = ['#f76262', '#216583', '#65c0ba', '#35477d', '#6c5b7b', '#203541', '#9951ff', '#480032']
 
 const theme = {
   brand,

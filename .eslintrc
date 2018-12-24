@@ -9,17 +9,14 @@
       "classes": true
     }
   },
-  "settings": {
-    "import/resolver": {
-      "node": {
-        "paths": ["src"]
-      }
-    }
+  "globals": {
+    "cy": true
   },
   "env": {
     "browser": true,
     "node": true,
-    "jquery": true
+    "jquery": true,
+    "jest": true
   },
   "rules": {
     "no-unused-vars": [

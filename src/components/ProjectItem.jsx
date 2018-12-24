@@ -89,8 +89,8 @@ const Service = styled.div`
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 `
 
-const ProjectItem = ({ node, style }) => (
-  <Item key={node.fields.slug} style={style}>
+const ProjectItem = ({ node, style, testid }) => (
+  <Item key={node.fields.slug} style={style} data-testid={testid}>
     <Content>
       <ImageWrapper>
         <Img fluid={node.frontmatter.cover.childImageSharp.fluid} />
@@ -110,4 +110,5 @@ export default ProjectItem
 ProjectItem.propTypes = {
   node: PropTypes.object.isRequired,
   style: PropTypes.object.isRequired,
+  testid: PropTypes.string.isRequired,
 }

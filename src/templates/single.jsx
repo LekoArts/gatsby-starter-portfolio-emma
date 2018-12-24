@@ -37,7 +37,7 @@ const Single = ({ pageContext: { slug }, data: { mdx } }) => {
             from={{ opacity: 0, transform: 'translate3d(0, -30px, 0)' }}
             to={{ opacity: 1, transform: 'translate3d(0, 0, 0)' }}
           >
-            {props => <Title style={props}>{single.title}</Title>}
+            {props => <Title data-testid="single-title" style={props}>{single.title}</Title>}
           </Spring>
         </Content>
       </Hero>

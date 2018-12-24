@@ -86,16 +86,21 @@ const Navigation = () => (
   <StaticQuery
     query={query}
     render={data => (
-      <Wrapper>
+      <Wrapper data-testid="navigation">
         <Nav>
-          {data.nav.edges.map(nav => (
-            <Link key={nav.node.fields.slug} to={nav.node.fields.slug} activeClassName="nav-active">
+          {data.nav.edges.map((nav, index) => (
+            <Link
+              key={nav.node.fields.slug}
+              to={nav.node.fields.slug}
+              data-testid={`navItem-${index}`}
+              activeClassName="nav-active"
+            >
               {nav.node.frontmatter.title}
             </Link>
           ))}
         </Nav>
         <Name>
-          <Link to="/">{config.siteTitle}</Link>
+          <Link to="/" data-testid="home-title-link">{config.siteTitle}</Link>
         </Name>
         <SocialMedia>
           <a href="https://www.instagram.com/lekoarts.de" target="_blank" rel="noopener noreferrer">

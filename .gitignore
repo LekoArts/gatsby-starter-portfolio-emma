@@ -52,9 +52,17 @@ jspm_packages
 # Build Files
 public/
 .cache/
+results
 
 # Gatsby context
 .gatsby-context.js
 
 # Bundle stats
 bundle-stats.json
+
+.env.development
+.env.production
+
+# Cypress
+cypress/videos
+cypress/screenshots

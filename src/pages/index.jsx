@@ -26,7 +26,14 @@ const Index = ({
         from={{ height: '0%' }}
         to={{ height: '100%' }}
       >
-        {project => props => <ProjectItem style={props} key={project.node.fields.slug} node={project.node} />}
+        {(project, index) => props => (
+          <ProjectItem
+            testid={`projectItem-${index}`}
+            style={props}
+            key={project.node.fields.slug}
+            node={project.node}
+          />
+        )}
       </Trail>
     </ListWrapper>
   </Layout>

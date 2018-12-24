@@ -59,7 +59,7 @@ const Project = ({ pageContext: { slug }, data: { mdx: postNode } }) => {
             from={{ opacity: 0, transform: 'translate3d(0, -30px, 0)' }}
             to={{ opacity: 1, transform: 'translate3d(0, 0, 0)' }}
           >
-            {props => <Title style={props}>{project.title}</Title>}
+            {props => <Title data-testid="project-title" style={props}>{project.title}</Title>}
           </Spring>
           <Spring native config={config.slow} delay={500} from={{ opacity: 0 }} to={{ opacity: 1 }}>
             {props => (

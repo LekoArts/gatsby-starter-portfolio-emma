@@ -86,3 +86,18 @@ exports.createPages = async ({ graphql, actions }) => {
 
   console.log(error)
 }
+
+exports.onCreateWebpackConfig = ({ stage, actions, loaders, getConfig }) => {
+  const config = getConfig()
+
+  config.module.rules = [
+    ...config.module.rules.filter(rule => String(rule.test) !== String(/\.jsx?$/)),
+    {
+      ...loaders.js(),
+      test: /\.jsx?$/,
+      exclude: modulePath => /node_modules/.test(modulePath) && !/node_modules\/gatsby-mdx/.test(modulePath),
+    },
+  ]
+
+  actions.replaceWebpackConfig(config)
+}

@@ -12,7 +12,7 @@ executors:
 aliases:
   e2e-executor: &e2e-executor
     docker:
-    - image: cypress/base:8
+    - image: cypress/browsers:chrome69
       environment:
         TERM: xterm
 
@@ -80,3 +80,4 @@ workflows:
   lint-test:
     jobs:
     - lint
+    - e2e_cypress
