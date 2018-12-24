@@ -4,7 +4,6 @@ import { Link } from 'gatsby'
 import { animated } from 'react-spring'
 import styled from 'styled-components'
 import Img from 'gatsby-image'
-import { overlay } from '../../config/theme'
 
 const Item = styled(animated.div)`
   position: relative;
@@ -98,7 +97,7 @@ const ProjectItem = ({ node, style }) => (
       </ImageWrapper>
       <Link to={node.fields.slug}>
         <TracedGlow src={node.frontmatter.cover.childImageSharp.fluid.tracedSVG} alt="" />
-        <Overlay style={{ backgroundColor: overlay[node.frontmatter.color] }} />
+        <Overlay style={{ backgroundColor: node.frontmatter.color }} />
         <h2>{node.frontmatter.client}</h2>
         <Service>{node.frontmatter.service}</Service>
       </Link>

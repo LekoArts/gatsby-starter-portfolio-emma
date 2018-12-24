@@ -1,51 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
+import { animated, Spring, config } from 'react-spring'
 import MDXRenderer from 'gatsby-mdx/mdx-renderer'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
-import SEO from '../components/SEO'
-import Container from '../components/Container'
-import Layout from '../components/Layout'
-import { overlay } from '../../config/theme'
-
-const Hero = styled.section`
-  position: relative;
-  margin-top: -6rem;
-  height: 40vw;
-  overflow: hidden;
-`
-
-const BGImage = styled.div`
-  width: 100%;
-  .gatsby-image-wrapper {
-    position: static !important;
-    filter: grayscale(100%);
-    > div {
-      padding-bottom: 40vw !important;
-    }
-  }
-  &:before {
-    content: '';
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    background-color: ${props => props.customcolor};
-  }
-  &:after {
-    backface-visibility: hidden;
-    background: ${({ theme }) => `linear-gradient(to bottom, rgba(255, 255, 255, 0.4) 0%, ${theme.colors.bg_color} 100%),
-      linear-gradient(to right, rgba(255, 255, 255, 0.4) 50%, ${theme.colors.bg_color} 100%)`};
-    content: '';
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
-  }
-`
+import { SEO, Container, Layout, Hero, BGImage } from '../components'
 
 const Content = styled(Container)`
   position: absolute;
@@ -54,21 +14,32 @@ const Content = styled(Container)`
   bottom: 0;
   padding-top: 2rem;
   padding-bottom: 2rem;
+  z-index: 3;
 `
 
-const InformationWrapper = styled.div`
+const InformationWrapper = styled(animated.div)`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
 `
 
+const Title = styled(animated.h1)`
+  margin-top: 0;
+`
+
 const InfoBlock = styled.div`
   display: flex;
   flex-direction: column;
-  margin: ${props => props.theme.spacer.vertical} ${props => props.theme.spacer.horizontal} 0 0;
+  margin: 1rem 2rem 0 0;
   div:first-child {
     text-transform: uppercase;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: ${props => (props.customcolor ? props.customcolor : props.theme.colors.grey)};
+  }
+  div:last-child {
+    font-size: 1rem;
   }
 `
 
@@ -78,29 +49,46 @@ const Project = ({ pageContext: { slug }, data: { mdx: postNode } }) => {
     <Layout>
       <SEO postPath={slug} postNode={postNode} postSEO />
       <Hero>
-        <BGImage customcolor={overlay[project.color]}>
+        <BGImage customcolor={project.color}>
           <Img fluid={project.cover.childImageSharp.fluid} alt="" />
         </BGImage>
         <Content type="text">
-          <h1>{project.title}</h1>
-          <InformationWrapper>
-            <InfoBlock>
-              <div>Client</div>
-              <div>{project.client}</div>
-            </InfoBlock>
-            <InfoBlock>
-              <div>Date</div>
-              <div>{project.date}</div>
-            </InfoBlock>
-            <InfoBlock>
-              <div>Service</div>
-              <div>{project.service}</div>
-            </InfoBlock>
-          </InformationWrapper>
+          <Spring
+            native
+            config={config.slow}
+            from={{ opacity: 0, transform: 'translate3d(0, -30px, 0)' }}
+            to={{ opacity: 1, transform: 'translate3d(0, 0, 0)' }}
+          >
+            {props => <Title style={props}>{project.title}</Title>}
+          </Spring>
+          <Spring native config={config.slow} delay={500} from={{ opacity: 0 }} to={{ opacity: 1 }}>
+            {props => (
+              <InformationWrapper style={props}>
+                <InfoBlock customcolor={project.color}>
+                  <div>Client</div>
+                  <div>{project.client}</div>
+                </InfoBlock>
+                <InfoBlock customcolor={project.color}>
+                  <div>Date</div>
+                  <div>{project.date}</div>
+                </InfoBlock>
+                <InfoBlock customcolor={project.color}>
+                  <div>Service</div>
+                  <div>{project.service}</div>
+                </InfoBlock>
+              </InformationWrapper>
+            )}
+          </Spring>
         </Content>
       </Hero>
       <Container type="text">
-        <MDXRenderer>{postNode.code.body}</MDXRenderer>
+        <Spring native config={config.slow} delay={1000} from={{ opacity: 0 }} to={{ opacity: 1 }}>
+          {props => (
+            <animated.div style={props}>
+              <MDXRenderer>{postNode.code.body}</MDXRenderer>
+            </animated.div>
+          )}
+        </Spring>
       </Container>
     </Layout>
   )
@@ -124,6 +112,9 @@ export const pageQuery = graphql`
         body
       }
       excerpt
+      fields {
+        slug
+      }
       frontmatter {
         title
         date(formatString: "DD.MM.YYYY")
@@ -140,9 +131,6 @@ export const pageQuery = graphql`
             }
           }
         }
-      }
-      fields {
-        slug
       }
     }
   }

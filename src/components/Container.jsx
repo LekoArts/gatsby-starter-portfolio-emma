@@ -10,13 +10,22 @@ const Wrapper = styled.div`
     props.type === 'text' &&
     css`
       p {
-        font-size: 1.25rem;
+        font-size: 1.2rem;
         letter-spacing: -0.003em;
         line-height: 1.58;
         --baseline-multiplier: 0.179;
         --x-height-multiplier: 0.35;
+        @media (max-width: ${props.theme.breakpoints.l}), (max-device-width: ${props.theme.breakpoints.l}) {
+          font-size: 1.1rem;
+        }
+        @media (max-width: ${props.theme.breakpoints.m}), (max-device-width: ${props.theme.breakpoints.m}) {
+          font-size: 1rem;
+        }
       }
     `};
+  @media (max-width: ${props => props.theme.breakpoints.s}), (max-device-width: ${props => props.theme.breakpoints.s}) {
+    padding: 0 1rem;
+  }
 `
 
 const Container = ({ children, type, className }) => (

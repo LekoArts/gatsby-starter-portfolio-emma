@@ -2,6 +2,7 @@
   "name": "gatsby-starter-portfolio-emma",
   "description": "Gatsby Starter Portfolio Emma",
   "version": "3.0.0",
+  "private": true,
   "author": "LekoArts <hello@lekoarts.de> (https://www.lekoarts.de)",
   "scripts": {
     "develop": "gatsby develop",
@@ -10,7 +11,8 @@
     "serve": "gatsby serve",
     "lint": "eslint . --ext .js,.jsx --ignore-path .gitignore",
     "lint:fix": "eslint . --ext .js,.jsx --fix --ignore-path .gitignore",
-    "format": "prettier \"**/*.{md,mdx} \" --write"
+    "format": "prettier \"**/*.{md,mdx} \" --write",
+    "lint:ci": "yarn lint --format junit -o results/eslint/result.xml"
   },
   "dependencies": {
     "@mdx-js/mdx": "0.15.x",

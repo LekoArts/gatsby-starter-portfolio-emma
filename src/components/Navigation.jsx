@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { Link, StaticQuery, graphql } from 'gatsby'
 import { FaInstagram, FaBehance, FaDribbble } from 'react-icons/fa'
 import styled from 'styled-components'
 import config from '../../config/website'
@@ -7,9 +7,11 @@ import config from '../../config/website'
 const Wrapper = styled.header`
   align-items: center;
   display: flex;
-  padding: 1rem 0 3rem 0;
+  padding: 1rem 0 1rem 0;
+  position: relative;
+  z-index: 1000;
   a {
-    color: ${props => props.theme.colors.body_color};
+    color: ${props => props.theme.colors.black};
     text-decoration: none;
     transition: all 0.3s ease-in-out;
     z-index: 100;
@@ -18,7 +20,7 @@ const Wrapper = styled.header`
     }
   }
   @media (max-width: ${props => props.theme.breakpoints.s}) {
-    padding: 1rem 0 3rem 0;
+    padding: 1rem 0 1rem 0;
     flex-wrap: wrap;
   }
 `
@@ -81,30 +83,51 @@ const SocialMedia = styled.div`
 `
 
 const Navigation = () => (
-  <Wrapper>
-    <Nav>
-      <Link to="/about" activeClassName="nav-active">
-        About
-      </Link>
-      <Link to="/contact" activeClassName="nav-active">
-        Contact
-      </Link>
-    </Nav>
-    <Name>
-      <Link to="/">{config.siteTitle}</Link>
-    </Name>
-    <SocialMedia>
-      <a href="https://www.instagram.com/lekoarts.de" target="_blank" rel="noopener noreferrer">
-        <FaInstagram />
-      </a>
-      <a href="https://www.behance.net/lekoarts" target="_blank" rel="noopener noreferrer">
-        <FaBehance />
-      </a>
-      <a href="https://dribbble.com/LeKoArts" target="_blank" rel="noopener noreferrer">
-        <FaDribbble />
-      </a>
-    </SocialMedia>
-  </Wrapper>
+  <StaticQuery
+    query={query}
+    render={data => (
+      <Wrapper>
+        <Nav>
+          {data.nav.edges.map(nav => (
+            <Link key={nav.node.fields.slug} to={nav.node.fields.slug} activeClassName="nav-active">
+              {nav.node.frontmatter.title}
+            </Link>
+          ))}
+        </Nav>
+        <Name>
+          <Link to="/">{config.siteTitle}</Link>
+        </Name>
+        <SocialMedia>
+          <a href="https://www.instagram.com/lekoarts.de" target="_blank" rel="noopener noreferrer">
+            <FaInstagram />
+          </a>
+          <a href="https://www.behance.net/lekoarts" target="_blank" rel="noopener noreferrer">
+            <FaBehance />
+          </a>
+          <a href="https://dribbble.com/LeKoArts" target="_blank" rel="noopener noreferrer">
+            <FaDribbble />
+          </a>
+        </SocialMedia>
+      </Wrapper>
+    )}
+  />
 )
 
 export default Navigation
+
+const query = graphql`
+  query NavLinks {
+    nav: allMdx(filter: { fields: { sourceInstanceName: { eq: "pages" } } }) {
+      edges {
+        node {
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+          }
+        }
+      }
+    }
+  }
+`

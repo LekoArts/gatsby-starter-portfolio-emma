@@ -35,8 +35,8 @@ const reset = css`
     h5 {
       font-size: 1rem;
     }
-    @media (max-width: ${theme.breakpoints.m}), (max-device-width: ${theme.breakpoints.m}) {
-      font-size: 16px !important;
+    @media (max-width: ${theme.breakpoints.l}), (max-device-width: ${theme.breakpoints.l}) {
+      font-size: 18px !important;
       h1 {
         font-size: 2.074rem;
       }
@@ -50,8 +50,10 @@ const reset = css`
         font-size: 1.2rem;
       }
     }
+    @media (max-width: ${theme.breakpoints.m}), (max-device-width: ${theme.breakpoints.m}) {
+      font-size: 16px !important;
+    }
     @media (max-width: ${theme.breakpoints.s}), (max-device-width: ${theme.breakpoints.s}) {
-      font-size: 14px !important;
       h1 {
         font-size: 1.602rem;
       }

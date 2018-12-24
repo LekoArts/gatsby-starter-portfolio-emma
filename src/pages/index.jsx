@@ -1,10 +1,10 @@
+/* eslint react/display-name: 0 */
 import React from 'react'
 import { graphql } from 'gatsby'
 import PropTypes from 'prop-types'
 import { Trail } from 'react-spring'
 import styled from 'styled-components'
-import Layout from '../components/Layout'
-import ProjectItem from '../components/ProjectItem'
+import { Layout, ProjectItem } from '../components'
 
 const ListWrapper = styled.div`
   display: grid;
@@ -20,6 +20,7 @@ const Index = ({
   <Layout>
     <ListWrapper>
       <Trail
+        native
         items={projectEdges}
         keys={project => project.node.fields.slug}
         from={{ height: '0%' }}
@@ -43,7 +44,10 @@ Index.propTypes = {
 
 export const pageQuery = graphql`
   query IndexQuery {
-    allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMdx(
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: { fields: { sourceInstanceName: { eq: "projects" } } }
+    ) {
       edges {
         node {
           fields {

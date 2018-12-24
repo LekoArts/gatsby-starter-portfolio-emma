@@ -5,13 +5,13 @@ import PropTypes from 'prop-types'
 import config from '../../config/website'
 
 const SEO = props => {
-  const { postNode, postPath, postSEO } = props
+  const { postNode, postPath, postSEO, postSingle } = props
   let title
   let description
   let image
   let postURL
   const realPrefix = config.pathPrefix === '/' ? '' : config.pathPrefix
-  if (postSEO) {
+  if (postSEO || postSingle) {
     const postMeta = postNode.frontmatter
     title = `${postMeta.title} | ${config.siteTitle}`
     description = postNode.excerpt
@@ -108,4 +108,5 @@ SEO.propTypes = {
   postNode: PropTypes.object,
   postPath: PropTypes.string,
   postSEO: PropTypes.bool,
+  postSingle: PropTypes.bool,
 }
