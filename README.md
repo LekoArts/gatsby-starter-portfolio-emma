@@ -4,9 +4,9 @@
 
 A portfolio starter for [Gatsby](https://www.gatsbyjs.org/). The target audience are designers and photographers.
 
-[Demo Website](https://portfolio-emma.netlify.com/)
+[Demo Website](https://emma.lekoarts.de)
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/LeKoArts/gatsby-starter-portfolio-emma) [![Edit gatsby-starter-portfolio-emma](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/LekoArts/gatsby-starter-portfolio-emma/tree/master/)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/LekoArts/gatsby-starter-portfolio-emma) [![Edit gatsby-starter-portfolio-emma](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/LekoArts/gatsby-starter-portfolio-emma/tree/master/)
 
 [![CircleCI](https://circleci.com/gh/LekoArts/gatsby-starter-portfolio-emma.svg?style=svg)](https://circleci.com/gh/LekoArts/gatsby-starter-portfolio-emma)
 
@@ -96,8 +96,8 @@ You can configure your setup in `config/website.js`:
 module.exports = {
   pathPrefix: '/', // Prefix for all links. If you deploy your site to example.com/portfolio your pathPrefix should be "portfolio"
   siteTitle: 'Emma', // Navigation and Site Title
-  siteTitleAlt: 'Emma - Gatsby Starter Portfolio', // Alternative Site title for SEO
-  siteUrl: 'https://portfolio-emma.netlify.com', // Domain of your site. No trailing slash!
+  siteTitleShort: 'Emma', // short_name for manifest
+  siteUrl: 'https://emma.lekoarts.de', // Domain of your site. No trailing slash!
   siteLanguage: 'en', // Language Tag on <html> element
   siteLogo: '/logo.png', // Used for SEO and manifest
   siteDescription: 'Minimalistic bright portfolio with full-width grid and large images',

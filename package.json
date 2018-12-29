@@ -68,7 +68,7 @@
   "bugs": {
     "url": "https://github.com/LekoArts/gatsby-starter-portfolio-emma/issues"
   },
-  "homepage": "https://github.com/LekoArts/gatsby-starter-portfolio-emma#readme",
+  "homepage": "https://emma.lekoarts.de",
   "license": "MIT",
   "main": "n/a",
   "devDependencies": {

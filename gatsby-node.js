@@ -6,14 +6,17 @@ const wrapper = promise => promise.then(result => ({ result, error: null })).cat
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
   let slug
+  // Only use MDX nodes
   if (node.internal.type === 'Mdx') {
     const fileNode = getNode(node.parent)
+    // If the frontmatter contains a "slug", use it
     if (
       Object.prototype.hasOwnProperty.call(node, 'frontmatter') &&
       Object.prototype.hasOwnProperty.call(node.frontmatter, 'slug')
     ) {
       slug = `/${_.kebabCase(node.frontmatter.slug)}`
     }
+    // Otherwise use the title for the slug
     if (
       Object.prototype.hasOwnProperty.call(node, 'frontmatter') &&
       Object.prototype.hasOwnProperty.call(node.frontmatter, 'title')
@@ -21,6 +24,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       slug = `/${_.kebabCase(node.frontmatter.title)}`
     }
     createNodeField({ node, name: 'slug', value: slug })
+    // Adds the name of "gatsby-source-filesystem" as field (in this case "projects" or "pages")
     createNodeField({ node, name: 'sourceInstanceName', value: fileNode.sourceInstanceName })
   }
 }
@@ -87,6 +91,7 @@ exports.createPages = async ({ graphql, actions }) => {
   console.log(error)
 }
 
+// Necessary changes to get gatsby-mdx and Cypress working
 exports.onCreateWebpackConfig = ({ stage, actions, loaders, getConfig }) => {
   const config = getConfig()
 
