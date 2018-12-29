@@ -105,13 +105,13 @@ const Navigation = () => (
           </Link>
         </Name>
         <SocialMedia>
-          <a href="https://www.instagram.com/lekoarts.de" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.instagram.com/lekoarts.de" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
             <FaInstagram />
           </a>
-          <a href="https://www.behance.net/lekoarts" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.behance.net/lekoarts" target="_blank" rel="noopener noreferrer" aria-label="Behance">
             <FaBehance />
           </a>
-          <a href="https://dribbble.com/LeKoArts" target="_blank" rel="noopener noreferrer">
+          <a href="https://dribbble.com/LeKoArts" target="_blank" rel="noopener noreferrer" aria-label="Dribbble">
             <FaDribbble />
           </a>
         </SocialMedia>
