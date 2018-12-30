@@ -105,7 +105,12 @@ const Navigation = () => (
           </Link>
         </Name>
         <SocialMedia>
-          <a href="https://www.instagram.com/lekoarts.de" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <a
+            href="https://www.instagram.com/lekoarts.de"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+          >
             <FaInstagram />
           </a>
           <a href="https://www.behance.net/lekoarts" target="_blank" rel="noopener noreferrer" aria-label="Behance">
