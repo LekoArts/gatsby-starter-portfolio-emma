@@ -21,12 +21,12 @@
     "test:e2e:ci": "start-server-and-test develop http://localhost:8000 cy:run:ci"
   },
   "dependencies": {
-    "@mdx-js/mdx": "0.15.x",
-    "@mdx-js/tag": "0.15.x",
+    "@mdx-js/mdx": "0.16.6",
+    "@mdx-js/tag": "0.16.6",
     "babel-plugin-styled-components": "^1.10.0",
-    "gatsby": "^2.0.75",
+    "gatsby": "^2.0.85",
     "gatsby-image": "^2.0.25",
-    "gatsby-mdx": "^0.2.0",
+    "gatsby-mdx": "^0.3.2",
     "gatsby-plugin-catch-links": "^2.0.9",
     "gatsby-plugin-google-analytics": "^2.0.8",
     "gatsby-plugin-lodash": "^3.0.3",

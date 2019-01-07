@@ -1,6 +1,6 @@
-const componentWithMDXScope = require('gatsby-mdx/component-with-mdx-scope')
 const _ = require('lodash')
 
+// graphql function returns a promise so we can use this little promise helper to have a nice result/error state
 const wrapper = promise => promise.then(result => ({ result, error: null })).catch(error => ({ error, result: null }))
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
@@ -32,6 +32,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
+  // Our templates for projects and files inside /pages/*.mdx
   const projectPage = require.resolve('./src/templates/project.jsx')
   const singlePage = require.resolve('./src/templates/single.jsx')
 
@@ -44,9 +45,6 @@ exports.createPages = async ({ graphql, actions }) => {
               fields {
                 slug
               }
-              code {
-                scope
-              }
             }
           }
         }
@@ -55,9 +53,6 @@ exports.createPages = async ({ graphql, actions }) => {
             node {
               fields {
                 slug
-              }
-              code {
-                scope
               }
             }
           }
@@ -70,8 +65,9 @@ exports.createPages = async ({ graphql, actions }) => {
     result.data.projects.edges.forEach(edge => {
       createPage({
         path: edge.node.fields.slug,
-        component: componentWithMDXScope(projectPage, edge.node.code.scope, __dirname),
+        component: projectPage,
         context: {
+          // Pass "slug" through context so we can reference it in our query like "$slug: String!"
           slug: edge.node.fields.slug,
         },
       })
@@ -79,7 +75,7 @@ exports.createPages = async ({ graphql, actions }) => {
     result.data.single.edges.forEach(edge => {
       createPage({
         path: edge.node.fields.slug,
-        component: componentWithMDXScope(singlePage, edge.node.code.scope, __dirname),
+        component: singlePage,
         context: {
           slug: edge.node.fields.slug,
         },
