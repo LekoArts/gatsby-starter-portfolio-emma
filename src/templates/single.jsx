@@ -21,11 +21,11 @@ const Title = styled(animated.h1)`
   margin-top: 0;
 `
 
-const Single = ({ pageContext: { slug }, data: { mdx } }) => {
+const Single = ({ data: { mdx }, location }) => {
   const single = mdx.frontmatter
   return (
-    <Layout>
-      <SEO postPath={slug} postNode={mdx} postSingle />
+    <Layout pathname={location.pathname} customSEO>
+      <SEO pathname={location.pathname} postNode={mdx} single />
       <Hero single>
         <BGImage single>
           <Img fluid={single.cover.childImageSharp.fluid} alt="" />
@@ -61,12 +61,10 @@ const Single = ({ pageContext: { slug }, data: { mdx } }) => {
 export default Single
 
 Single.propTypes = {
-  pageContext: PropTypes.shape({
-    slug: PropTypes.string.isRequired,
-  }).isRequired,
   data: PropTypes.shape({
     mdx: PropTypes.object.isRequired,
   }).isRequired,
+  location: PropTypes.object.isRequired,
 }
 
 export const pageQuery = graphql`

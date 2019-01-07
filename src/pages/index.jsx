@@ -16,8 +16,9 @@ const Index = ({
   data: {
     allMdx: { edges: projectEdges },
   },
+  location,
 }) => (
-  <Layout>
+  <Layout pathname={location.pathname}>
     <ListWrapper>
       <Trail
         native
@@ -47,6 +48,7 @@ Index.propTypes = {
       edges: PropTypes.array.isRequired,
     }),
   }).isRequired,
+  location: PropTypes.object.isRequired,
 }
 
 export const pageQuery = graphql`

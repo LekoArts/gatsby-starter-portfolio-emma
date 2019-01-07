@@ -43,11 +43,11 @@ const InfoBlock = styled.div`
   }
 `
 
-const Project = ({ pageContext: { slug }, data: { mdx: postNode } }) => {
+const Project = ({ data: { mdx: postNode }, location }) => {
   const project = postNode.frontmatter
   return (
-    <Layout>
-      <SEO postPath={slug} postNode={postNode} postSEO />
+    <Layout pathname={location.pathname} customSEO>
+      <SEO pathname={location.pathname} postNode={postNode} article />
       <Hero>
         <BGImage customcolor={project.color}>
           <Img fluid={project.cover.childImageSharp.fluid} alt="" />
@@ -101,12 +101,10 @@ const Project = ({ pageContext: { slug }, data: { mdx: postNode } }) => {
 export default Project
 
 Project.propTypes = {
-  pageContext: PropTypes.shape({
-    slug: PropTypes.string.isRequired,
-  }).isRequired,
   data: PropTypes.shape({
     mdx: PropTypes.object.isRequired,
   }).isRequired,
+  location: PropTypes.object.isRequired,
 }
 
 export const pageQuery = graphql`
@@ -118,6 +116,12 @@ export const pageQuery = graphql`
       excerpt
       fields {
         slug
+      }
+      parent {
+        ... on File {
+          mtime
+          birthtime
+        }
       }
       frontmatter {
         title

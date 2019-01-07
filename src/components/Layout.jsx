@@ -22,10 +22,10 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
-const Layout = ({ children }) => (
+const Layout = ({ children, pathname, customSEO }) => (
   <ThemeProvider theme={theme}>
     <>
-      <SEO />
+      {!customSEO && <SEO pathname={pathname} />}
       <GlobalStyle />
       <noscript>To browse this site, please enable JavaScript.</noscript>
       <Navigation />
@@ -39,4 +39,10 @@ export default Layout
 
 Layout.propTypes = {
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.node]).isRequired,
+  pathname: PropTypes.string.isRequired,
+  customSEO: PropTypes.bool,
+}
+
+Layout.defaultProps = {
+  customSEO: false,
 }
