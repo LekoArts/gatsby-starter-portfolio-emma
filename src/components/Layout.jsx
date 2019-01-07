@@ -22,6 +22,9 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
+// We can pass customSEO here to not include the <SEO> component twice. This prop is 'true' on the project template
+// as the SEO component there passes in some additional things. Otherwise things would be inserted two times
+
 const Layout = ({ children, pathname, customSEO }) => (
   <ThemeProvider theme={theme}>
     <>

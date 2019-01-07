@@ -28,6 +28,10 @@ const SEO = props => {
     image = `${homeURL}${config.siteLogo}`
   }
 
+  // schema.org in JSONLD format
+  // https://developers.google.com/search/docs/guides/intro-structured-data
+  // You can fill out the 'author', 'creator' with more data or another type (e.g. 'Organization')
+
   const schemaOrgWebPage = {
     '@context': 'http://schema.org',
     '@type': 'WebPage',
@@ -61,6 +65,8 @@ const SEO = props => {
       url: image,
     },
   }
+
+  // Initial breadcrumb list
 
   const itemListElement = [
     {
@@ -121,6 +127,7 @@ const SEO = props => {
       },
       mainEntityOfPage: URL,
     }
+    // Push current blogpost into breadcrumb list
     itemListElement.push({
       '@type': 'ListItem',
       item: {
@@ -168,6 +175,7 @@ const SEO = props => {
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={image} />
       <meta name="twitter:image:alt" content={description} />
+      {/* Insert schema.org data conditionally (webpage/article) + everytime (breadcrumbs) */}
       {!article && <script type="application/ld+json">{JSON.stringify(schemaOrgWebPage)}</script>}
       {article && <script type="application/ld+json">{JSON.stringify(schemaArticle)}</script>}
       <script type="application/ld+json">{JSON.stringify(breadcrumb)}</script>

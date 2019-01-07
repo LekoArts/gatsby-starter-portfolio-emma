@@ -82,6 +82,8 @@ const SocialMedia = styled.div`
   }
 `
 
+// Grabs all MDX files from src/pages and puts them into the navigation
+
 const Navigation = () => (
   <StaticQuery
     query={query}
