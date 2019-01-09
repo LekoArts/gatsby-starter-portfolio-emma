@@ -30,7 +30,6 @@ const Layout = ({ children, pathname, customSEO }) => (
     <>
       {!customSEO && <SEO pathname={pathname} />}
       <GlobalStyle />
-      <noscript>To browse this site, please enable JavaScript.</noscript>
       <Navigation />
       {children}
       <Footer />

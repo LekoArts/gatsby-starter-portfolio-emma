@@ -3,6 +3,9 @@ import { rgba } from 'polished'
 
 const shade = `rgba(255, 255, 255, 0.4)`
 
+// position: static on the image wrapper resets the absolute positioning and allows for some custom styling
+// the single/project templates have different headers
+
 const BGImage = styled.div`
   width: 100%;
   .gatsby-image-wrapper {
