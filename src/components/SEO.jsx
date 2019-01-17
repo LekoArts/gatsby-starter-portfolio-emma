@@ -1,17 +1,19 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import PropTypes from 'prop-types'
+import { graphql, StaticQuery } from 'gatsby'
 import config from '../../config/website'
 
 const replaceTrailing = _path => _path.replace(/\/$/, ``)
 
-const SEO = props => {
-  const { postNode, pathname, article, single } = props
+const Head = props => {
+  const { postNode, pathname, article, single, data } = props
 
   let title
   let description
   let image
 
+  const { buildTime } = data.site
   const realPrefix = config.pathPrefix === '/' ? '' : config.pathPrefix
   const homeURL = `${config.siteUrl}${realPrefix}`
   const URL = `${config.siteUrl}${replaceTrailing(pathname) || realPrefix}`
@@ -59,7 +61,7 @@ const SEO = props => {
       name: config.author,
     },
     datePublished: '2019-01-07T10:30:00+01:00',
-    dateModified: '2019-010-07T10:30:00+01:00',
+    dateModified: buildTime,
     image: {
       '@type': 'ImageObject',
       url: image,
@@ -183,17 +185,28 @@ const SEO = props => {
   )
 }
 
+const SEO = props => <StaticQuery query={querySEO} render={data => <Head {...props} data={data} />} />
+
 export default SEO
 
-SEO.propTypes = {
+Head.propTypes = {
   pathname: PropTypes.string.isRequired,
+  data: PropTypes.any.isRequired,
   postNode: PropTypes.object,
   article: PropTypes.bool,
   single: PropTypes.bool,
 }
 
-SEO.defaultProps = {
+Head.defaultProps = {
   postNode: null,
   article: false,
   single: false,
 }
+
+const querySEO = graphql`
+  query SEO {
+    site {
+      buildTime(formatString: "YYYY-MM-DD")
+    }
+  }
+`
