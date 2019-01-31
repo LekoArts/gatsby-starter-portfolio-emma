@@ -8,7 +8,7 @@ A portfolio starter for [Gatsby](https://www.gatsbyjs.org/). The target audience
 
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/LekoArts/gatsby-starter-portfolio-emma) [![Edit gatsby-starter-portfolio-emma](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/LekoArts/gatsby-starter-portfolio-emma/tree/master/)
 
-[![CircleCI](https://circleci.com/gh/LekoArts/gatsby-starter-portfolio-emma.svg?style=svg)](https://circleci.com/gh/LekoArts/gatsby-starter-portfolio-emma)
+[![CircleCI](https://circleci.com/gh/LekoArts/gatsby-starter-portfolio-emma.svg?style=svg)](https://circleci.com/gh/LekoArts/gatsby-starter-portfolio-emma) [![Netlify Status](https://api.netlify.com/api/v1/badges/5a4f3e8c-82cb-411d-89f1-fcfde2d3cf80/deploy-status)](https://app.netlify.com/sites/portfolio-emma/deploys)
 
 - Full-width grid-layout
 - Large images
