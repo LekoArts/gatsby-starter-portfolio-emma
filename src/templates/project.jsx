@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import { animated, Spring, config } from 'react-spring'
+import { animated, useSpring, config } from 'react-spring'
 import MDXRenderer from 'gatsby-mdx/mdx-renderer'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
@@ -45,6 +45,15 @@ const InfoBlock = styled.div`
 
 const Project = ({ data: { mdx: postNode }, location }) => {
   const project = postNode.frontmatter
+
+  const titleProps = useSpring({
+    config: config.slow,
+    from: { opacity: 0, transform: 'translate3d(0, -30px, 0)' },
+    to: { opacity: 1, transform: 'translate3d(0, 0, 0)' },
+  })
+  const infoProps = useSpring({ config: config.slow, delay: 500, from: { opacity: 0 }, to: { opacity: 1 } })
+  const contentProps = useSpring({ config: config.slow, delay: 1000, from: { opacity: 0 }, to: { opacity: 1 } })
+
   return (
     <Layout pathname={location.pathname} customSEO>
       <SEO pathname={location.pathname} postNode={postNode} article />
@@ -53,46 +62,29 @@ const Project = ({ data: { mdx: postNode }, location }) => {
           <Img fluid={project.cover.childImageSharp.fluid} alt="" />
         </BGImage>
         <Content type="text">
-          <Spring
-            native
-            config={config.slow}
-            from={{ opacity: 0, transform: 'translate3d(0, -30px, 0)' }}
-            to={{ opacity: 1, transform: 'translate3d(0, 0, 0)' }}
-          >
-            {props => (
-              <Title data-testid="project-title" style={props}>
-                {project.title}
-              </Title>
-            )}
-          </Spring>
-          <Spring native config={config.slow} delay={500} from={{ opacity: 0 }} to={{ opacity: 1 }}>
-            {props => (
-              <InformationWrapper style={props}>
-                <InfoBlock customcolor={project.color}>
-                  <div>Client</div>
-                  <div>{project.client}</div>
-                </InfoBlock>
-                <InfoBlock customcolor={project.color}>
-                  <div>Date</div>
-                  <div>{project.date}</div>
-                </InfoBlock>
-                <InfoBlock customcolor={project.color}>
-                  <div>Service</div>
-                  <div>{project.service}</div>
-                </InfoBlock>
-              </InformationWrapper>
-            )}
-          </Spring>
+          <Title data-testid="project-title" style={titleProps}>
+            {project.title}
+          </Title>
+          <InformationWrapper style={infoProps}>
+            <InfoBlock customcolor={project.color}>
+              <div>Client</div>
+              <div>{project.client}</div>
+            </InfoBlock>
+            <InfoBlock customcolor={project.color}>
+              <div>Date</div>
+              <div>{project.date}</div>
+            </InfoBlock>
+            <InfoBlock customcolor={project.color}>
+              <div>Service</div>
+              <div>{project.service}</div>
+            </InfoBlock>
+          </InformationWrapper>
         </Content>
       </Hero>
       <Container type="text">
-        <Spring native config={config.slow} delay={1000} from={{ opacity: 0 }} to={{ opacity: 1 }}>
-          {props => (
-            <animated.div style={props}>
-              <MDXRenderer>{postNode.code.body}</MDXRenderer>
-            </animated.div>
-          )}
-        </Spring>
+        <animated.div style={contentProps}>
+          <MDXRenderer>{postNode.code.body}</MDXRenderer>
+        </animated.div>
       </Container>
     </Layout>
   )

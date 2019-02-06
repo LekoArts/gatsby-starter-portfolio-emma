@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import { animated, Spring, config } from 'react-spring'
+import { animated, useSpring, config } from 'react-spring'
 import MDXRenderer from 'gatsby-mdx/mdx-renderer'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
@@ -23,6 +23,14 @@ const Title = styled(animated.h1)`
 
 const Single = ({ data: { mdx }, location }) => {
   const single = mdx.frontmatter
+
+  const titleProps = useSpring({
+    config: config.slow,
+    from: { opacity: 0, transform: 'translate3d(0, -30px, 0)' },
+    to: { opacity: 1, transform: 'translate3d(0, 0, 0)' },
+  })
+  const contentProps = useSpring({ config: config.slow, delay: 500, from: { opacity: 0 }, to: { opacity: 1 } })
+
   return (
     <Layout pathname={location.pathname} customSEO>
       <SEO pathname={location.pathname} postNode={mdx} single />
@@ -31,28 +39,15 @@ const Single = ({ data: { mdx }, location }) => {
           <Img fluid={single.cover.childImageSharp.fluid} alt="" />
         </BGImage>
         <Content type="text">
-          <Spring
-            native
-            config={config.slow}
-            from={{ opacity: 0, transform: 'translate3d(0, -30px, 0)' }}
-            to={{ opacity: 1, transform: 'translate3d(0, 0, 0)' }}
-          >
-            {props => (
-              <Title data-testid="single-title" style={props}>
-                {single.title}
-              </Title>
-            )}
-          </Spring>
+          <Title data-testid="single-title" style={titleProps}>
+            {single.title}
+          </Title>
         </Content>
       </Hero>
       <Container type="text">
-        <Spring native config={config.slow} delay={500} from={{ opacity: 0 }} to={{ opacity: 1 }}>
-          {props => (
-            <animated.div style={props}>
-              <MDXRenderer>{mdx.code.body}</MDXRenderer>
-            </animated.div>
-          )}
-        </Spring>
+        <animated.div style={contentProps}>
+          <MDXRenderer>{mdx.code.body}</MDXRenderer>
+        </animated.div>
       </Container>
     </Layout>
   )
