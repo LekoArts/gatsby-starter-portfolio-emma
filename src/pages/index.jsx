@@ -2,7 +2,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import PropTypes from 'prop-types'
-import { Trail } from 'react-spring'
+import { useTrail } from 'react-spring'
 import styled from 'styled-components'
 import { Layout, ProjectItem } from '../components'
 
@@ -17,28 +17,27 @@ const Index = ({
     allMdx: { edges: projectEdges },
   },
   location,
-}) => (
-  <Layout pathname={location.pathname}>
-    <ListWrapper>
-      <Trail
-        native
-        items={projectEdges}
-        keys={project => project.node.fields.slug}
-        from={{ height: '0%' }}
-        to={{ height: '100%' }}
-      >
-        {(project, index) => props => (
+}) => {
+  const trail = useTrail(projectEdges.length, {
+    from: { height: '0%' },
+    to: { height: '100%' },
+  })
+
+  return (
+    <Layout pathname={location.pathname}>
+      <ListWrapper>
+        {trail.map((style, index) => (
           <ProjectItem
             testid={`projectItem-${index}`}
-            style={props}
-            key={project.node.fields.slug}
-            node={project.node}
+            style={style}
+            key={projectEdges[index].node.fields.slug}
+            node={projectEdges[index].node}
           />
-        )}
-      </Trail>
-    </ListWrapper>
-  </Layout>
-)
+        ))}
+      </ListWrapper>
+    </Layout>
+  )
+}
 
 export default Index
 
