@@ -1,15 +1,13 @@
 const _ = require('lodash')
 
-// graphql function returns a promise so we can use this little promise helper to have a nice result/error state
+// graphql function doesn't throw an error so we have to check to check for the result.errors to throw manually
 const wrapper = promise =>
-  promise
-    .then(result => {
-      if (result.errors) {
-        throw result.errors
-      }
-      return { result, error: null }
-    })
-    .catch(error => ({ error, result: null }))
+  promise.then(result => {
+    if (result.errors) {
+      throw result.errors
+    }
+    return result
+  })
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
@@ -44,7 +42,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const projectPage = require.resolve('./src/templates/project.jsx')
   const singlePage = require.resolve('./src/templates/single.jsx')
 
-  const { error, result } = await wrapper(
+  const result = await wrapper(
     graphql(`
       {
         projects: allMdx(filter: { fields: { sourceInstanceName: { eq: "projects" } } }) {
@@ -69,30 +67,25 @@ exports.createPages = async ({ graphql, actions }) => {
     `)
   )
 
-  if (!error) {
-    result.data.projects.edges.forEach(edge => {
-      createPage({
-        path: edge.node.fields.slug,
-        component: projectPage,
-        context: {
-          // Pass "slug" through context so we can reference it in our query like "$slug: String!"
-          slug: edge.node.fields.slug,
-        },
-      })
+  result.data.projects.edges.forEach(edge => {
+    createPage({
+      path: edge.node.fields.slug,
+      component: projectPage,
+      context: {
+        // Pass "slug" through context so we can reference it in our query like "$slug: String!"
+        slug: edge.node.fields.slug,
+      },
     })
-    result.data.single.edges.forEach(edge => {
-      createPage({
-        path: edge.node.fields.slug,
-        component: singlePage,
-        context: {
-          slug: edge.node.fields.slug,
-        },
-      })
+  })
+  result.data.single.edges.forEach(edge => {
+    createPage({
+      path: edge.node.fields.slug,
+      component: singlePage,
+      context: {
+        slug: edge.node.fields.slug,
+      },
     })
-    return
-  }
-
-  console.log(error)
+  })
 }
 
 // Necessary changes to get gatsby-mdx and Cypress working
