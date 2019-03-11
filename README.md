@@ -16,11 +16,12 @@ A portfolio starter for [Gatsby](https://www.gatsbyjs.org/). The target audience
 
 ## Why?
 
-If you want to quickly bootstrap a design/photography portfolio or use it as a foundation for your personal site the *gatsby-starter-portfolio* are a perfect fit for you! The project's goal is to offer minimalistic and fast websites. 
+If you want to quickly bootstrap a design/photography portfolio or use it as a foundation for your personal site the _gatsby-starter-portfolio_ are a perfect fit for you! The project's goal is to offer minimalistic and fast websites.
 
 I hope you like my starters and create something awesome! To see some of my work you can visit my [website](https://www.lekoarts.de) or support me on [Patreon](https://www.patreon.com/lekoarts) to get some neat rewards (4K images, project files, tutorial insights). Every pledge on Patreon helps me creating more free starters!
 
-Also check out the other *gatsby-starter-portfolio*:
+Also check out the other _gatsby-starter-portfolio_:
+
 - [gatsby-starter-portfolio-emilia](https://github.com/LekoArts/gatsby-starter-portfolio-emilia)
 - [gatsby-starter-portfolio-bella](https://github.com/LekoArts/gatsby-starter-portfolio-bella)
 - [gatsby-starter-portfolio-cara](https://github.com/LekoArts/gatsby-starter-portfolio-cara)
@@ -30,8 +31,8 @@ Check out the [Gatsby Starter Portfolio Overview](https://gatsby-starter-portfol
 ## Features
 
 - Configurable
-    - Use the website.js to easily change the most important information
-    - Easily change the font
+  - Use the website.js to easily change the most important information
+  - Easily change the font
 - Choose a color for your projects highlights
 - Create your subpages with MDX
 - Uses styled-components for styling
@@ -40,20 +41,21 @@ Check out the [Gatsby Starter Portfolio Overview](https://gatsby-starter-portfol
 - Cypress for End-to-End testing (+ CircleCI config)
 - Google Analytics Support
 - SEO
-    - Sitemap
-    - Schema.org JSONLD
-    - OpenGraph Tags
-    - Twitter Tags
+  - Sitemap
+  - Schema.org JSONLD
+  - OpenGraph Tags
+  - Twitter Tags
 - Offline Support
 - WebApp Manifest Support
 - Responsive images
-    - The right image size for every screen size
-    - Traced SVG loading (lazy-loading)
-    - WebP support
+  - The right image size for every screen size
+  - Traced SVG loading (lazy-loading)
+  - WebP support
 
 ## Getting Started
 
 Check your development environment! You'll need [Node.js](https://nodejs.org/en/), the [Gatsby CLI](https://www.gatsbyjs.org/docs/) and [node-gyp](https://github.com/nodejs/node-gyp#installation) installed. The official Gatsby website also lists two articles regarding this topic:
+
 - [Gatsby on Windows](https://www.gatsbyjs.org/docs/gatsby-on-windows/)
 - [Check your development environment](https://www.gatsbyjs.org/tutorial/part-zero/)
 
@@ -66,6 +68,7 @@ npm run dev
 ```
 
 ### Adding a new project
+
 - Create a new folder in `content/projects`
 - Create a new markdown/mdx file, add the frontmatter (use the date format "YYYY-MM-DD")
 - Add an image and reference it in your frontmatter as `cover`
@@ -74,6 +77,7 @@ npm run dev
 If you're still unsure have a look at the already existing examples.
 
 ### Adding a new page
+
 - Create a new folder in `src/pages`
 - Create a new mdx file with the name `index.mdx` in it
 
@@ -86,6 +90,7 @@ You can add other features by having a look at the official [plugins page](https
 ```
 npm run build
 ```
+
 Copy the content of the `public` folder to your webhost or use a website like Netlify which automates that for you.
 
 ## Configuration

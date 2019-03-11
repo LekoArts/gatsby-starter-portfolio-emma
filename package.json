@@ -16,9 +16,9 @@
     "cy:open": "cypress open",
     "cy:run": "cypress run --browser chrome",
     "cy:run:ci": "cypress run --browser chrome --reporter junit --reporter-options 'mochaFile=results/cypress/result.xml'",
-    "test:e2e:dev": "start-server-and-test dev http://localhost:8000 cy:open",
-    "test:e2e:run": "start-server-and-test develop http://localhost:8000 cy:run",
-    "test:e2e:ci": "start-server-and-test develop http://localhost:8000 cy:run:ci"
+    "test:e2e:dev": "cross-env CYPRESS_SUPPORT=y start-server-and-test dev http://localhost:8000 cy:open",
+    "test:e2e:run": "cross-env CYPRESS_SUPPORT=y start-server-and-test develop http://localhost:8000 cy:run",
+    "test:e2e:ci": "cross-env CYPRESS_SUPPORT=y start-server-and-test develop http://localhost:8000 cy:run:ci"
   },
   "dependencies": {
     "@mdx-js/mdx": "^0.20.3",
@@ -73,6 +73,7 @@
   "main": "n/a",
   "devDependencies": {
     "babel-eslint": "^10.0.1",
+    "cross-env": "^5.2.0",
     "cypress": "^3.1.5",
     "cypress-testing-library": "^2.3.6",
     "eslint": "^5.15.1",
@@ -82,6 +83,7 @@
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-prettier": "^3.0.1",
     "eslint-plugin-react": "^7.12.4",
+    "gatsby-cypress": "^0.1.5",
     "prettier": "^1.16.4",
     "start-server-and-test": "^1.7.11"
   }
