@@ -49,7 +49,7 @@
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.0",
     "react-icons": "^3.6.1",
-    "react-spring": "^8.0.19",
+    "react-spring": "^8.0.20",
     "styled-components": "^4.2.0",
     "styled-theming": "^2.2.0",
     "typeface-merriweather": "^0.0.72",
