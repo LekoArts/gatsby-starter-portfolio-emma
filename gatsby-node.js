@@ -46,20 +46,16 @@ exports.createPages = async ({ graphql, actions }) => {
     graphql(`
       {
         projects: allMdx(filter: { fields: { sourceInstanceName: { eq: "projects" } } }) {
-          edges {
-            node {
-              fields {
-                slug
-              }
+          nodes {
+            fields {
+              slug
             }
           }
         }
         single: allMdx(filter: { fields: { sourceInstanceName: { eq: "pages" } } }) {
-          edges {
-            node {
-              fields {
-                slug
-              }
+          nodes {
+            fields {
+              slug
             }
           }
         }
@@ -67,22 +63,22 @@ exports.createPages = async ({ graphql, actions }) => {
     `)
   )
 
-  result.data.projects.edges.forEach(edge => {
+  result.data.projects.nodes.forEach(n => {
     createPage({
-      path: edge.node.fields.slug,
+      path: n.fields.slug,
       component: projectPage,
       context: {
         // Pass "slug" through context so we can reference it in our query like "$slug: String!"
-        slug: edge.node.fields.slug,
+        slug: n.fields.slug,
       },
     })
   })
-  result.data.single.edges.forEach(edge => {
+  result.data.single.nodes.forEach(n => {
     createPage({
-      path: edge.node.fields.slug,
+      path: n.fields.slug,
       component: singlePage,
       context: {
-        slug: edge.node.fields.slug,
+        slug: n.fields.slug,
       },
     })
   })

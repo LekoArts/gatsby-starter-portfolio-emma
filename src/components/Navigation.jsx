@@ -90,14 +90,14 @@ const Navigation = () => {
   return (
     <Wrapper data-testid="navigation">
       <Nav>
-        {data.nav.edges.map((nav, index) => (
+        {data.nav.nodes.map((n, index) => (
           <Link
-            key={nav.node.fields.slug}
-            to={nav.node.fields.slug}
+            key={n.fields.slug}
+            to={n.fields.slug}
             data-testid={`navItem-${index}`}
             activeClassName="nav-active"
           >
-            {nav.node.frontmatter.title}
+            {n.frontmatter.title}
           </Link>
         ))}
       </Nav>
@@ -131,14 +131,12 @@ export default Navigation
 const query = graphql`
   query NavLinks {
     nav: allMdx(filter: { fields: { sourceInstanceName: { eq: "pages" } } }) {
-      edges {
-        node {
-          fields {
-            slug
-          }
-          frontmatter {
-            title
-          }
+      nodes {
+        fields {
+          slug
+        }
+        frontmatter {
+          title
         }
       }
     }

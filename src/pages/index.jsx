@@ -14,7 +14,7 @@ const ListWrapper = styled.div`
 
 const Index = ({
   data: {
-    allMdx: { edges: projectEdges },
+    allMdx: { nodes: projectEdges },
   },
   location,
 }) => {
@@ -30,8 +30,8 @@ const Index = ({
           <ProjectItem
             testid={`projectItem-${index}`}
             style={style}
-            key={projectEdges[index].node.fields.slug}
-            node={projectEdges[index].node}
+            key={projectEdges[index].fields.slug}
+            node={projectEdges[index]}
           />
         ))}
       </ListWrapper>
@@ -56,20 +56,18 @@ export const pageQuery = graphql`
       sort: { fields: [frontmatter___date], order: DESC }
       filter: { fields: { sourceInstanceName: { eq: "projects" } } }
     ) {
-      edges {
-        node {
-          fields {
-            slug
-          }
-          frontmatter {
-            service
-            color
-            client
-            cover {
-              childImageSharp {
-                fluid(maxWidth: 850, quality: 90, traceSVG: { color: "#f3f3f3" }) {
-                  ...GatsbyImageSharpFluid_withWebp_tracedSVG
-                }
+      nodes {
+        fields {
+          slug
+        }
+        frontmatter {
+          service
+          color
+          client
+          cover {
+            childImageSharp {
+              fluid(maxWidth: 850, quality: 90, traceSVG: { color: "#f3f3f3" }) {
+                ...GatsbyImageSharpFluid_withWebp_tracedSVG
               }
             }
           }
