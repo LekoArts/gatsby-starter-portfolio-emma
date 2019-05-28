@@ -23,7 +23,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       slug = `/${_.kebabCase(node.frontmatter.slug)}`
     }
     // Otherwise use the title for the slug
-    if (
+    else if (
       Object.prototype.hasOwnProperty.call(node, 'frontmatter') &&
       Object.prototype.hasOwnProperty.call(node.frontmatter, 'title')
     ) {

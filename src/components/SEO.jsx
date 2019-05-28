@@ -1,13 +1,13 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import PropTypes from 'prop-types'
-import { graphql, StaticQuery } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
 import config from '../../config/website'
 
 const replaceTrailing = _path => _path.replace(/\/$/, ``)
 
-const Head = props => {
-  const { postNode, pathname, article, single, data } = props
+const SEO = ({ postNode, pathname, article, single }) => {
+  const data = useStaticQuery(querySEO)
 
   let title
   let description
@@ -185,19 +185,16 @@ const Head = props => {
   )
 }
 
-const SEO = props => <StaticQuery query={querySEO} render={data => <Head {...props} data={data} />} />
-
 export default SEO
 
-Head.propTypes = {
+SEO.propTypes = {
   pathname: PropTypes.string.isRequired,
-  data: PropTypes.any.isRequired,
   postNode: PropTypes.object,
   article: PropTypes.bool,
   single: PropTypes.bool,
 }
 
-Head.defaultProps = {
+SEO.defaultProps = {
   postNode: null,
   article: false,
   single: false,

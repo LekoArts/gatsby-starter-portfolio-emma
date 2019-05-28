@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, StaticQuery, graphql } from 'gatsby'
+import { Link, useStaticQuery, graphql } from 'gatsby'
 import { FaInstagram, FaBehance, FaDribbble } from 'react-icons/fa'
 import styled from 'styled-components'
 import config from '../../config/website'
@@ -84,48 +84,47 @@ const SocialMedia = styled.div`
 
 // Grabs all MDX files from src/pages and puts them into the navigation
 
-const Navigation = () => (
-  <StaticQuery
-    query={query}
-    render={data => (
-      <Wrapper data-testid="navigation">
-        <Nav>
-          {data.nav.edges.map((nav, index) => (
-            <Link
-              key={nav.node.fields.slug}
-              to={nav.node.fields.slug}
-              data-testid={`navItem-${index}`}
-              activeClassName="nav-active"
-            >
-              {nav.node.frontmatter.title}
-            </Link>
-          ))}
-        </Nav>
-        <Name>
-          <Link to="/" data-testid="home-title-link">
-            {config.siteTitle}
-          </Link>
-        </Name>
-        <SocialMedia>
-          <a
-            href="https://www.instagram.com/lekoarts.de"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Instagram"
+const Navigation = () => {
+  const data = useStaticQuery(query)
+
+  return (
+    <Wrapper data-testid="navigation">
+      <Nav>
+        {data.nav.edges.map((nav, index) => (
+          <Link
+            key={nav.node.fields.slug}
+            to={nav.node.fields.slug}
+            data-testid={`navItem-${index}`}
+            activeClassName="nav-active"
           >
-            <FaInstagram />
-          </a>
-          <a href="https://www.behance.net/lekoarts" target="_blank" rel="noopener noreferrer" aria-label="Behance">
-            <FaBehance />
-          </a>
-          <a href="https://dribbble.com/LeKoArts" target="_blank" rel="noopener noreferrer" aria-label="Dribbble">
-            <FaDribbble />
-          </a>
-        </SocialMedia>
-      </Wrapper>
-    )}
-  />
-)
+            {nav.node.frontmatter.title}
+          </Link>
+        ))}
+      </Nav>
+      <Name>
+        <Link to="/" data-testid="home-title-link">
+          {config.siteTitle}
+        </Link>
+      </Name>
+      <SocialMedia>
+        <a
+          href="https://www.instagram.com/lekoarts.de"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Instagram"
+        >
+          <FaInstagram />
+        </a>
+        <a href="https://www.behance.net/lekoarts" target="_blank" rel="noopener noreferrer" aria-label="Behance">
+          <FaBehance />
+        </a>
+        <a href="https://dribbble.com/LeKoArts" target="_blank" rel="noopener noreferrer" aria-label="Dribbble">
+          <FaDribbble />
+        </a>
+      </SocialMedia>
+    </Wrapper>
+  )
+}
 
 export default Navigation
 
