@@ -91,12 +91,7 @@ const Navigation = () => {
     <Wrapper data-testid="navigation">
       <Nav>
         {data.nav.nodes.map((n, index) => (
-          <Link
-            key={n.fields.slug}
-            to={n.fields.slug}
-            data-testid={`navItem-${index}`}
-            activeClassName="nav-active"
-          >
+          <Link key={n.fields.slug} to={n.fields.slug} data-testid={`navItem-${index}`} activeClassName="nav-active">
             {n.frontmatter.title}
           </Link>
         ))}

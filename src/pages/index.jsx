@@ -44,7 +44,19 @@ export default Index
 Index.propTypes = {
   data: PropTypes.shape({
     allMdx: PropTypes.shape({
-      edges: PropTypes.array.isRequired,
+      nodes: PropTypes.arrayOf(
+        PropTypes.shape({
+          fields: PropTypes.shape({
+            slug: PropTypes.string,
+          }),
+          frontmatter: PropTypes.shape({
+            service: PropTypes.string,
+            color: PropTypes.string,
+            client: PropTypes.string,
+            cover: PropTypes.any,
+          }),
+        })
+      ),
     }),
   }).isRequired,
   location: PropTypes.object.isRequired,
