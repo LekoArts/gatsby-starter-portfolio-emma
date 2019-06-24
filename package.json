@@ -50,7 +50,7 @@
     "react-helmet": "^5.2.1",
     "react-icons": "^3.7.0",
     "react-spring": "^8.0.25",
-    "styled-components": "^4.3.1",
+    "styled-components": "^4.3.2",
     "styled-theming": "^2.2.0",
     "typeface-merriweather": "^0.0.72",
     "typeface-roboto": "^0.0.54"
