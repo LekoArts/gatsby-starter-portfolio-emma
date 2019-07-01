@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { animated, useSpring, config } from 'react-spring'
-import MDXRenderer from 'gatsby-mdx/mdx-renderer'
+import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import { SEO, Container, Layout, Hero, BGImage } from '../components'
@@ -46,7 +46,7 @@ const Single = ({ data: { mdx }, location }) => {
       </Hero>
       <Container type="text">
         <animated.div style={contentProps}>
-          <MDXRenderer>{mdx.code.body}</MDXRenderer>
+          <MDXRenderer>{mdx.body}</MDXRenderer>
         </animated.div>
       </Container>
     </Layout>
@@ -65,9 +65,7 @@ Single.propTypes = {
 export const pageQuery = graphql`
   query($slug: String!) {
     mdx(fields: { slug: { eq: $slug } }) {
-      code {
-        body
-      }
+      body
       fields {
         slug
       }
