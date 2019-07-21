@@ -1,168 +1,105 @@
-![](https://i.imgur.com/M0nwIVi.png)
+<p align="center">
+  <a href="https://emma.lekoarts.de">
+    <img alt="LekoArts" src="https://img.lekoarts.de/gatsby/gatsby-site-illustration.png" />
+  </a>
+</p>
+<h1 align="center">
+  Gatsby Starter Portfolio: Emma
+</h1>
 
-# Gatsby Starter Portfolio: Emma
+<p align="center">
+  <a href="https://github.com/LekoArts/gatsby-starter-portfolio-emma/blob/master/LICENSE">
+    <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="Gatsby Starter Portfolio: Emma is released under the MIT license." />
+  </a>
+  <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs welcome!" />
+  <a href="https://twitter.com/intent/follow?screen_name=lekoarts_de">
+    <img src="https://img.shields.io/twitter/follow/lekoarts_de.svg?label=Follow%20@lekoarts_de" alt="Follow @lekoarts_de" />
+  </a>
+  <a href="https://app.netlify.com/sites/portfolio-emma/deploys">
+      <img src="https://api.netlify.com/api/v1/badges/5a4f3e8c-82cb-411d-89f1-fcfde2d3cf80/deploy-status" alt="Netlify Status" />
+    </a>
+</p>
 
-A portfolio starter for [Gatsby](https://www.gatsbyjs.org/). The target audience are designers and photographers.
+Minimalistic portfolio with full-width grid, page transitions, support for additional MDX pages, and a focus on large images. Using the Gatsby Theme [`@lekoarts/gatsby-theme-emma`](https://github.com/LekoArts/gatsby-themes/tree/master/themes/gatsby-theme-emma).
 
-[Demo Website](https://emma.lekoarts.de)
+[**Demo Website**](https://emma.lekoarts.de)
+
+Also be sure to checkout other [Free & Open Source Gatsby Themes](https://themes.lekoarts.de)
+
+## ✨ Features
+
+- MDX
+- react-spring page animations
+- Optional MDX pages which automatically get added to the navigation
+- Fully customizable through the usage of Gatsby Themes (and Theme UI)
+- Light Mode / Dark Mode
+- Google Analytics Support
+- SEO (Sitemap, OpenGraph tags, Twitter tags)
+- Offline Support & WebApp Manifest
+
+## 🚀 Getting Started
 
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/LekoArts/gatsby-starter-portfolio-emma) [![Edit gatsby-starter-portfolio-emma](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/LekoArts/gatsby-starter-portfolio-emma/tree/master/)
 
-[![CircleCI](https://circleci.com/gh/LekoArts/gatsby-starter-portfolio-emma.svg?style=svg)](https://circleci.com/gh/LekoArts/gatsby-starter-portfolio-emma) [![Netlify Status](https://api.netlify.com/api/v1/badges/5a4f3e8c-82cb-411d-89f1-fcfde2d3cf80/deploy-status)](https://app.netlify.com/sites/portfolio-emma/deploys)
+1. **Create a Gatsby site.**
 
-- Full-width grid-layout
-- Large images
-- Light theme
+Use the Gatsby CLI to create a new site, specifying this project
 
-## Why?
-
-If you want to quickly bootstrap a design/photography portfolio or use it as a foundation for your personal site the _gatsby-starter-portfolio_ are a perfect fit for you! The project's goal is to offer minimalistic and fast websites.
-
-I hope you like my starters and create something awesome! To see some of my work you can visit my [website](https://www.lekoarts.de) or support me on [Patreon](https://www.patreon.com/lekoarts) to get some neat rewards (4K images, project files, tutorial insights). Every pledge on Patreon helps me creating more free starters!
-
-Also check out the other _gatsby-starter-portfolio_:
-
-- [gatsby-starter-portfolio-emilia](https://github.com/LekoArts/gatsby-starter-portfolio-emilia)
-- [gatsby-starter-portfolio-bella](https://github.com/LekoArts/gatsby-starter-portfolio-bella)
-- [gatsby-starter-portfolio-cara](https://github.com/LekoArts/gatsby-starter-portfolio-cara)
-- [gatsby-starter-portfolio-jodie](https://github.com/LekoArts/gatsby-starter-portfolio-jodie)
-
-Check out the [Gatsby Starter Portfolio Overview](https://gatsby-starter-portfolio.netlify.com/)!
-
-## Features
-
-- Configurable
-  - Use the website.js to easily change the most important information
-  - Easily change the font
-- Choose a color for your projects highlights
-- Create your subpages with MDX
-- Uses styled-components for styling
-- [react-spring](https://github.com/react-spring/react-spring) animations
-- Projects in MDX ([gatsby-mdx](https://github.com/ChristopherBiscardi/gatsby-mdx))
-- Cypress for End-to-End testing (+ CircleCI config)
-- Google Analytics Support
-- SEO
-  - Sitemap
-  - Schema.org JSONLD
-  - OpenGraph Tags
-  - Twitter Tags
-- Offline Support
-- WebApp Manifest Support
-- Responsive images
-  - The right image size for every screen size
-  - Traced SVG loading (lazy-loading)
-  - WebP support
-
-## Getting Started
-
-Check your development environment! You'll need [Node.js](https://nodejs.org/en/), the [Gatsby CLI](https://www.gatsbyjs.org/docs/) and [node-gyp](https://github.com/nodejs/node-gyp#installation) installed. The official Gatsby website also lists two articles regarding this topic:
-
-- [Gatsby on Windows](https://www.gatsbyjs.org/docs/gatsby-on-windows/)
-- [Check your development environment](https://www.gatsbyjs.org/tutorial/part-zero/)
-
-To copy and install this starter run this command (with "project-name" being the name of your folder you wish to install it in):
-
-```
+```sh
 gatsby new project-name https://github.com/LekoArts/gatsby-starter-portfolio-emma
-cd project-name
-npm run dev
 ```
+
+2. **Start developing.**
+
+Navigate into your new site's directory and start it up.
+
+```sh
+cd project-name
+gatsby develop
+```
+
+3. **Open the code and start customizing!**
+
+Your site is now running at `http://localhost:8000`!
+
+If you want to learn more about how you can use a Gatsby starter that is configured with a Gatsby theme, you can checkout this [shorter](https://www.gatsbyjs.org/docs/themes/using-a-gatsby-theme/) or [longer](https://www.gatsbyjs.org/tutorial/using-a-theme/) tutorial. The tutorials don't exactly apply to this starter however the concepts are the same.
+
+## 📝 Using and modifying this starter
+
+This starter creates a new Gatsby site that installs and configures the theme [`@lekoarts/gatsby-theme-emma`](https://github.com/LekoArts/gatsby-themes/tree/master/themes/gatsby-theme-emma).
+
+Please have a look at the theme's README and files to see what options are available and how you can shadow the various components including Theme UI.
 
 ### Adding a new project
 
-- Create a new folder in `content/projects`
-- Create a new markdown/mdx file, add the frontmatter (use the date format "YYYY-MM-DD")
-- Add an image and reference it in your frontmatter as `cover`
-- Write your content below the frontmatter
-
-If you're still unsure have a look at the already existing examples.
+1. Create a new folder inside `content/projects`
+1. Create a new `index.mdx` file, and add the frontmatter (have a look at the already existing files for reference)
+1. Add an image to the created folder (from step 1)
+1. Reference this image as your `cover` in the frontmatter
+1. Write your content below the frontmatter
 
 ### Adding a new page
 
-- Create a new folder in `src/pages`
-- Create a new mdx file with the name `index.mdx` in it
+1. Create a new folder inside `content/pages`
+1. Create a new `index.mdx` file, and add the frontmatter
+1. Add an image to the created folder (from step 1)
+1. Reference this image as your `cover` in the frontmatter
+1. Write your content below the frontmatter
 
-### Adding new features/plugins
+### Change your `static` folder
 
-You can add other features by having a look at the official [plugins page](https://www.gatsbyjs.org/docs/plugins/)
+The `static` folder contains the icons, social media images and robots.txt. Don't forget to change these files, too!
 
-### Building your site
+## 🎓 Learning Gatsby
 
-```
-npm run build
-```
+Looking for more guidance? Full documentation for Gatsby lives [on Gatsby's website](https://www.gatsbyjs.org/).
 
-Copy the content of the `public` folder to your webhost or use a website like Netlify which automates that for you.
+### Themes
 
-## Configuration
+- To learn more about Gatsby themes specifically, we recommend checking out the [theme docs](https://www.gatsbyjs.org/docs/themes/).
 
-You can configure your setup in `config/website.js`:
+### General
 
-```JS
-module.exports = {
-  pathPrefix: '/', // Prefix for all links. If you deploy your site to example.com/portfolio your pathPrefix should be "portfolio"
-  siteTitle: 'Emma', // Navigation and Site Title
-  siteTitleAlt: 'Emma - Gatsby Starter Portfolio', // Alternative Site title for SEO
-  siteHeadline: 'Creating marvelous art & blazginly fast websites', // Headline for schema.org JSONLD
-  siteTitleShort: 'Emma', // short_name for manifest
-  siteUrl: 'https://emma.lekoarts.de', // Domain of your site. No trailing slash!
-  siteLanguage: 'en', // Language Tag on <html> element
-  siteLogo: '/logo.png', // Used for SEO and manifest
-  siteDescription: 'Minimalistic bright portfolio with full-width grid and large images',
-  author: 'LekoArts', // Author for schema.org JSONLD
+- **For most developers, I recommend starting with the [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.org/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
 
-  // siteFBAppID: '123456789', // Facebook App ID - Optional
-  userTwitter: '@emma', // Twitter Username
-  ogSiteName: 'emma', // Facebook Site Name
-  ogLanguage: 'en_US',
-  googleAnalyticsID: 'UA-12345689-1',
-
-  // Manifest and Progress color
-  themeColor: '#3498DB',
-  backgroundColor: '#2b2e3c',
-}
-```
-
-You can also configure the styling of the site by editing the theme variables in `config/theme.js`.
-
-```JS
-import { darken } from 'polished'
-
-const brand = {
-  primary: '#cf1993',
-  secondary: '#7b8acc',
-}
-
-const colors = {
-  grey: '#6b6b6b',
-  black: '#000',
-  white: '#fff',
-  bg_color: '#f3f3f3',
-  body_color: '#444',
-  link_color: brand.primary,
-  link_color_hover: `${darken(0.15, brand.primary)}`,
-}
-
-const theme = {
-  brand,
-  colors,
-  breakpoints: {
-    xs: '400px',
-    s: '600px',
-    m: '900px',
-    l: '1200px',
-  },
-  container: {
-    base: '100rem',
-    text: '55rem',
-  },
-  spacer: {
-    horizontal: '2rem',
-    vertical: '3rem',
-  },
-}
-
-export default theme
-```
-
-**Attention:** You also need to edit `static/robots.txt` to include your domain!
+- **To dive straight into code samples, head [to Gatsby's documentation](https://www.gatsbyjs.org/docs/).** In particular, check out the _Reference Guides_ and _Gatsby API_ sections in the sidebar.
