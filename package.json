@@ -11,8 +11,8 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
-    "@lekoarts/gatsby-theme-emma": "^0.0.4",
-    "gatsby": "^2.13.3",
+    "@lekoarts/gatsby-theme-emma": "^0.0.6",
+    "gatsby": "^2.13.32",
     "gatsby-plugin-google-analytics": "^2.1.4",
     "gatsby-plugin-manifest": "^2.2.3",
     "gatsby-plugin-netlify": "^2.1.3",

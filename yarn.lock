@@ -1199,10 +1199,10 @@
   dependencies:
     core-js "^2.5.7"
 
-"@lekoarts/gatsby-theme-emma@^0.0.4":
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/@lekoarts/gatsby-theme-emma/-/gatsby-theme-emma-0.0.4.tgz#4f0639bae31901d3b99ddf3452a4fe7ee0f981c2"
-  integrity sha512-ROCCX17/HaFnpnttXPGlhOAAw8qJD/hcynRAw+uILP6YXHcPSq1sIJf94xIfFAl2GSDu4LCSXi/j5AlzoL2P+A==
+"@lekoarts/gatsby-theme-emma@^0.0.6":
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/@lekoarts/gatsby-theme-emma/-/gatsby-theme-emma-0.0.6.tgz#265f6c8a61d390e9f2de28f4ea21561e0916a581"
+  integrity sha512-f2lnv/a9KbM+vzUTyIwYjnnQk3w13TTPDJcSHUCpv4SrHxWkpY23W2VeYxfrTD0uzPMNZJ7XFFeNHqeg2DTZhg==
   dependencies:
     "@emotion/core" "^10.0.14"
     "@mdx-js/mdx" "^1.0.21"
@@ -5582,7 +5582,7 @@ gatsby-transformer-sharp@^2.2.1:
     semver "^5.6.0"
     sharp "^0.22.1"
 
-gatsby@^2.13.3:
+gatsby@^2.13.32:
   version "2.13.32"
   resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.13.32.tgz#984974f70c9e70d99d86407a3d58c2b30b82c8d9"
   integrity sha512-w1U7VqzuHstGC1joWeI3idn8MCMkxD79BKIY3T1UwIaFWbKnwJNp/x9ADiNuW8VV+T2tDrS49+SclPZNBXjC6w==
