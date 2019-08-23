@@ -1194,27 +1194,37 @@
   dependencies:
     core-js "^2.5.7"
 
-"@lekoarts/gatsby-theme-emma@^0.0.18":
-  version "0.0.18"
-  resolved "https://registry.yarnpkg.com/@lekoarts/gatsby-theme-emma/-/gatsby-theme-emma-0.0.18.tgz#7c8270e92446937f0a48991af64306a9467eb606"
-  integrity sha512-ZLK4UAu55tBL9jelUXtdu5voNaGYyd/oZRKwJ9qsIqSuEhsZFxjmUgZEgw8J+w3n8LnCznNU5ySDT/Lcfyj1zQ==
+"@lekoarts/gatsby-theme-emma-core@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@lekoarts/gatsby-theme-emma-core/-/gatsby-theme-emma-core-1.0.1.tgz#ab2fdc03a6b4d211d9b34240ff0dbe7825ed457e"
+  integrity sha512-r83mecNARXg5wkxzbMSoXxqnObtPL5GkutN6ui5BXrzbC0w15fF+XczbiAeutLU2e/nzFqpsHajKGA2tuBucDQ==
+  dependencies:
+    "@mdx-js/mdx" "^1.3.1"
+    "@mdx-js/react" "^1.3.1"
+    gatsby-plugin-mdx "^1.0.25"
+    gatsby-plugin-sharp "^2.2.13"
+    gatsby-plugin-typescript "^2.1.3"
+    gatsby-remark-images "^3.1.13"
+    gatsby-source-filesystem "^2.1.10"
+    gatsby-transformer-sharp "^2.2.7"
+    lodash.kebabcase "^4.1.1"
+
+"@lekoarts/gatsby-theme-emma@^1.0.0":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@lekoarts/gatsby-theme-emma/-/gatsby-theme-emma-1.0.1.tgz#8bdc8ec20a1c438bd57e8a60ffe99180a81fa49f"
+  integrity sha512-CgchtCg5LhgSvGAEZ5uznqsvm+ztQa9a/CEqjxG5ivxxPyJnaFD7kKZy5Z7VkltZWcbTcTDXLpL8E9i4vFaq5A==
   dependencies:
     "@emotion/core" "^10.0.16"
+    "@lekoarts/gatsby-theme-emma-core" "^1.0.1"
     "@mdx-js/mdx" "^1.3.1"
     "@mdx-js/react" "^1.3.1"
     "@theme-ui/presets" "^0.2.34"
     gatsby-image "^2.2.10"
     gatsby-plugin-catch-links "^2.1.4"
     gatsby-plugin-emotion "^4.1.3"
-    gatsby-plugin-mdx "^1.0.25"
     gatsby-plugin-react-helmet "^3.1.4"
-    gatsby-plugin-sharp "^2.2.13"
     gatsby-plugin-theme-ui "^0.2.34"
     gatsby-plugin-typescript "^2.1.3"
-    gatsby-remark-images "^3.1.13"
-    gatsby-source-filesystem "^2.1.10"
-    gatsby-transformer-sharp "^2.2.7"
-    lodash.kebabcase "^4.1.1"
     polished "^3.4.1"
     react-helmet "^5.2.1"
     react-spring "^8.0.27"
