@@ -1194,10 +1194,10 @@
   dependencies:
     core-js "^2.5.7"
 
-"@lekoarts/gatsby-theme-emma-core@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@lekoarts/gatsby-theme-emma-core/-/gatsby-theme-emma-core-1.0.1.tgz#ab2fdc03a6b4d211d9b34240ff0dbe7825ed457e"
-  integrity sha512-r83mecNARXg5wkxzbMSoXxqnObtPL5GkutN6ui5BXrzbC0w15fF+XczbiAeutLU2e/nzFqpsHajKGA2tuBucDQ==
+"@lekoarts/gatsby-theme-emma-core@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@lekoarts/gatsby-theme-emma-core/-/gatsby-theme-emma-core-1.0.2.tgz#194e46930d6fd33afbb477489270cf29b251c8fe"
+  integrity sha512-Mzf05PcaQTZ2WnNDIg15N+p0qPUHpChbupjMaPptPnO7gi788R4F1yywss1JsTWSTL1MEwRiDeJbmWzt+gihXA==
   dependencies:
     "@mdx-js/mdx" "^1.3.1"
     "@mdx-js/react" "^1.3.1"
@@ -1210,12 +1210,12 @@
     lodash.kebabcase "^4.1.1"
 
 "@lekoarts/gatsby-theme-emma@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@lekoarts/gatsby-theme-emma/-/gatsby-theme-emma-1.0.1.tgz#8bdc8ec20a1c438bd57e8a60ffe99180a81fa49f"
-  integrity sha512-CgchtCg5LhgSvGAEZ5uznqsvm+ztQa9a/CEqjxG5ivxxPyJnaFD7kKZy5Z7VkltZWcbTcTDXLpL8E9i4vFaq5A==
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@lekoarts/gatsby-theme-emma/-/gatsby-theme-emma-1.0.2.tgz#521096cc9aed6a9afdabfb49903f18b3473dc893"
+  integrity sha512-Q2nQtLHkSw4ANFUvPVJcYJHnYYpM+TDr2azma8VTOUksnwHKoJx874RTZwxU+S3JzyUzxkzlwxu2ZxZtXuRaJw==
   dependencies:
     "@emotion/core" "^10.0.16"
-    "@lekoarts/gatsby-theme-emma-core" "^1.0.1"
+    "@lekoarts/gatsby-theme-emma-core" "^1.0.2"
     "@mdx-js/mdx" "^1.3.1"
     "@mdx-js/react" "^1.3.1"
     "@theme-ui/presets" "^0.2.34"
