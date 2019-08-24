@@ -1209,7 +1209,7 @@
     gatsby-transformer-sharp "^2.2.7"
     lodash.kebabcase "^4.1.1"
 
-"@lekoarts/gatsby-theme-emma@^1.0.2":
+"@lekoarts/gatsby-theme-emma@^1.0.3":
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/@lekoarts/gatsby-theme-emma/-/gatsby-theme-emma-1.0.3.tgz#36320887b26344330d6f058ced1fcb7b9fe2cc99"
   integrity sha512-NDYR4J4s/NxqTFEZAvI+01IYOr93pq1IAgxDX5vLiZy5qWBeAlutsD68PNku8WQa+6O6IrIZRLGCP0qqtckrNg==
