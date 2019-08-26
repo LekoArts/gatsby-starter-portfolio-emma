@@ -1210,9 +1210,9 @@
     lodash.kebabcase "^4.1.1"
 
 "@lekoarts/gatsby-theme-emma@^1.0.3":
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/@lekoarts/gatsby-theme-emma/-/gatsby-theme-emma-1.0.3.tgz#36320887b26344330d6f058ced1fcb7b9fe2cc99"
-  integrity sha512-NDYR4J4s/NxqTFEZAvI+01IYOr93pq1IAgxDX5vLiZy5qWBeAlutsD68PNku8WQa+6O6IrIZRLGCP0qqtckrNg==
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/@lekoarts/gatsby-theme-emma/-/gatsby-theme-emma-1.0.4.tgz#f42e8fe730d07b73db7f2a4c4b329ea0b1348852"
+  integrity sha512-UOysLvdIKQ3poMtVJNGyvAXL4hbnONrk3GyRWSlkWGBOLgjygVXVFbVq8Pdh/sUPFt38o4ld1Bprg4v9EZ7voA==
   dependencies:
     "@emotion/core" "^10.0.16"
     "@lekoarts/gatsby-theme-emma-core" "^1.0.2"
