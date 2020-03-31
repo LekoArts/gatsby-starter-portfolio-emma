@@ -1378,43 +1378,43 @@
     "@babel/runtime" "^7.7.2"
     core-js "^3.4.1"
 
-"@lekoarts/gatsby-theme-emma-core@^1.2.1":
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/@lekoarts/gatsby-theme-emma-core/-/gatsby-theme-emma-core-1.2.1.tgz#5303f2d73135069406a393588ca249d71ff27eab"
-  integrity sha512-Xo5olDawFevffWubzxL9m8h8M8fVQnLAIOTjjtLTnpGB8utPTy123eAVucr6EVI5/8TsxpikDEHhcB70WVy2aw==
+"@lekoarts/gatsby-theme-emma-core@^1.2.2":
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/@lekoarts/gatsby-theme-emma-core/-/gatsby-theme-emma-core-1.2.2.tgz#bd12b9eb4d92d984c70f6e84fd6f082cc33bab7e"
+  integrity sha512-pDeDzUfoQyBNObusAVicw31mjDoC/+Ku1fhyHggiXHxo1wVfyPxaKRaZ8a+0Lw3GZRTYpUUPotKGusZ/F6n7mQ==
   dependencies:
-    "@mdx-js/mdx" "^1.5.7"
-    "@mdx-js/react" "^1.5.7"
-    gatsby-plugin-mdx "^1.0.74"
-    gatsby-plugin-sharp "^2.4.5"
-    gatsby-plugin-typescript "^2.2.0"
-    gatsby-remark-images "^3.1.44"
-    gatsby-source-filesystem "^2.1.48"
-    gatsby-transformer-sharp "^2.3.16"
+    "@mdx-js/mdx" "^1.5.8"
+    "@mdx-js/react" "^1.5.8"
+    gatsby-plugin-mdx "^1.1.3"
+    gatsby-plugin-sharp "^2.5.3"
+    gatsby-plugin-typescript "^2.3.1"
+    gatsby-remark-images "^3.2.1"
+    gatsby-source-filesystem "^2.2.2"
+    gatsby-transformer-sharp "^2.4.3"
     lodash.kebabcase "^4.1.1"
 
-"@lekoarts/gatsby-theme-emma@^1.3.1":
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/@lekoarts/gatsby-theme-emma/-/gatsby-theme-emma-1.3.1.tgz#9d026399f0afc008dc49c4fef1b7150dca7959e0"
-  integrity sha512-IhzXCW35qCPhdnqm9/XUR8ILO6C9y2NYHsIRo3L4al6HLDj4RZPIK0dZrQ4JIEjxRxOPBN1b4DvjI3vx8q1DOw==
+"@lekoarts/gatsby-theme-emma@^1.3.2":
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/@lekoarts/gatsby-theme-emma/-/gatsby-theme-emma-1.3.2.tgz#4f0d57a97010b8769a5cb9d0f03d1d430d214e37"
+  integrity sha512-jvjASXyBSeNhrcrsh/VkTcQFf4BBcOI/8c3M4HDsnUq5FZxzIikJJm07qQLCezHKUS7gzf7XOxguIUkGNxE/CA==
   dependencies:
     "@emotion/core" "^10.0.28"
-    "@lekoarts/gatsby-theme-emma-core" "^1.2.1"
-    "@mdx-js/mdx" "^1.5.7"
-    "@mdx-js/react" "^1.5.7"
+    "@lekoarts/gatsby-theme-emma-core" "^1.2.2"
+    "@mdx-js/mdx" "^1.5.8"
+    "@mdx-js/react" "^1.5.8"
     "@theme-ui/presets" "^0.2.44"
-    gatsby-image "^2.2.42"
-    gatsby-plugin-catch-links "^2.1.26"
-    gatsby-plugin-emotion "^4.1.23"
-    gatsby-plugin-react-helmet "^3.1.22"
+    gatsby-image "^2.3.1"
+    gatsby-plugin-catch-links "^2.2.1"
+    gatsby-plugin-emotion "^4.2.1"
+    gatsby-plugin-react-helmet "^3.2.1"
     gatsby-plugin-theme-ui "^0.2.53"
-    gatsby-plugin-typescript "^2.2.0"
-    polished "^3.4.4"
+    gatsby-plugin-typescript "^2.3.1"
+    polished "^3.5.1"
     react-helmet "^5.2.1"
     react-spring "^8.0.27"
     theme-ui "^0.2.52"
 
-"@mdx-js/mdx@^1.5.7":
+"@mdx-js/mdx@^1.5.8":
   version "1.5.8"
   resolved "https://registry.yarnpkg.com/@mdx-js/mdx/-/mdx-1.5.8.tgz#40740eaf0b0007b461cee8df13a7ae5a1af8064a"
   integrity sha512-OzanPTN0p9GZOEVeEuEa8QsjxxGyfFOOnI/+V1oC1su9UIN4KUg1k4n/hWTZC+VZhdW1Lfj6+Ho8nIs6L+pbDA==
@@ -1438,7 +1438,7 @@
     unist-builder "2.0.3"
     unist-util-visit "2.0.2"
 
-"@mdx-js/react@^1.5.7":
+"@mdx-js/react@^1.5.8":
   version "1.5.8"
   resolved "https://registry.yarnpkg.com/@mdx-js/react/-/react-1.5.8.tgz#fc38fe0eb278ae24666b2df3c751e726e33f5fac"
   integrity sha512-L3rehITVxqDHOPJFGBSHKt3Mv/p3MENYlGIwLNYU89/iVqTLMD/vz8hL9RQtKqRoMbKuWpzzLlKIObqJzthNYg==
@@ -5934,7 +5934,7 @@ gatsby-graphiql-explorer@^0.3.1:
   dependencies:
     "@babel/runtime" "^7.8.7"
 
-gatsby-image@^2.2.42:
+gatsby-image@^2.3.1:
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/gatsby-image/-/gatsby-image-2.3.1.tgz#6898e03a489e9b43242562d70079bd8ed10c5d99"
   integrity sha512-VCJIb2Sp7Dcql+seZ14pqP2yL8oUlLin+HNEb5u8hcn3txkZhzIW3zwPQ3UwfPvi9Em3gBsEClCR6TQSw96J8g==
@@ -5966,7 +5966,7 @@ gatsby-page-utils@^0.1.1:
     lodash "^4.17.15"
     micromatch "^3.1.10"
 
-gatsby-plugin-catch-links@^2.1.26:
+gatsby-plugin-catch-links@^2.2.1:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-catch-links/-/gatsby-plugin-catch-links-2.2.1.tgz#8e546743b43e4548c4eda9d855987a8f98eb7695"
   integrity sha512-sxKYhQVh8fKcQQ6EzEuHOyWN9igNjvaVg5jGgB2b0Mft7+KgWzVkq2pNjwmP7UGMUPVsE01LLJdQFytkduSkAA==
@@ -5974,7 +5974,7 @@ gatsby-plugin-catch-links@^2.1.26:
     "@babel/runtime" "^7.8.7"
     escape-string-regexp "^1.0.5"
 
-gatsby-plugin-emotion@^4.1.23:
+gatsby-plugin-emotion@^4.2.1:
   version "4.2.1"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-emotion/-/gatsby-plugin-emotion-4.2.1.tgz#d4244460e23d1bb5cca76266ba8990f534234e32"
   integrity sha512-ygXxkpnWJdDOAgb1XA9TbVCRLkaAYTFLTsqVQXMBhnrknb5iPNO+MP0fZ5LRqWgBALyJ629nxs0efUpnT/RSWw==
@@ -6000,7 +6000,7 @@ gatsby-plugin-manifest@^2.2.6:
     semver "^5.7.1"
     sharp "^0.25.1"
 
-gatsby-plugin-mdx@^1.0.74:
+gatsby-plugin-mdx@^1.1.3:
   version "1.1.4"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-mdx/-/gatsby-plugin-mdx-1.1.4.tgz#1f3e9773bfc1fd4806ceacab7a130441f3e19b0d"
   integrity sha512-id2/LALN7eseTGN05v1n16XCYggrl2UTzWOJOQME9rh25jNK+KT5ywaPY6vNYimeAW7wWdad3rl6hORpv4L6yw==
@@ -6077,14 +6077,14 @@ gatsby-plugin-page-creator@^2.2.1:
     lodash "^4.17.15"
     micromatch "^3.1.10"
 
-gatsby-plugin-react-helmet@^3.1.22:
+gatsby-plugin-react-helmet@^3.2.1:
   version "3.2.1"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-react-helmet/-/gatsby-plugin-react-helmet-3.2.1.tgz#28a89e884e5447f7aefead2a80749e3745f5f5a9"
   integrity sha512-5oarZdVvp3k3keG26eVFagVHLYw7wCGs/MXRYQg8MEyJewU3X4Uc0eo7qu4TM5EIuZ2ekaL14r86RB6RM5TORA==
   dependencies:
     "@babel/runtime" "^7.8.7"
 
-gatsby-plugin-sharp@^2.4.5:
+gatsby-plugin-sharp@^2.5.3:
   version "2.5.3"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-2.5.3.tgz#7644ab20228f13af5b9fdebc5c1bb22662dfc7c3"
   integrity sha512-/qx0QJNXsmHudEGlRm6oqkq+X228hGBJ6KjCJpJK5bUwWdhcZRJNar337g/2BXPchaxk1emJTUK9y+qSvVpPvw==
@@ -6124,7 +6124,7 @@ gatsby-plugin-theme-ui@^0.2.53:
   resolved "https://registry.yarnpkg.com/gatsby-plugin-theme-ui/-/gatsby-plugin-theme-ui-0.2.53.tgz#57a52339e50ede7ef4df0b1b5593d360b56b597d"
   integrity sha512-AlQC+uC9lvrP3LlGsLe0f0azp7B5c49qWl4b3FDj8xbravBoqFmJT7XrNTpYYbxnCnx/K1v0QtwP8qindw0S2g==
 
-gatsby-plugin-typescript@^2.2.0:
+gatsby-plugin-typescript@^2.3.1:
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-typescript/-/gatsby-plugin-typescript-2.3.1.tgz#fadc8004a85cf2a033f17140e482f7d72fd3bf10"
   integrity sha512-dT+YStwH1CcMk4vCtyNrqefjCqGyVInuXrVnqfOJQD+V6Wxo7gt8t+54uGdsjQJthRCz5xVGO9ylrHvOKzmU9g==
@@ -6146,7 +6146,7 @@ gatsby-react-router-scroll@^2.2.1:
     scroll-behavior "^0.9.12"
     warning "^3.0.0"
 
-gatsby-remark-images@^3.1.44:
+gatsby-remark-images@^3.2.1:
   version "3.2.1"
   resolved "https://registry.yarnpkg.com/gatsby-remark-images/-/gatsby-remark-images-3.2.1.tgz#0f767fda76c85cb0ddca2f7ff1b82ca5b4fb716a"
   integrity sha512-3zzLRjfTiXG4u8kFK17tZYpu3FNIirfdaOt7ZtNyfaowLcB+Ok67KCweZlHlvr/+Zvj+gvXAHWycMnMQqlK0iw==
@@ -6163,7 +6163,7 @@ gatsby-remark-images@^3.1.44:
     unist-util-select "^1.5.0"
     unist-util-visit-parents "^2.1.2"
 
-gatsby-source-filesystem@^2.1.48:
+gatsby-source-filesystem@^2.2.2:
   version "2.2.2"
   resolved "https://registry.yarnpkg.com/gatsby-source-filesystem/-/gatsby-source-filesystem-2.2.2.tgz#9ecbc9e64fedd1c30b4d21f7e148016353b2dc17"
   integrity sha512-uHHCiTp8/q9JF0Yr14Q5aJZ07jUJSV6HJSnrSVnEIF4PfRQkVJG5FHQULmxJUXWQhIoy17EGuzqVjxMsFY69QA==
@@ -6207,7 +6207,7 @@ gatsby-telemetry@^1.2.2:
     stack-utils "1.0.2"
     uuid "3.4.0"
 
-gatsby-transformer-sharp@^2.3.16:
+gatsby-transformer-sharp@^2.4.3:
   version "2.4.3"
   resolved "https://registry.yarnpkg.com/gatsby-transformer-sharp/-/gatsby-transformer-sharp-2.4.3.tgz#a5004a872ea649829dd98d1cedb903ac2c9e577f"
   integrity sha512-sBEgyx9q/I9phIuOq87BqDjtdpvsLKQPDXHzDmX/OcdwbfjS7HtmjhJcV2fCdTMEYKwK+s/iI1gamTtNe95/5w==
@@ -10335,7 +10335,7 @@ pnp-webpack-plugin@^1.6.4:
   dependencies:
     ts-pnp "^1.1.6"
 
-polished@^3.4.4:
+polished@^3.5.1:
   version "3.5.1"
   resolved "https://registry.yarnpkg.com/polished/-/polished-3.5.1.tgz#657b6faf4c2308f3e0b1951196803a5e5d67b122"
   integrity sha512-GVbvskpBiDV5TknurGL6OyFfLHsCknxbU8w5iMppT8rW0tLEoQHrIRfrPNPqGXNj3HGhkjRvhmg59Fy7HSnCAw==
