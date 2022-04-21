@@ -3,6 +3,7 @@ import { Flex, jsx, useColorMode } from "theme-ui"
 import { Link } from "gatsby"
 import Navigation from "./navigation"
 import SocialLinks from "./social-links"
+import ColorModeToggle from '../../../components/dl-toggle'
 
 type HeaderProps = {
   meta: {
@@ -175,14 +176,15 @@ const Header = ({ meta, nav }: HeaderProps) => {
         }}
       >
         <SocialLinks />
-        <button
+        {/* <button
           sx={{ variant: `buttons.toggle`, fontWeight: `semibold` }}
           onClick={toggleColorMode}
           type="button"
           aria-label="Toggle dark mode"
         >
           {isDark ? `Light` : `Dark`}
-        </button>
+        </button> */}
+        <ColorModeToggle isDark={isDark} toggle={toggleColorMode} />
       </div>
     </Flex>
   );
