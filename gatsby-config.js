@@ -1,26 +1,24 @@
-require(`dotenv`).config()
+require(`dotenv`).config();
 
-const shouldAnalyseBundle = process.env.ANALYSE_BUNDLE
+const shouldAnalyseBundle = process.env.ANALYSE_BUNDLE;
 
 module.exports = {
   siteMetadata: {
     // You can overwrite values here that are used for the SEO component
     // You can also add new values here to query them like usual
     // See all options: https://github.com/LekoArts/gatsby-themes/blob/main/themes/gatsby-theme-emma-core/gatsby-config.js
-    siteTitle: `Emma`,
-    siteTitleAlt: `Emma - Gatsby Starter Portfolio`,
-    siteHeadline: `Emma - Gatsby Theme from @lekoarts`,
-    siteUrl: `https://emma.lekoarts.de`,
-    siteDescription: `Minimalistic portfolio with full-width grid, page transitions, support for additional MDX pages, and a focus on large images`,
+    siteTitle: `Leila`,
+    siteTitleAlt: `Leila - Design Portfolio`,
+    siteHeadline: `Leila - Design Portfolio`,
+    siteUrl: `https://leilameyerdesign.com`,
+    siteDescription: `My Portfolio 😁`,
     siteLanguage: `en`,
     siteImage: `/banner.jpg`,
-    author: `@lekoarts_de`,
+    author: `@leilamdesigns`,
   },
   plugins: [
     {
       resolve: `@lekoarts/gatsby-theme-emma`,
-      // See the theme's README for all available options
-      options: {},
     },
     `gatsby-plugin-sitemap`,
     {
@@ -59,4 +57,4 @@ module.exports = {
       },
     },
   ].filter(Boolean),
-}
+};

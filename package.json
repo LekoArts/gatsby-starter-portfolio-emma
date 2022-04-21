@@ -1,9 +1,9 @@
 {
   "private": true,
-  "name": "emma",
+  "name": "Leila",
   "description": "Minimalistic portfolio with full-width grid, page transitions, support for additional MDX pages, and a focus on large images",
-  "version": "0.3.11",
-  "author": "LekoArts <hello@lekoarts.de>",
+  "version": "1.0",
+  "author": "Leila <leilmeyer@gmail.com>",
   "license": "0BSD",
   "starter-name": "gatsby-starter-portfolio-emma",
   "scripts": {
