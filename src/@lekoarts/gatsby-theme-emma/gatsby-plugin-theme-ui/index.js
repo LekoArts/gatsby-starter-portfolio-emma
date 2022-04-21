@@ -28,12 +28,14 @@ export default merge(tailwind, {
   colors: {
     primary: colors.primary,
     secondary: colors.secondary,
+    toggleIcon: tailwind.colors.black,
     modes: {
       dark: {
         text: tailwind.colors.white,
         primary: colors.secondary,
         background: colors.darkBackground,
         textMuted: colors.muted,
+        toggleIcon: tailwind.colors.white,
       },
     },
   },
