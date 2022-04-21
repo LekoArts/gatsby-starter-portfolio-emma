@@ -1,14 +1,10 @@
-import React from 'react'
+import React from "react";
+import Contact from "./contact-form";
 
 const Details = () => (
   <>
-    <h3>No details specified</h3>
-    <p>
-      If you are the owner of this site, you can specify details by overriding
-      this file. Have a look at the README of gatsby-theme-contact for how this
-      is done.
-    </p>
+    <Contact />
   </>
-)
+);
 
-export default Details
+export default Details;
